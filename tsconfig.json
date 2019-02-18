@@ -17,6 +17,18 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": [ "*" ],
+      "@henrik/interfaces/*": ["app/interfaces/*"],
+      "@henrik/services/*":["app/services/*"],
+      "@henrik/modals/*":["app/modals/*"],
+      "@henrik/components/*":["app/components/*"],
+      "@henrik/pipes/*":["app/pipes/*"],
+      "@henrik/directives/*":["app/directives/*"],
+      "@henrik/pages/*":["app/pages/*"],
+      "@henrik/common/*":["app/common/*"]
+    }
   }
 }
