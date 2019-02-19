@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit,ViewEncapsulation } from '@angular/core';
 
 import { MatDrawer } from '@angular/material/sidenav';
 
@@ -9,6 +9,7 @@ import { IPageLink } from '@henrik/interfaces/app.interfaces';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent implements AfterViewInit {
