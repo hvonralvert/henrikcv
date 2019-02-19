@@ -2,7 +2,6 @@
 
   <!--side menu-->
   <mat-drawer #drawer mode="side">
-
     <div class="Menu-inner">
 
       <!-----------------buttons------------------->
@@ -10,7 +9,9 @@
 
         <div class="PageButt-container" (click)="GoToPage(page.Page)" [ngClass]="{'PageButt-active' : page.Active}"
           *ngFor="let page of MenuPages">
-          <mat-icon>home</mat-icon>
+          <div class="PageButt-icon">
+            <mat-icon class="">home</mat-icon>
+          </div>
           <div *ngIf="menuWide" class="PageButt-text-container">
             <div class="PageButt-text-name">
               {{page.Name}}
@@ -27,6 +28,7 @@
       <div class="ButtonExpand-container" (click)="expandMenu()">
         <div class="arrow" [ngClass]="{'arrow-expand': menuWide , 'arrow-shrink' : !menuWide}"></div>
       </div>
+
     </div>
 
   </mat-drawer>

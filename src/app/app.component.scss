@@ -4,10 +4,11 @@
 $menu-padding:5px;
 $menu-maxwidth:300px;
 
-$pagebutt-iconsize-width:50px;
-$pagebutt-iconsize-height:50px;
-$pagebutt-iconsize:45px;
-$pagebutt-namesize:17px;
+$pagebutt-iconsize-width:30px;
+$pagebutt-iconsize-height:30px;
+$pagebutt-iconsize:30px;
+$pagebutt-namesize:22px;
+$pagebutt-descsize:15px;
 $pagebutt-padding:20px;
 $pagebutt-icontext-margin:15px;
 $pagebutt-height:55px;
@@ -36,6 +37,11 @@ $expandbutt-hieght:40px;
   min-width: fit-content;
   max-width: $menu-maxwidth;
   height: 100%;
+  background: var(--menu-dark);
+  background: -moz-linear-gradient(top, var(--menu-light) 0%, var(--menu-light) 52%, var(--menu-dark) 100%);
+  background: -webkit-linear-gradient(top, var(--menu-light) 0%, var(--menu-light) 52%, var(--menu-dark) 100%);
+  background: linear-gradient(to bottom, var(--menu-light) 0%, var(--menu-light) 52%, var(--menu-dark) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4f74fe', endColorstr='#6fa9fb', GradientType=0);
 }
 
 
@@ -58,22 +64,34 @@ $expandbutt-hieght:40px;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding:$pagebutt-padding;
+  padding: $pagebutt-padding;
   cursor: pointer;
 }
 
-.PageButt-container:hover{
-    background-color: green;
+.PageButt-container:hover {
+  background-color: var(--menu-button-hover);
 }
 
-.PageButt-active{
-    background-color: red;
+.PageButt-active {
+  background-color: var(--menu-button-active);
 }
 
-.PageButt-icon {
+.PageButt-icon-container {
   width: $pagebutt-iconsize-width;
   height: $pagebutt-iconsize-height;
-  font-size: $pagebutt-iconsize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  font-size: 55px;
+}
+
+.PageButt-icon{
+  // font-size: $pagebutt-iconsize;
+  color:white;
+  .material-icons{
+      font-size: $pagebutt-iconsize;
+  }
 }
 
 .PageButt-text-container {
@@ -81,51 +99,56 @@ $expandbutt-hieght:40px;
   flex-direction: column;
   width: fit-content;
   justify-content: center;
-  margin-left:$pagebutt-icontext-margin;
+  margin-left: $pagebutt-icontext-margin;
 }
 
 
 .PageButt-text-name {
   font-size: $pagebutt-namesize;
   width: 100;
+  color: white;
 }
 
 .PageButt-text-description {
-  font-size: $pagebutt-namesize;
+  font-size: $pagebutt-descsize;
   width: 100;
+  color:rgb(245, 245, 245);
 }
 
 /*---------------- arrow button bottom ----------------*/
 .ButtonExpand-container {
-    height: $expandbutt-hieght;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: black;
-    width: 100%;
-  }
-
-  .arrow{
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    padding: 4px;
-    display: inline-block;
-    transition: all 0.2s ease;
-  }
-
-  .arrow-expand{
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    margin: 15px 10px 15px 0px;
-  }
-
-  .arrow-shrink{
-    transform: rotate(-225deg);
-    -webkit-transform: rotate(-225deg);
-    margin: 15px 10px 15px 10px;
-  }
-
-  .mat-drawer-inner-container{
-    overflow:  !important;
+  height: $expandbutt-hieght;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  cursor: pointer;
 }
 
+.ButtonExpand-container:hover {
+  background-color: var(--menu-button-hover);
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  padding: 4px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.arrow-expand {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin: 15px 10px 15px 0px;
+}
+
+.arrow-shrink {
+  transform: rotate(-225deg);
+  -webkit-transform: rotate(-225deg);
+  margin: 15px 10px 15px 10px;
+}
+
+.mat-drawer-inner-container {
+  overflow: hidden !important;
+}
