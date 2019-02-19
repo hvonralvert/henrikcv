@@ -11,7 +11,7 @@ $pageHeader-underlineBottom:10px;
 
 
 /*---------- boxes --------------*/
-$box-bigwidth:450px;
+$box-bigwidth:500px;
 $box-smallwidth:300px;
 $box-maxwidth:100%;
 $box-fullscreen-margins:20px;
@@ -48,7 +48,7 @@ $box-items-topmargin:10px;
 
 
 /*------------------------------------ screen control ----------------------------------*/
-$screenszies: ('smallscreen':600px, "bigscreen": 15000px);
+$screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 
 @mixin ScreenSize($sizeType) {
   @if map-has-key($screenszies, $sizeType) {
@@ -153,7 +153,9 @@ $screenszies: ('smallscreen':600px, "bigscreen": 15000px);
 
 .box-margins{
   @include ScreenSize('bigscreen') {
-    margin: $box-fullscreen-margins;
+    margin-left: $box-fullscreen-margins;
+    margin-right:$box-fullscreen-margins;
+    margin-bottom: $box-fullscreen-margins;
   }
 
   @include ScreenSize('smallscreen') {
@@ -196,6 +198,18 @@ $screenszies: ('smallscreen':600px, "bigscreen": 15000px);
 .box-header {
   font-size: $box-headerfontsize;
   width: 100%;
+}
+
+.InfoBox.TextArray{
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  margin-left:$box-items-leftmargin;
+  margin-top:$box-items-topmargin;
+}
+
+.box-textparagraph{
+  margin-bottom:10px;
 }
 
 .box-items-container{

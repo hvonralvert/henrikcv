@@ -2,6 +2,8 @@ import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular
 
 import { MatDialog } from '@angular/material';
 import { MatDrawer } from '@angular/material/sidenav';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { RouteService } from '@henrik/services/route.service';
 import { AuthService } from '@henrik/services/auth.service';
@@ -30,7 +32,9 @@ export class AppComponent implements AfterViewInit {
   constructor(
     public routServ: RouteService,
     public dialog: MatDialog,
-    public authServ: AuthService
+    public authServ: AuthService,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
   ) {
 
     /*There is no stop to subscription. This is intenonally since we are at app.component.ts*/
@@ -41,6 +45,16 @@ export class AppComponent implements AfterViewInit {
     this.authServ.UserOnline$$.subscribe(online => {
       this.adminOnline = online;
     });
+
+    this.matIconRegistry.addSvgIcon(
+      'github',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/github.svg')
+    );
+
+    this.matIconRegistry.addSvgIcon(
+      'linkedin',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/linkedin.svg')
+    );
   }
 
 

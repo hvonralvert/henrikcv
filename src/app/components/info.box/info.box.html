@@ -3,7 +3,12 @@
   <div class="box-header">
     {{InfoBox.Header}}
   </div>
-  <div class="box-items-container">
-    {{InfoBox.Text}}
+
+  <!--text array-->
+  <div *ngIf="InfoBox.TextArray" class="box-items-container">
+    <div *ngFor="let text of InfoBox.TextArray" class="box-textparagraph">
+      {{text}}
+    </div>
   </div>
+
 </div>
