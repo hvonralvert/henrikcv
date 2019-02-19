@@ -97,13 +97,18 @@ $smallLink-wdith:25px;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+  fill:white !important;
   cursor: pointer;
+  path{
+    fill:white !important;
+  }
 }
 
 .smalllink:hover{
   background-color: var(--menu-button-hover);
   border-radius: 50%;
 }
+
 
 /*----------------- buttons side nav --------------*/
 .PageButt-wrapper{

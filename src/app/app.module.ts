@@ -14,6 +14,8 @@ import { environment } from '../environments/environment';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { LoginModalModule } from '@henrik/modals/login.modal.module';
 
@@ -32,7 +34,8 @@ import { LoginModalModule } from '@henrik/modals/login.modal.module';
     MatSidenavModule,
     MatIconModule,
     MatDialogModule,
-    LoginModalModule
+    LoginModalModule,
+    HttpClientModule
   ],
   providers: [],
   entryComponents: [],

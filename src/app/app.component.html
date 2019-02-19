@@ -6,10 +6,10 @@
 
       <!----------------- small links ------------->
       <div class="small-links-container" [ngClass]="{'small-links-expanded' : menuWide, 'small-links-shrinked' : !menuWide}">
-        <mat-icon class="smalllink" [inline]="true">nature_people</mat-icon>
-        <mat-icon class="smalllink" [inline]="true">image_aspect_ratio</mat-icon>
         <mat-icon class="smalllink" [inline]="true" *ngIf="!adminOnline" (click)="openLoginModal()">lock</mat-icon>
         <mat-icon class="smalllink" [inline]="true" *ngIf="adminOnline" (click)="LogOut()">lock_open</mat-icon>
+        <mat-icon class="smalllink" svgIcon="github" [inline]="true"></mat-icon>
+        <mat-icon class="smalllink" svgIcon="linkedin"></mat-icon>
       </div>
 
       <!-----------------buttons------------------->
@@ -17,9 +17,11 @@
         <div class="PageButt-wrapper" *ngFor="let page of MenuPages">
           <div *ngIf="(page.Page !== 'admin') || ((page.Page === 'admin') && adminOnline)" class="PageButt-container" (click)="GoToPage(page.Page)"
             [ngClass]="{'PageButt-active' : page.Active}">
+
             <div class="PageButt-icon">
               <mat-icon [inline]="true">{{page.Icon}}</mat-icon>
             </div>
+
             <div *ngIf="menuWide" class="PageButt-text-container">
               <div class="PageButt-text-name">
                 {{page.Name}}
@@ -28,10 +30,9 @@
                 {{page.Description}}
               </div>
             </div>
+            
           </div>
-
         </div>
-
       </div>
 
       <!-------expand collapse button -------------->
