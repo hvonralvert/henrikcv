@@ -1,0 +1,56 @@
+@import '../../../themes/common.scss';
+
+
+$item-img-size:30px;
+$item-imgmargin:10px;
+$item-fontsize:15px;
+$item-padding:5px;
+
+$star-size:20px;
+
+.item-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width:100%;
+    padding:$item-padding;
+}
+
+.item-container:hover{
+    background-color: rgb(243, 243, 243);
+}
+
+
+.item-img{
+    width:$item-img-size;
+    height: $item-img-size;
+    margin-right:$item-imgmargin;
+}
+
+
+.item-text{
+    font-size:$item-fontsize;
+    display: flex;
+    flex:1;
+}
+
+
+.item-stars-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+.star{
+    font-size: $star-size;
+    &.nolight{
+        color:rgb(82, 82, 82);
+    }
+    &.light{
+        color:rgb(0, 184, 31);
+    }
+}

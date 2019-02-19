@@ -1,0 +1,15 @@
+<div class="item-container">
+
+  <img class="item-img" *ngIf="knowledge.Img" [src]="knowledge.Img">
+  <div class="item-img" *ngIf="!knowledge.Img"></div>
+
+  <div class="item-text">{{knowledge.Text}}</div>
+
+  <div class="item-stars-container">
+    <div class="star-container" *ngFor="let star of stars">
+      <mat-icon *ngIf="!star.Light" class="star nolight" [inline]="true">star_border</mat-icon>
+      <mat-icon *ngIf="star.Light" class="star light" [inline]="true">star</mat-icon>
+    </div>
+  </div>
+
+</div>

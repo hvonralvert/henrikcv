@@ -14,47 +14,55 @@ export class RouteService {
 
   MenuPages: IPageLink[] = [
     {
-      Name: 'Mig',
-      Description: 'Vision, mål och personlighet',
-      Icon: 'contact',
-      Page: 'me',
-      Active: false,
-    },
-    {
-      Name: 'Om OnlineCV:et',
-      Description: 'Hur online cv:et är gjort och sök.',
-      Icon: 'home',
-      Page: 'home',
-      Active: false
-    },
-    {
       Name: 'Front End',
       Description: 'Portfolio och kunskaper',
-      Icon: 'settings',
+      Icon: 'devices_other',
       Page: 'frontend',
       Active: false
     },
     {
+      Name: 'Mig',
+      Description: 'Vision, mål och personlighet',
+      Icon: 'face',
+      Page: 'me',
+      Active: false,
+    },
+    {
       Name: 'Kärriär',
       Description: 'Karriärshistorik',
-      Icon: 'settings',
+      Icon: 'trending_up',
       Page: 'career',
+      Active: false
+    },
+    {
+      Name: 'Om OnlineCV:et',
+      Description: 'Hur online cv:et är gjort och sök.',
+      Icon: 'description',
+      Page: 'home',
       Active: false
     },
     {
       Name: 'Kontakt',
       Description: 'Karriärshistorik',
-      Icon: 'settings',
+      Icon: 'contact_phone',
       Page: 'contact',
+      Active: false
+    },
+    {
+      Name: 'Admin',
+      Description: 'Administrationspanel',
+      Icon: 'settings',
+      Page: 'admin',
       Active: false
     }
   ];
+
 
   MenuPages$$: BehaviorSubject<IPageLink[]> = new BehaviorSubject(this.MenuPages);
 
 
   constructor(public router: Router) {
-    this.GoToPage('home');
+    this.GoToPage('frontend');
   }
 
 

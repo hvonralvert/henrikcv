@@ -4,22 +4,32 @@
   <mat-drawer #drawer mode="side">
     <div class="Menu-inner">
 
+      <!----------------- small links ------------->
+      <div class="small-links-container" [ngClass]="{'small-links-expanded' : menuWide, 'small-links-shrinked' : !menuWide}">
+        <mat-icon class="smalllink" [inline]="true">nature_people</mat-icon>
+        <mat-icon class="smalllink" [inline]="true">image_aspect_ratio</mat-icon>
+        <mat-icon class="smalllink" [inline]="true" *ngIf="!adminOnline" (click)="openLoginModal()">lock</mat-icon>
+        <mat-icon class="smalllink" [inline]="true" *ngIf="adminOnline" (click)="LogOut()">lock_open</mat-icon>
+      </div>
+
       <!-----------------buttons------------------->
       <div class="buttons-container">
+        <div class="PageButt-wrapper" *ngFor="let page of MenuPages">
+          <div *ngIf="(page.Page !== 'admin') || ((page.Page === 'admin') && adminOnline)" class="PageButt-container" (click)="GoToPage(page.Page)"
+            [ngClass]="{'PageButt-active' : page.Active}">
+            <div class="PageButt-icon">
+              <mat-icon [inline]="true">{{page.Icon}}</mat-icon>
+            </div>
+            <div *ngIf="menuWide" class="PageButt-text-container">
+              <div class="PageButt-text-name">
+                {{page.Name}}
+              </div>
+              <div class="PageButt-text-description">
+                {{page.Description}}
+              </div>
+            </div>
+          </div>
 
-        <div class="PageButt-container" (click)="GoToPage(page.Page)" [ngClass]="{'PageButt-active' : page.Active}"
-          *ngFor="let page of MenuPages">
-          <div class="PageButt-icon">
-            <mat-icon class="">home</mat-icon>
-          </div>
-          <div *ngIf="menuWide" class="PageButt-text-container">
-            <div class="PageButt-text-name">
-              {{page.Name}}
-            </div>
-            <div class="PageButt-text-description">
-              {{page.Description}}
-            </div>
-          </div>
         </div>
 
       </div>

@@ -19,6 +19,7 @@ export class AuthService {
 
   constructor(public afAuth: AngularFireAuth) {
     this.UserOnline$$ = new BehaviorSubject(false);
+    this.initService();
   }
 
 

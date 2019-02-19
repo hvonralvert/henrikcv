@@ -3,11 +3,55 @@
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-body{
-    margin: 0px !important;
-    // font-family: 'Open Sans Condensed', sans-serif;
-    // font-family: 'Quicksand', sans-serif;
-    font-family: 'Didact Gothic', sans-serif;
+body {
+  margin: 0px !important;
+  // font-family: 'Open Sans Condensed', sans-serif;
+  // font-family: 'Quicksand', sans-serif;
+  font-family: 'Didact Gothic', sans-serif;
 
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgb(212, 212, 212);
+    border-radius: 7x;
+    cursor: pointer;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(202, 202, 202);
+    border-radius: 7px;
+    cursor: pointer;
+  }
 }
 
+
+
+app-frontend,
+app-admin,
+app-me,
+app-career,
+app-contact,
+app-home {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  max-width: 100%;
+}
+
+
+app-knowledge-box{
+    max-width: 100%;
+    display: flex;
+}
+
+app-knowledge-item{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+}

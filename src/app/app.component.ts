@@ -1,15 +1,21 @@
-import { Component, ViewChild, AfterViewInit,ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 
+import { MatDialog } from '@angular/material';
 import { MatDrawer } from '@angular/material/sidenav';
 
 import { RouteService } from '@henrik/services/route.service';
+import { AuthService } from '@henrik/services/auth.service';
+
 import { IPageLink } from '@henrik/interfaces/app.interfaces';
+
+import { LoginModal } from '@henrik/modals/login.modal/login.modal';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  providers: [MatDialog]
 })
 
 export class AppComponent implements AfterViewInit {
@@ -19,16 +25,21 @@ export class AppComponent implements AfterViewInit {
   MenuPages: IPageLink[] = [];
 
   menuWide = true;
-
+  adminOnline = false;
 
   constructor(
     public routServ: RouteService,
+    public dialog: MatDialog,
+    public authServ: AuthService
   ) {
 
     /*There is no stop to subscription. This is intenonally since we are at app.component.ts*/
     this.routServ.MenuPages$$.subscribe(pages => {
       this.MenuPages = pages;
-      console.log(this.MenuPages)
+    });
+
+    this.authServ.UserOnline$$.subscribe(online => {
+      this.adminOnline = online;
     });
   }
 
@@ -38,6 +49,24 @@ export class AppComponent implements AfterViewInit {
       this.drawer.open();
     }, 1000);
   }
+
+
+  openLoginModal(): void {
+    const logModal = this.dialog.open(LoginModal, {
+      width: '250px',
+    });
+
+    logModal.afterClosed().subscribe(result => {
+      if (result) {
+        this.GoToPage('admin');
+      }
+    });
+  }
+
+  LogOut() {
+    this.authServ.logoutUser();
+  }
+
 
   expandMenu() {
     this.menuWide = !this.menuWide;

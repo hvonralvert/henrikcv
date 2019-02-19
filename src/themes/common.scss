@@ -1,1 +1,208 @@
 /*Commonly used css. Like graphical containers, buttons, etc.*/
+@import './colors.scss';
+
+
+/*---------- page containers -----*/
+$pagecontainer-FullscreenPadding:20px;
+$pageHeader-fontsize:55px;
+$pageHeader-marginleft:25px;
+$pageHeader-underlinewidth:550px;
+$pageHeader-underlineBottom:10px;
+
+
+/*---------- boxes --------------*/
+$box-bigwidth:450px;
+$box-smallwidth:300px;
+$box-maxwidth:100%;
+$box-fullscreen-margins:20px;
+$box-smallscreen-margins:5px;
+$box-fullscreenpadding:15px;
+$box-smallscreenpadding:2px;
+$box-headerfontsize:20px;
+$box-items-leftmargin:20px;
+$box-items-topmargin:10px;
+
+
+/*----------------------------------- scrollbar ----------------------------------------*/
+@mixin henrikScrollBar {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: gray;
+    border-radius: 7x;
+    cursor: pointer;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+}
+
+
+/*------------------------------------ screen control ----------------------------------*/
+$screenszies: ('smallscreen':600px, "bigscreen": 15000px);
+
+@mixin ScreenSize($sizeType) {
+  @if map-has-key($screenszies, $sizeType) {
+    @media (max-width: #{map-get($screenszies, $sizeType)}) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "sass error, could not identify";
+  }
+}
+
+/*------------------------------- page container -------------------------------------*/
+@mixin PageContainer {
+  @include henrikScrollBar;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: fit-content;
+  overflow-y: auto;
+  background-color: var(--page-background);
+
+  @include ScreenSize('bigscreen') {
+    padding-left: $pagecontainer-FullscreenPadding;
+    padding-right: $pagecontainer-FullscreenPadding;
+    padding-top: $pagecontainer-FullscreenPadding;
+  }
+
+  @include ScreenSize('smallscreen') {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 5px;
+  }
+}
+
+.PageContainer {
+  @include PageContainer;
+}
+
+.PageHeader-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.PageHeader-Text {
+  font-size: $pageHeader-fontsize;
+  color: var(--page-headercolor);
+  margin-left: $pageHeader-marginleft;
+}
+    
+.PageHeader-underline {
+  border-bottom: 1px solid var(--page-headercolor);
+  height: 1px;
+  width: $pageHeader-underlinewidth;
+  position: absolute;
+  bottom: $pageHeader-underlineBottom;
+}
+
+
+/*------------------------- page content ----------------------*/
+.page-content {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  flex: 1;
+  overflow-x: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.page-boxescol{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:fit-content;
+  max-width:100%;
+}
+
+
+.box-col{
+  display: flex;
+  flex-direction: column;
+  width:fit-content;
+  max-width: 100%;
+}
+
+
+.page-box-wrapper { /*--only det boxes ---*/
+  display: flex;
+  max-width: 100%;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.box-margins{
+  @include ScreenSize('bigscreen') {
+    margin: $box-fullscreen-margins;
+  }
+
+  @include ScreenSize('smallscreen') {
+    margin-top: $box-smallscreen-margins;
+    margin-left:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+  }
+}
+
+
+/*------------------------ boxes -----------------------------*/
+.box-container {
+  background-color: white;
+  border: 1px solid rgb(206, 206, 206);
+  display: flex;
+  flex-direction: column;
+  // width: $box-width;
+  max-width: $box-maxwidth;
+  overflow: hidden;
+  height:fit-content;
+
+  &.small{
+    width: $box-smallwidth;
+  }
+
+  &.big{
+    width: $box-bigwidth;
+  }
+
+  @include ScreenSize('bigscreen') {
+    padding: $box-fullscreenpadding;
+  }
+
+  @include ScreenSize('smallscreen') {
+    padding: $box-smallscreenpadding;
+  }
+}
+
+.box-header {
+  font-size: $box-headerfontsize;
+  width: 100%;
+}
+
+.box-items-container{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    margin-left:$box-items-leftmargin;
+    margin-top:$box-items-topmargin;
+}
+

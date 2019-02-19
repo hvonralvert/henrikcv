@@ -1,3 +1,38 @@
-<p>
-  frontend works!
-</p>
+<div class="PageContainer">
+  <!-------------header--------------->
+  <div class="PageHeader-container">
+    <div class="PageHeader-Text">
+      Front End
+    </div>
+    <div class="PageHeader-underline"></div>
+  </div>
+
+  <!-----------content-------------->
+  <div class="page-content">
+
+<div class="page-boxescol">
+    <div class="box-col">
+      <app-info-box [InfoBox]="MyHistory"></app-info-box>
+
+    </div>
+
+  <div class="box-col">
+      <app-knowledge-box class="box-margins" Header="Språk" KnowledgeType="language" Catogery="frontend"></app-knowledge-box>
+     
+      <app-knowledge-box class="box-margins"  Header="Verktyg & System" KnowledgeType="tools" Catogery="frontend"></app-knowledge-box>
+
+      <app-knowledge-box class="box-margins"  Header="Mjukvaror" KnowledgeType="software" Catogery="frontend"></app-knowledge-box>
+  </div>
+</div>
+
+<!-- <div class="page-box-wrapper">
+
+  <app-knowledge-box class="box-margins" Header="Språk" KnowledgeType="language" Catogery="frontend"></app-knowledge-box>
+
+  <app-knowledge-box class="box-margins" Header="Verktyg & System" KnowledgeType="tools" Catogery="frontend"></app-knowledge-box>
+
+  <app-knowledge-box class="box-margins" Header="Mjukvaror" KnowledgeType="software" Catogery="frontend"></app-knowledge-box>
+
+</div> -->
+  </div>
+</div>

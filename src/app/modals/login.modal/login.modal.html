@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Admin panel </h1>
+
+<div mat-dialog-content>
+  <mat-form-field [formGroup]="loginFormGroup" style="width:100%;">
+    <input type="email" formControlName="Email" matInput placeholder="Email" required (keyup.enter)="LoginUser()">
+    <mat-error>
+      Felaktig angiven mail
+    </mat-error>
+    <mat-hint *ngIf="loginFormGroup.controls.Email.status=='INVALID'">
+      <strong>Mailen för att logga in</strong>
+    </mat-hint>
+  </mat-form-field>
+
+  <mat-form-field [formGroup]="loginFormGroup"  style="width:100%;margin-bottom:30px;">
+    <input type="password" formControlName="Password" matInput placeholder="Lösenord" required (keyup.enter)="LoginUser()">
+    <mat-error *ngIf="loginFormGroup.controls.Password.hasError('minLength') || !loginFormGroup.controls.Password.hasError('required')">
+      Måste vara längre än {{MinPassLength}} bokstäver
+    </mat-error>
+    <mat-hint *ngIf="loginFormGroup.controls.Password.status=='INVALID'">
+      <strong>Ditt lösenord</strong>
+    </mat-hint>
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions style="display: flex;justify-content: flex-end;">
+  <app-button (click)="CloseDialog()" text="Avbryt" style="margin-right:20px;"></app-button>
+  <app-button [disabled]="loginFormGroup.status !== 'VALID'" type="save" (click)="LoginUser()" text="Logga in"></app-button>
+</div>

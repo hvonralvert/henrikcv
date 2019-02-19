@@ -13,7 +13,9 @@ import { environment } from '../environments/environment';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDialogModule } from '@angular/material/dialog';
 
+import { LoginModalModule } from '@henrik/modals/login.modal.module';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     AngularFireAuthModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    LoginModalModule
   ],
   providers: [],
+  entryComponents: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
