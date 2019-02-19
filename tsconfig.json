@@ -28,7 +28,8 @@
       "@henrik/pipes/*":["app/pipes/*"],
       "@henrik/directives/*":["app/directives/*"],
       "@henrik/pages/*":["app/pages/*"],
-      "@henrik/common/*":["app/common/*"]
+      "@henrik/common/*":["app/common/*"],
+      "@henrik/data/*":["app/data/*"]
     }
   }
 }

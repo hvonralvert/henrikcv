@@ -1,0 +1,9 @@
+<div class="box-container small">
+
+  <div class="box-header">
+    {{Header}}
+  </div>
+  <div class="box-items-container">
+    <app-knowledge-item  [knowledge]="knowledge" *ngFor="let knowledge of KnowLedges"></app-knowledge-item>
+  </div>
+</div>

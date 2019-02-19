@@ -1,0 +1,17 @@
+<div class="button-container" [ngClass]="getClass('container')" >
+
+    <div class="ralva-button-icon" *ngIf="iconLeft && (icon || SVG)" [ngClass]="getClass('icon')">
+      <!-- <ion-icon *ngIf="SVG === undefined" [name]="icon"></ion-icon> -->
+      <!-- <ion-icon *ngIf="SVG !== undefined" [src]="SVG"></ion-icon> -->
+    </div>
+  
+    <div class="button-text" *ngIf="text!='' && text!=undefined" [ngClass]="getClass('text')">
+      &nbsp; {{text}} &nbsp;
+    </div>
+  
+    <div class="ralva-button-icon" *ngIf="!iconLeft && (icon || SVG)" [ngClass]="getClass('icon')">
+      <!-- <ion-icon *ngIf="SVG === undefined" [name]="icon"></ion-icon> -->
+      <!-- <ion-icon *ngIf="SVG !== undefined" [src]="SVG"></ion-icon> -->
+    </div>
+  
+  </div>

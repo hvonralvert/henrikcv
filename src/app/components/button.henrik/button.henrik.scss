@@ -1,0 +1,202 @@
+@import '../../../themes/common.scss';
+
+
+@mixin buttonColors($type) {
+  border-radius: 5px;
+  border-width: 0px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  @if $type=="save" {
+    background-color: var(--button-save);
+    color: white;
+
+    .mat-icon {
+      color: white;
+    }
+  }
+
+
+  @else if $type=="standard" {
+    background-color: var(--button-standard);
+    color: white !important;
+
+    .mat-icon {
+      color: white;
+    }
+  }
+
+
+  @else if $type=="transparent" {
+    background-color: none;
+    color: black;
+
+    .mat-icon {
+      color: var(--ralva-boxoddrow);
+    }
+  }
+}
+
+@mixin buttonColorsHover($type) {
+  border-radius: 5px !important; // needed for when it is active
+  border-width: 0px;
+  cursor: pointer;
+
+  @if $type=="save" {
+    background-color: var(--button-save-hover);
+    color: white;
+
+    .mat-icon {
+      color: white;
+    }
+  }
+
+
+  @else if $type=="standard" {
+    background-color: var(--button-standard-hover);
+    color: white;
+
+    .mat-icon {
+      color: white;
+    }
+  }
+
+
+  @else if $type=="transparent" {
+    background-color: rgb(204, 204, 204);
+    color: black;
+  }
+
+}
+
+
+
+
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-text {
+  display: flex;
+  color: inherit;
+  width: fit-content;
+  flex-wrap: nowrap;
+  max-height: inherit;
+  white-space: nowrap;
+}
+
+.text-button {
+  color: inherit;
+}
+
+//¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤-button colors-¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+.normal-container-button {
+  @include buttonColors('standard');
+}
+
+.normal-container-button:hover {
+  @include buttonColorsHover('standard');
+}
+
+.normal-container-button-active {
+  @include buttonColorsHover('standard');
+}
+
+
+.save-container-button {
+  @include buttonColors('save');
+}
+
+.save-container-button:hover {
+  @include buttonColorsHover('save');
+}
+
+
+.transparent-container-button {
+  color: grey;
+}
+
+.transparent-container-button:hover {
+  color: rgb(190, 190, 190);
+}
+
+.transparent-container-button:active {
+  color: grey;
+}
+
+
+/** ¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤-button sizes-¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤ **/
+.big-size-container {
+  padding: 6px;
+  height: 40px;
+}
+
+.big-size-icon {
+  font-size: 26px;
+}
+
+.big-size-text {
+  padding: 0px 3px 0px 3px;
+  font-size: 18px;
+}
+
+.medium-size-container {
+  padding: 6px;
+  height: 20px;
+}
+
+.medium-size-icon {
+  font-size: 18px;
+}
+
+.medium-size-text {
+  padding: 0px 3px 0px 3px;
+  font-size: 15px;
+}
+
+.small-size-container {
+  padding: 6px;
+  height: 25px;
+}
+
+.small-size-text {
+  font-size: 11px;
+}
+
+.small-size-icon {
+  font-size: 14px;
+}
+
+.verysmall-size-container {
+  // padding:6px;
+  height: 20px;
+  width: 20px;
+}
+
+.verysmall-size-text {
+  font-size: 11px;
+}
+
+.verysmall-size-icon {
+  font-size: 14px;
+}
+
+.ralva-button-disabled {
+  opacity: 0.4;
+  cursor: progress;
+  pointer-events: none;
+}
