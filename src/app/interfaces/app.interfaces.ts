@@ -28,5 +28,8 @@ export interface IPortfolio {
     Loggo: string;
     TextArray?: IInfoParam[];
     ButtonText: string;
+    ProductImage: string;
     Link: string;
 }
+
+

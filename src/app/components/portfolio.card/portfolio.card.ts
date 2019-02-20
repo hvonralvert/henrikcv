@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
+import { IParamInfoBox, IPortfolio } from '~/app/interfaces/app.interfaces';
 
 
 @Component({
@@ -9,10 +9,10 @@ import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
 })
 export class PortfolioCard implements OnInit, OnDestroy {
 
-  @Input() InfoBox: IParamInfoBox;
+  @Input() Portfolio: IPortfolio;
 
 
-  constructor() {  }
+  constructor() { }
 
 
   ngOnInit() {

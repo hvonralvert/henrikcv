@@ -1,4 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { IPortfolio } from '~/app/interfaces/app.interfaces';
+
+import { PortfolioData } from '@henrik/data/portfolio.data';
 
 @Component({
   selector: 'app-portfolio-box',
@@ -8,7 +11,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class PortfolioBox implements OnInit, OnDestroy {
 
 
-  constructor() {  }
+  Portfilios: IPortfolio[] = PortfolioData;
+
+
+  constructor() { }
 
 
   ngOnInit() {
