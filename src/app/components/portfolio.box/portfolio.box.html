@@ -1,9 +1,9 @@
-<div class="transp-container">
+<div class="transp-container myprojects-margintop">
 
-  <div class="box-header">
-    Mina projekt
+  <div class="box-header portfolio-card-margins">
+    Exempel projekt
   </div>
 
-  <app-portfolio-card class="portfolio-card-margins"></app-portfolio-card>
+  <app-portfolio-card [Portfolio]="portfolio" *ngFor="let portfolio of Portfilios" class="portfolio-card-margins"></app-portfolio-card>
 
 </div>

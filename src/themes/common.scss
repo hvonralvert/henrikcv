@@ -11,7 +11,7 @@ $pageHeader-underlineBottom:10px;
 
 
 /*---------- boxes --------------*/
-$box-bigwidth:650px;
+$box-bigwidth:750px;
 $box-smallwidth:300px;
 $box-maxwidth:100%;
 $box-fullscreen-margins:20px;
@@ -21,6 +21,8 @@ $box-smallscreenpadding:2px;
 $box-headerfontsize:22px;
 $box-items-leftmargin:20px;
 $box-items-topmargin:10px;
+
+$myprojects-topmargins:20px;
 
 /*---------boxes text------------*/
 $box-paraggraph-fontsize:18px;
@@ -180,6 +182,10 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   overflow: hidden;
   height:fit-content;
   width:100%;
+}
+
+.myprojects-margintop{
+  margin-top:$myprojects-topmargins;
 }
 
 

@@ -2,9 +2,9 @@
 
   <!--header-->
   <div class="header-row">
-    <img class="header-img" src="./assets/groupcaller.png">
+    <img class="header-img" [src]="Portfolio.Loggo">
     <div class="header-text">
-      GroupCaller
+      {{Portfolio.Header}}
     </div>
   </div>
 
@@ -17,13 +17,13 @@
   <div class="content-container">
 
     <div class="product-img-container">
-      <img class="product-img" src="./assets/GroupCallerScreens.png">
+      <img class="product-img" [src]="Portfolio.ProductImage">
     </div>
 
-    <div class="content-text">
-      asdasdsadasd
-      asdasdsadasd<br>
-      asdasd
+    <div class="content-text-container">
+      <div [ngClass]="{'content-text' : !last}" *ngFor="let textPar of Portfolio.TextArray; let last = last;">
+        {{textPar.Text}}
+      </div>
     </div>
   </div>
 
@@ -37,6 +37,6 @@
   </div>
 
   <div class="button-card">
-      Ta mig till GroupCaller
-    </div>
+    {{Portfolio.ButtonText}}
+  </div>
 </div>
