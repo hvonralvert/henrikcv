@@ -22,8 +22,6 @@ export class KnowledgeItem implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('in the item');
-    console.log(this.knowledge);
     this.runStars();
   }
 

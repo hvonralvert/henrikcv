@@ -6,8 +6,13 @@
 
   <!--text array-->
   <div *ngIf="InfoBox.TextArray" class="box-items-container">
-    <div *ngFor="let text of InfoBox.TextArray" class="box-textparagraph">
-      {{text}}
+    <div *ngFor="let paragraph of InfoBox.TextArray" class="box-textparagraph">
+      <!-- <div class="box-paragraph-header">
+          {{paragraph.Header}}
+      </div> -->
+      <div *ngFor="let text of paragraph.Text">
+        {{text}}
+      </div>
     </div>
   </div>
 
