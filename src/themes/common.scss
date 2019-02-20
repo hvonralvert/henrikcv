@@ -11,16 +11,20 @@ $pageHeader-underlineBottom:10px;
 
 
 /*---------- boxes --------------*/
-$box-bigwidth:500px;
+$box-bigwidth:650px;
 $box-smallwidth:300px;
 $box-maxwidth:100%;
 $box-fullscreen-margins:20px;
 $box-smallscreen-margins:5px;
 $box-fullscreenpadding:15px;
 $box-smallscreenpadding:2px;
-$box-headerfontsize:20px;
+$box-headerfontsize:22px;
 $box-items-leftmargin:20px;
 $box-items-topmargin:10px;
+
+/*---------boxes text------------*/
+$box-paraggraph-fontsize:18px;
+$box-marginbottom:20px;
 
 
 /*----------------------------------- scrollbar ----------------------------------------*/
@@ -151,32 +155,43 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   margin: 10px;
 }
 
-.box-margins{
+.box-margins {
   @include ScreenSize('bigscreen') {
     margin-left: $box-fullscreen-margins;
-    margin-right:$box-fullscreen-margins;
+    margin-right: $box-fullscreen-margins;
     margin-bottom: $box-fullscreen-margins;
   }
 
   @include ScreenSize('smallscreen') {
     margin-top: $box-smallscreen-margins;
-    margin-left:0px;
-    margin-right:0px;
-    margin-bottom:0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
   }
 }
 
 
 /*------------------------ boxes -----------------------------*/
+
+.transp-container{
+  display: flex;
+  flex-direction: column;
+  max-width: $box-maxwidth;
+  overflow: hidden;
+  height:fit-content;
+  width:100%;
+}
+
+
 .box-container {
   background-color: white;
   border: 1px solid rgb(206, 206, 206);
   display: flex;
   flex-direction: column;
-  // width: $box-width;
   max-width: $box-maxwidth;
   overflow: hidden;
   height:fit-content;
+  position: relative;
 
   &.small{
     width: $box-smallwidth;
@@ -208,8 +223,13 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   margin-top:$box-items-topmargin;
 }
 
+.box-paragraph-header{
+  font-size: $box-paraggraph-fontsize;
+  font-weight: bold;
+}
+
 .box-textparagraph{
-  margin-bottom:10px;
+  margin-bottom:$box-marginbottom;
 }
 
 .box-items-container{
