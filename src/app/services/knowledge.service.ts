@@ -9,7 +9,7 @@ import {
 import { BehaviorSubject, Observable, Subject, of } from 'rxjs';
 import { map, catchError, take, takeUntil } from 'rxjs/operators';
 import { IKnowledge } from '../interfaces/document.interfaces';
-import { IKnowLedgeType, IKnowCatType } from '../interfaces/app.interfaces';
+import { IKnowCatType } from '../interfaces/app.interfaces';
 
 @Injectable()
 export class KnowledgeService {
@@ -18,7 +18,6 @@ export class KnowledgeService {
   Know$: Observable<IKnowledge[]>;
   Know$$: BehaviorSubject<IKnowledge[]>;
 
-  KnowledgeType: IKnowLedgeType;
   Catogery: IKnowCatType;
 
   ngUnsubscribe$: Subject<void> = new Subject();
@@ -29,13 +28,12 @@ export class KnowledgeService {
   }
 
 
-  initFirestore(KnowledgeType: IKnowLedgeType, Catogery: IKnowCatType) {
-    this.KnowledgeType = KnowledgeType;
+  initFirestore( Catogery: IKnowCatType) {
     this.Catogery = Catogery;
 
     this.KnowColl = this.afs.collection('/Knowledges/', ref => {
       let query: firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
-      query = query.orderBy('Order', 'asc').where('KnowledgeType', '==', this.KnowledgeType).where('Catogery', '==', this.Catogery);
+      query = query.orderBy('Order', 'asc').where('Catogery', 'array-contains', this.Catogery);
       return query;
     });
 

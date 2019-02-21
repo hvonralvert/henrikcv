@@ -20,7 +20,7 @@ export interface IParamInfoBox {
 }
 
 export type IKnowLedgeType = 'language' | 'software' | 'career' | 'hardware' | 'tools';
-export type IKnowCatType = 'frontend' | 'backend' | 'other';
+export type IKnowCatType = 'language' | 'softtools' | 'graphtools' | 'backend' | 'other' | 'softdev' | 'graphdes' | 'iot' | 'mechengineer' | 'orgdev';
 
 
 export interface IPortfolio {
@@ -32,4 +32,12 @@ export interface IPortfolio {
     Link: string;
 }
 
+
+export interface ICareer {
+    Title: string; // my title,
+    CompanyName: string;
+    LoggoURL: string;
+    Time: string;
+    TextArray: IInfoParam[];
+}
 

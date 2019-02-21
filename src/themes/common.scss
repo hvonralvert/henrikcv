@@ -13,6 +13,7 @@ $pageHeader-underlineBottom:10px;
 /*---------- boxes --------------*/
 $box-bigwidth:750px;
 $box-smallwidth:300px;
+$box-medwidth:450px;
 $box-maxwidth:100%;
 $box-fullscreen-margins:20px;
 $box-smallscreen-margins:5px;
@@ -201,6 +202,10 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 
   &.small{
     width: $box-smallwidth;
+  }
+
+  &.med{
+    width: $box-medwidth;
   }
 
   &.big{

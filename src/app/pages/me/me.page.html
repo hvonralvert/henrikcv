@@ -1,3 +1,28 @@
-<p>
-  henrik works!
-</p>
+<div class="PageContainer">
+  <!-------------header--------------->
+  <div class="PageHeader-container">
+    <div class="PageHeader-Text">
+      Vem är Henrik
+    </div>
+    <div class="PageHeader-underline"></div>
+  </div>
+
+  <!-----------content-------------->
+  <div class="page-content">
+
+    <div class="page-boxescol">
+      <div class="box-col col-center-content">
+
+        <div class="me-img-container">
+          <img class="me-image" src="./assets/mig.jpg">
+        </div>
+
+        <!--vision and goals-->
+        <app-info-box class="box-margins" *ngFor="let info of MySelf" [InfoBox]="info"></app-info-box>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

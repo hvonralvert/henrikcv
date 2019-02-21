@@ -1,0 +1,34 @@
+<div class="box-container big">
+
+  <!--the content-->
+  <div class="content-container">
+
+    <div style="height:fit-content">
+      <img class="comploggo" [src]="career.LoggoURL">
+    </div>
+
+    <div class="info-container">
+
+      <div class="title">
+        {{career.Title}}
+      </div>
+
+      <div class="company-name">
+        {{career.CompanyName}}
+      </div>
+
+      <div class="time">
+        {{career.Time}}
+      </div>
+
+      <div class="description" *ngFor="let textPar of career.TextArray">
+        <div *ngFor="let text of textPar.Text">
+            {{text}}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

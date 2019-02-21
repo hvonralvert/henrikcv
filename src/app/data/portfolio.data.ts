@@ -14,7 +14,7 @@ export const PortfolioData: IPortfolio[] = [
             {
                 Header: 'Funktion',
                 Text: [
-                    'Systemet är en hybridlösning med både webb-app och IOS samt Android appar. Grafiskt och prestandan är satt utefter Iphone 5s då den inte är tänkt för modeller äldre (samt svagre) än så. ',
+                    'Systemet är en hybridlösning med både webb-app och IOS samt Android appar. Grafiskt och prestandan är satt utefter Iphone 5s då den inte är tänkt för modeller äldre (samt svagare) än så. ',
                     'Det är ett realtidssystem.'
                 ]
             },
@@ -48,6 +48,27 @@ export const PortfolioData: IPortfolio[] = [
         ],
         ProductImage: './assets/GroupCallerScreens.png',
         ButtonText: 'Ta mig till Din Medlem',
+        Link: 'www.dinmedlem.se'
+    },
+    {
+        Header: 'Mitt eget bröllop',
+        Loggo: './assets/groupcaller.png',
+        TextArray: [
+            {
+                Header: 'RongaRalvert.com',
+                Text: [
+                    'Hemsidan för mitt eget bröllop som visar på liten annan typ av design. Också realtidssystem med firebase som backend.',
+                ]
+            },
+            {
+                Header: 'Techstack',
+                Text: [
+                    'Typescript, Angular 2+, Firebase',
+                ]
+            }
+        ],
+        ProductImage: './assets/GroupCallerScreens.png',
+        ButtonText: 'Ta mig till rongaralvert.com',
         Link: 'www.dinmedlem.se'
     }
 ];

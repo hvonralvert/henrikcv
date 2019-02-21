@@ -15,7 +15,6 @@ import { IKnowledge } from '~/app/interfaces/document.interfaces';
 })
 export class KnowledgeBox implements OnInit, OnDestroy {
 
-  @Input() KnowledgeType: IKnowLedgeType;
   @Input() Catogery: IKnowCatType;
   @Input() Header: string;
 
@@ -32,10 +31,7 @@ export class KnowledgeBox implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    console.log('in the box knwoledge');
-    console.log(this.KnowledgeType);
-    console.log(this.Catogery);
-    this.knowServ.initFirestore(this.KnowledgeType, this.Catogery);
+    this.knowServ.initFirestore(this.Catogery);
   }
 
 

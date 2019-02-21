@@ -38,7 +38,7 @@ export class RouteService {
       Name: 'Om OnlineCV:et',
       Description: 'Hur online cv:et är gjort och sök.',
       Icon: 'description',
-      Page: 'home',
+      Page: 'about',
       Active: false
     },
     {
@@ -62,7 +62,7 @@ export class RouteService {
 
 
   constructor(public router: Router) {
-    this.GoToPage('frontend');
+    this.GoToPage('about');
   }
 
 
@@ -71,7 +71,7 @@ export class RouteService {
       el.Active = el.Page === page ? true : false;
       return el;
     });
-    
+
     this.MenuPages$$.next(this.MenuPages);
     this.router.navigateByUrl(page);
   }

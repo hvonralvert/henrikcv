@@ -1,0 +1,55 @@
+@import '../../../themes/common.scss';
+
+$comploggo-width:70px;
+$comploggo-margin:10px;
+
+$infocont-minwidth:300px;
+$infocont-paddingleft:10px;
+
+$title-fontsize:22px;
+$companyname-fontsize:20px;
+$time-fontsize:18px;
+$description-fontsize:20px;
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+
+.comploggo {
+  width: $comploggo-width;
+  height: auto;
+}
+
+/*------------- info cont --------------*/
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: $infocont-minwidth;
+  padding-left: $infocont-paddingleft;
+}
+
+.title {
+  font-size: $title-fontsize;
+}
+
+.company-name {
+  font-size: $companyname-fontsize;
+}
+
+
+.time {
+  font-size: $time-fontsize;
+  color: gray;
+  margin-bottom:$box-marginbottom;
+}
+
+.description {
+  // font-size: $box-paraggraph-fontsize;
+  margin-bottom:$box-marginbottom;
+}

@@ -37,7 +37,7 @@ app-admin,
 app-me,
 app-career,
 app-contact,
-app-home {
+app-about {
   height: 100%;
   display: flex;
   flex: 1;
@@ -45,7 +45,7 @@ app-home {
 }
 
 
-app-knowledge-box, app-info-box, app-portfolio-box, app-portfolio-card{
+app-knowledge-box, app-info-box, app-portfolio-box, app-portfolio-card, app-career-card{
     max-width: 100%;
     display: flex;
 }

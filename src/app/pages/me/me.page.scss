@@ -1,0 +1,39 @@
+@import '../../../themes/common.scss';
+
+$img-margin-left:50px;
+$img-margin:20px;
+$img-width:200px;
+
+.me-image {
+  width: $img-width;
+  height: $img-width;
+  border-radius: 50%;
+}
+
+
+.me-img-container {
+  width: 100%;
+  display: flex;
+  margin-bottom: $img-margin;
+
+  @include ScreenSize('bigscreen') {
+    margin-left: $img-margin-left;
+    justify-content: flex-start;
+  }
+
+  @include ScreenSize('smallscreen') {
+    margin-left: 0px;
+    justify-content: center;
+  }
+}
+
+
+.col-center-content {
+  @include ScreenSize('bigscreen') {
+    padding-bottom: $pagecontainer-FullscreenPadding;
+  }
+
+  @include ScreenSize('smallscreen') {
+    padding-bottom: 300px;
+  }
+}
