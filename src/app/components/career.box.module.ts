@@ -2,14 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PortfolioCard } from '@henrik/components/portfolio.card/portfolio.card';
-
-import { MatDialogModule } from '@angular/material/dialog';
+import { CareerBox } from '@henrik/components/career.box/career.box';
+import { CareerCardModule } from '@henrik/components/career.card.module';
 
 const routes: Routes = [
   {
-    path: 'PortfolioCard',
-    component: PortfolioCard
+    path: 'CareerBox',
+    component: CareerBox
   }
 ];
 
@@ -17,14 +16,14 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MatDialogModule,
+    CareerCardModule
   ],
   declarations: [
-    PortfolioCard
+    CareerBox
   ],
   exports: [
-    PortfolioCard
+    CareerBox
   ]
 })
 
-export class PortfolioCardModule { }
+export class CareerBoxModule { }

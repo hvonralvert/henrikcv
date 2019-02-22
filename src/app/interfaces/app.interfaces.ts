@@ -20,8 +20,16 @@ export interface IParamInfoBox {
 }
 
 export type IKnowLedgeType = 'language' | 'software' | 'career' | 'hardware' | 'tools';
-export type IKnowCatType = 'frontend' | 'backend' | 'other';
-
+export type IKnowCatType = 'language' | 'softtools' | 'graphtools' | 'backend' | 'other' | 'softdev' | 'graphdes' | 'iot' | 'mechengineer' | 'orgdev';
+export type IDemoType = 'groupcaller' | 'dinmedlem';
+export interface IDemoModalData {
+    anv: string;
+    los: string;
+    GotToText: string;
+    Header: string;
+    PanelClass: string;
+    url: string;
+}
 
 export interface IPortfolio {
     Header: string;
@@ -30,6 +38,16 @@ export interface IPortfolio {
     ButtonText: string;
     ProductImage: string;
     Link: string;
+    DemoModalData?: IDemoModalData;
+    DemoType?: IDemoType;
 }
 
+
+export interface ICareer {
+    Title: string; // my title,
+    CompanyName: string;
+    LoggoURL: string;
+    Time: string;
+    TextArray: IInfoParam[];
+}
 

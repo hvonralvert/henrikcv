@@ -1,52 +1,112 @@
-<mat-drawer-container class="app-container" autosize>
+<mat-sidenav-container class="app-container" autosize>
 
   <!--side menu-->
-  <mat-drawer #drawer mode="side">
-    <div class="Menu-inner">
-
-      <!----------------- small links ------------->
-      <div class="small-links-container" [ngClass]="{'small-links-expanded' : menuWide, 'small-links-shrinked' : !menuWide}">
-        <mat-icon class="smalllink" [inline]="true" *ngIf="!adminOnline" (click)="openLoginModal()">lock</mat-icon>
-        <mat-icon class="smalllink" [inline]="true" *ngIf="adminOnline" (click)="LogOut()">lock_open</mat-icon>
-        <mat-icon class="smalllink" svgIcon="github" [inline]="true"></mat-icon>
-        <mat-icon class="smalllink" svgIcon="linkedin"></mat-icon>
-      </div>
-
-      <!-----------------buttons------------------->
-      <div class="buttons-container">
-        <div class="PageButt-wrapper" *ngFor="let page of MenuPages">
-          <div *ngIf="(page.Page !== 'admin') || ((page.Page === 'admin') && adminOnline)" class="PageButt-container" (click)="GoToPage(page.Page)"
-            [ngClass]="{'PageButt-active' : page.Active}">
-
-            <div class="PageButt-icon">
-              <mat-icon [inline]="true">{{page.Icon}}</mat-icon>
-            </div>
-
-            <div *ngIf="menuWide" class="PageButt-text-container">
-              <div class="PageButt-text-name">
-                {{page.Name}}
-              </div>
-              <div class="PageButt-text-description">
-                {{page.Description}}
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-
-      <!-------expand collapse button -------------->
-      <div class="ButtonExpand-container" (click)="expandMenu()">
-        <div class="arrow" [ngClass]="{'arrow-expand': menuWide , 'arrow-shrink' : !menuWide}"></div>
-      </div>
-
-    </div>
-
-  </mat-drawer>
+  <mat-sidenav #drawer [mode]="menuMode">
+    <ng-content *ngTemplateOutlet="desktopMenu"></ng-content>
+    <ng-content *ngTemplateOutlet="phoneMenu"></ng-content>
+  </mat-sidenav>
 
   <!--Router-->
-  <div class="router-content">
-    <router-outlet></router-outlet>
+  <div class="content">
+
+    <div *ngIf="!desktopScreen" class="toolbar">
+
+      <div class="menubutton-container">
+        <mat-icon class="menubutton" [inline]="true" (click)="drawer.toggle()">menu</mat-icon>
+      </div>
+
+      <div class="toolbar-header">
+        {{toolbarHeader}}
+      </div>
+
+      <mat-icon onclick="window.open('https://github.com/hvonralvert');" class="smalllink" svgIcon="github" [inline]="true"></mat-icon>
+      <mat-icon onclick="window.open('https://www.linkedin.com/in/henrik-ralvert-011b3a16/');" class="smalllink"
+        svgIcon="linkedin"></mat-icon>
+    </div>
+
+    <div class="router-content">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 
-</mat-drawer-container>
+
+</mat-sidenav-container>
+
+
+
+
+<!-------------------desktop sidenav------------------------>
+<ng-template #desktopMenu>
+  <div *ngIf="desktopScreen" class="Menu-inner">
+
+    <!----------------- small links ------------->
+    <div class="small-links-container" [ngClass]="{'small-links-expanded' : menuWide, 'small-links-shrinked' : !menuWide}">
+      <mat-icon class="smalllink" [inline]="true" *ngIf="!adminOnline" (click)="openLoginModal()">lock</mat-icon>
+      <mat-icon class="smalllink" [inline]="true" *ngIf="adminOnline" (click)="LogOut()">lock_open</mat-icon>
+      <mat-icon onclick="window.open('https://github.com/hvonralvert');" class="smalllink" svgIcon="github" [inline]="true"></mat-icon>
+      <mat-icon onclick="window.open('https://www.linkedin.com/in/henrik-ralvert-011b3a16/');" class="smalllink"
+        svgIcon="linkedin"></mat-icon>
+    </div>
+
+    <!-----------------buttons------------------->
+    <div class="buttons-container">
+      <div class="deskPageButt-wrapper" *ngFor="let page of MenuPages">
+        <div *ngIf="showMenuButton(page)" class="deskPageButt-container" (click)="GoToPage(page.Page)" [ngClass]="{'deskPageButt-active' : page.Active}">
+
+          <div class="deskPageButt-icon">
+            <mat-icon [inline]="true">{{page.Icon}}</mat-icon>
+          </div>
+
+          <div *ngIf="menuWide" class="deskPageButt-text-container">
+            <div class="deskPageButt-text-name">
+              {{page.Name}}
+            </div>
+            <div class="deskPageButt-text-description">
+              {{page.Description}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-------expand collapse button -------------->
+    <div class="ButtonExpand-container" (click)="expandMenu()">
+      <div class="arrow" [ngClass]="{'arrow-expand': menuWide , 'arrow-shrink' : !menuWide}"></div>
+    </div>
+
+  </div>
+</ng-template>
+
+
+
+<!-------------------phone sidenav------------------------>
+<ng-template #phoneMenu>
+  <div *ngIf="!desktopScreen" class="phMen-menu-inner">
+    <div class="phMenu-me-container">
+      <div class="phMenu-my-container">
+        <img class="phMenu-img" src="./assets/mig.jpg">
+        <div class="phMenu-name">Henrik Ralverts CV</div>
+      </div>
+    </div>
+
+    <div class="phMenu-buttons-container">
+      <div class="phonePageButt-wrapper" *ngFor="let page of MenuPages">
+        <div *ngIf="showMenuButton(page)" class="phonePageButt-container" (click)="GoToPage(page.Page)" [ngClass]="{'phonePageButt-active' : page.Active}">
+
+          <div class="phonePageButt-icon" [ngClass]="{'phonePageButt-actcolor' : page.Active}">
+            <mat-icon [inline]="true">{{page.Icon}}</mat-icon>
+          </div>
+
+          <div *ngIf="menuWide" class="phonePageButt-text-container">
+            <div class="phonePageButt-text-name" [ngClass]="{'phonePageButt-actcolor' : page.Active}">
+              {{page.Name}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ng-template>

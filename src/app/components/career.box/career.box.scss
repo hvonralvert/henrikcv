@@ -1,0 +1,11 @@
+@import '../../../themes/common.scss';
+
+$portfolio-card-margin:20px;
+
+.portfolio-container{
+    display: flex; 
+}
+
+.portfolio-card-margins{
+    margin-bottom:$portfolio-card-margin;
+}

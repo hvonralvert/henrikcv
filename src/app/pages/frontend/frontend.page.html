@@ -1,6 +1,6 @@
 <div class="PageContainer">
   <!-------------header--------------->
-  <div class="PageHeader-container">
+  <div class="PageHeader-container" *ngIf="desktopScreen">
     <div class="PageHeader-Text">
       Front End
     </div>
@@ -10,30 +10,21 @@
   <!-----------content-------------->
   <div class="page-content">
 
-<div class="page-boxescol">
-    <div class="box-col">
-      <app-info-box class="box-margins" [InfoBox]="MyHistory"></app-info-box>
-      
-      <app-portfolio-box class="box-margins"></app-portfolio-box>
+    <div class="page-boxescol">
+      <div class="box-col">
+        <app-info-box class="box-margins" [InfoBox]="MyHistory"></app-info-box>
+
+        <app-portfolio-box class="box-margins"></app-portfolio-box>
+      </div>
+
+      <div class="box-col">
+        <app-knowledge-box class="box-margins" Header="Språk" Catogery="language"></app-knowledge-box>
+
+        <app-knowledge-box class="box-margins" Header="Verktyg & System" Catogery="softtools"></app-knowledge-box>
+
+        <app-knowledge-box class="box-margins" Header="Mjukvaror" Catogery="graphtools"></app-knowledge-box>
+      </div>
     </div>
 
-  <div class="box-col">
-      <app-knowledge-box class="box-margins" Header="Språk" KnowledgeType="language" Catogery="frontend"></app-knowledge-box>
-     
-      <app-knowledge-box class="box-margins"  Header="Verktyg & System" KnowledgeType="tools" Catogery="frontend"></app-knowledge-box>
-
-      <app-knowledge-box class="box-margins"  Header="Mjukvaror" KnowledgeType="software" Catogery="frontend"></app-knowledge-box>
-  </div>
-</div>
-
-<!-- <div class="page-box-wrapper">
-
-  <app-knowledge-box class="box-margins" Header="Språk" KnowledgeType="language" Catogery="frontend"></app-knowledge-box>
-
-  <app-knowledge-box class="box-margins" Header="Verktyg & System" KnowledgeType="tools" Catogery="frontend"></app-knowledge-box>
-
-  <app-knowledge-box class="box-margins" Header="Mjukvaror" KnowledgeType="software" Catogery="frontend"></app-knowledge-box>
-
-</div> -->
   </div>
 </div>

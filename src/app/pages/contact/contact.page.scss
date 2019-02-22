@@ -1,0 +1,37 @@
+@import '../../../themes/common.scss';
+
+
+$contact-iconsize:25px;
+$contact-iconwidth:25px;
+$contact-fontsize:20px;
+$contact-icontextmargin:10px;
+$contact-contactrowmargin:20px;
+
+.contact-icon {
+  font-size: $contact-iconsize;
+  width: $contact-iconwidth;
+}
+
+
+.contact-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: $contact-contactrowmargin;
+}
+
+.contact-icon-container{
+    font-size: $contact-iconsize;
+    width: $contact-iconwidth;
+    height: $contact-iconwidth;
+}
+
+.contact-text{
+    font-size: $contact-fontsize;
+    margin-left: $contact-icontextmargin;
+}
+
+
+

@@ -1,0 +1,42 @@
+<div class="PageContainer">
+  <!-------------header--------------->
+  <div class="PageHeader-container" *ngIf="desktopScreen">
+    <div class="PageHeader-Text">
+      Om detta CV
+    </div>
+    <div class="PageHeader-underline"></div>
+  </div>
+
+  <!-----------content-------------->
+  <div class="page-content">
+
+    <div class="page-boxescol">
+      <div class="box-col col-center-content">
+
+        <!--vision and goals-->
+        <div class="box-container">
+
+          <div class="box-header">
+            Om CV:et
+          </div>
+
+          <!--info content-->
+          <div class="box-items-container">
+
+            <div *ngFor="let how of Abouts" class="about-row">
+              <!--phone call-->
+              <div class="about-what">
+                {{how.What}}
+              </div>
+              <div class="about-text">
+                {{how.Text}}
+              </div>              
+            </div>             
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

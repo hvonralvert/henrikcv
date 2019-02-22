@@ -1,5 +1,8 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { IParamInfoBox, IPortfolio } from '~/app/interfaces/app.interfaces';
+import { IPortfolio } from '~/app/interfaces/app.interfaces';
+
+import { DemoModal } from '@henrik/modals/demo.modal/demo.modal';
+import { MatDialog } from '@angular/material';
 
 
 @Component({
@@ -12,10 +15,26 @@ export class PortfolioCard implements OnInit, OnDestroy {
   @Input() Portfolio: IPortfolio;
 
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
 
   ngOnInit() {
+  }
+  
+
+  openModal() {
+
+    if (!this.Portfolio.DemoType) {
+      return window.open(this.Portfolio.Link);
+    }
+
+    const logModal = this.dialog.open(DemoModal, {
+      width: '310px',
+      data: this.Portfolio.DemoModalData
+    });
+
   }
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { AdminKnowledgeService } from '@henrik/services/admin.knowledge.service';
 
@@ -11,10 +11,11 @@ import { Subject } from 'rxjs';
   styleUrls: ['./admin.page.scss'],
   providers: [AdminKnowledgeService]
 })
-export class AdminPage implements OnInit {
+export class AdminPage implements OnInit, OnDestroy {
 
 
-  ngUnsubscribe$: Subject<void> = new Subject();
+  desktopScreen = true;
+  ngUnsubscribe$: Subject<boolean> = new Subject();
 
   constructor(public knowServ: AdminKnowledgeService) {
   }
@@ -26,5 +27,10 @@ export class AdminPage implements OnInit {
     this.knowServ.addNewKnows();
   }
 
+
+  ngOnDestroy() {
+    this.ngUnsubscribe$.next();
+    this.ngUnsubscribe$.unsubscribe();
+  }
 
 }

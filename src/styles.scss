@@ -37,21 +37,59 @@ app-admin,
 app-me,
 app-career,
 app-contact,
-app-home {
+app-about {
   height: 100%;
   display: flex;
   flex: 1;
   max-width: 100%;
+  width: 100%;
 }
 
 
-app-knowledge-box, app-info-box, app-portfolio-box, app-portfolio-card{
-    max-width: 100%;
-    display: flex;
+app-knowledge-box,
+app-info-box,
+app-portfolio-box,
+app-portfolio-card,
+app-career-card {
+  max-width: 100%;
+  display: flex;
 }
 
-app-knowledge-item{
-    width: 100%;
-    max-width: 100%;
-    display: flex;
+app-knowledge-item {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
 }
+
+app-groupcaller-modal {
+  position: relative;
+}
+
+
+
+
+
+/*--------- modal classer -----*/
+$color-groupcaller-lightgrad: #054b95;
+$color-groupcaller-darkgrad: #032d59;
+
+.groupcallerModal .mat-dialog-container {
+  height: fit-content;
+  background-color: $color-groupcaller-lightgrad;
+  background: -moz-linear-gradient(top, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
+  background: -webkit-linear-gradient(top, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
+  background: linear-gradient(to bottom, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#054b95', endColorstr='#032d59', GradientType=0);
+}
+
+
+.dinmedlemModal .mat-dialog-container {
+  height:fit-content;
+  background: #20932c;
+  background: -moz-linear-gradient(-45deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
+  background: -webkit-linear-gradient(-45deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
+  background: linear-gradient(135deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20932c', endColorstr='#3b6115', GradientType=1);
+  color: white;
+}
+
