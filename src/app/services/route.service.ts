@@ -62,7 +62,7 @@ export class RouteService {
 
 
   constructor(public router: Router) {
-    this.GoToPage('about');
+    this.GoToPage('frontend');
   }
 
 

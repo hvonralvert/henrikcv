@@ -27,7 +27,16 @@ export const PortfolioData: IPortfolio[] = [
         ],
         ProductImage: './assets/GroupCallerScreens.png',
         ButtonText: 'Ta mig till GroupCaller',
-        Link: 'www.ralva.se'
+        Link: 'www.ralva.se',
+        DemoModalData: {
+            anv: 'demo@ralva.se',
+            los: 'demo16',
+            Header: 'Groupcaller - Demo',
+            GotToText: ' Gå till GroupCaller',
+            PanelClass: 'groupcallerModal',
+            url: 'https://groupcaller2.firebaseapp.com/loginpagedesktop'
+        },
+        DemoType: 'groupcaller'
     },
     {
         Header: 'Din Medlem',
@@ -48,7 +57,16 @@ export const PortfolioData: IPortfolio[] = [
         ],
         ProductImage: './assets/GroupCallerScreens.png',
         ButtonText: 'Ta mig till Din Medlem',
-        Link: 'www.dinmedlem.se'
+        Link: 'www.dinmedlem.se',
+        DemoModalData: {
+            anv: 'demo@dinmedlem.se',
+            los: 'demo16',
+            Header: 'Din Medlem - Demo',
+            GotToText: 'Gå till Din Medlem',
+            PanelClass: 'dinmedlemModal',
+            url: 'https://makalosa-demo.firebaseapp.com'
+        },
+        DemoType: 'dinmedlem'
     },
     {
         Header: 'Mitt eget bröllop',
@@ -69,7 +87,7 @@ export const PortfolioData: IPortfolio[] = [
         ],
         ProductImage: './assets/GroupCallerScreens.png',
         ButtonText: 'Ta mig till rongaralvert.com',
-        Link: 'www.dinmedlem.se'
+        Link: 'https://rongaralvert.com/'
     }
 ];
 

@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PortfolioCard } from '@henrik/components/portfolio.card/portfolio.card';
 
+import { MatDialogModule } from '@angular/material/dialog';
+
 const routes: Routes = [
   {
     path: 'PortfolioCard',
@@ -15,6 +17,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    MatDialogModule,
   ],
   declarations: [
     PortfolioCard

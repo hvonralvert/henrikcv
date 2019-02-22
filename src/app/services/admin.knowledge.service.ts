@@ -45,8 +45,6 @@ export class AdminKnowledgeService {
     );
 
     this.Know$.pipe(takeUntil(this.ngUnsubscribe$)).subscribe(Knowledges => {
-      console.log('current knowledges');
-      console.log(Knowledges);
       this.CurrentKnow = Knowledges;
     });
   }

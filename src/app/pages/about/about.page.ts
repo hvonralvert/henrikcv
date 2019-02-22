@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subject } from 'rxjs';
+import { CommonService } from '~/app/services/common.service';
 
 export interface IAbout {
   What: string;
@@ -10,7 +12,7 @@ export interface IAbout {
   templateUrl: './about.page.html',
   styleUrls: ['./about.page.scss']
 })
-export class AboutPage implements OnInit {
+export class AboutPage implements OnInit, OnDestroy {
 
   Abouts: IAbout[] = [
     {
@@ -39,9 +41,24 @@ export class AboutPage implements OnInit {
     },
   ];
 
-  constructor() { }
+  desktopScreen = true;
+  ngUnsubscribe$: Subject<boolean> = new Subject();
+
+  constructor(public comServ: CommonService) {
+
+    this.comServ.ScreenType$$.subscribe(desktop => {
+      this.desktopScreen = desktop;
+    });
+  }
+
 
   ngOnInit() {
+  }
+
+
+  ngOnDestroy() {
+    this.ngUnsubscribe$.next();
+    this.ngUnsubscribe$.unsubscribe();
   }
 
 }

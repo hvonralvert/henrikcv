@@ -1,0 +1,45 @@
+@import '../../../themes/common.scss';
+
+$demo-infottext-fontsize:15px;
+$demo-what-fontsize:15px;
+$demo-what-width:50px;
+$demo-marginbott:10px;
+$demo-info-fontsize:18px;
+
+
+$color-groupcaller-ralvaorange: #ff6622;
+
+h1 {
+  color: white !important;
+}
+
+.demo-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom:$demo-marginbott;
+}
+
+.demo-infotext {
+  font-size: $demo-infottext-fontsize;
+  color: white;
+  margin-bottom:$demo-marginbott;
+}
+
+
+.demo-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.demo-what {
+  font-size: $demo-what-fontsize;
+  color: white;
+  width: $demo-what-width;
+}
+
+.demo-text {
+  font-size: $demo-what-fontsize;
+  color: white;
+}

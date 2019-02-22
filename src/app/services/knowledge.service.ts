@@ -53,8 +53,6 @@ export class KnowledgeService {
     );
 
     this.Know$.pipe(takeUntil(this.ngUnsubscribe$)).subscribe(Knowledges => {
-      console.log('current knowledges');
-      console.log(Knowledges);
       this.Know$$.next(Knowledges);
     });
   }

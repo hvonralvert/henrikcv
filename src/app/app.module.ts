@@ -16,8 +16,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { LoginModalModule } from '@henrik/modals/login.modal.module';
+import { DemoModalModule } from '@henrik/modals/demo.modal.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { LoginModalModule } from '@henrik/modals/login.modal.module';
     MatIconModule,
     MatDialogModule,
     LoginModalModule,
-    HttpClientModule
+    HttpClientModule,
+    DemoModalModule
   ],
   providers: [],
   entryComponents: [],

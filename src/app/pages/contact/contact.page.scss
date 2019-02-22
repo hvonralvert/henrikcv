@@ -2,7 +2,7 @@
 
 
 $contact-iconsize:25px;
-$contact-iconwidth:30px;
+$contact-iconwidth:25px;
 $contact-fontsize:20px;
 $contact-icontextmargin:10px;
 $contact-contactrowmargin:20px;
@@ -25,6 +25,7 @@ $contact-contactrowmargin:20px;
 .contact-icon-container{
     font-size: $contact-iconsize;
     width: $contact-iconwidth;
+    height: $contact-iconwidth;
 }
 
 .contact-text{

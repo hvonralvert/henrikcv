@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material';
 import { MatDrawer } from '@angular/material/sidenav';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CommonService } from '@henrik/services/common.service';
 
 import { RouteService } from '@henrik/services/route.service';
 import { AuthService } from '@henrik/services/auth.service';
@@ -24,22 +25,29 @@ export class AppComponent implements AfterViewInit {
 
   @ViewChild('drawer') drawer: MatDrawer;
 
+
   MenuPages: IPageLink[] = [];
 
   menuWide = true;
+  menuMode: MatDrawer['mode'] = 'side';
   adminOnline = false;
+  desktopScreen = false;
+
+  toolbarHeader = '';
 
   constructor(
     public routServ: RouteService,
     public dialog: MatDialog,
     public authServ: AuthService,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    public comServ: CommonService
   ) {
 
     /*There is no stop to subscription. This is intenonally since we are at app.component.ts*/
     this.routServ.MenuPages$$.subscribe(pages => {
       this.MenuPages = pages;
+      this.toolbarHeader = this.getToolbarHeader();
     });
 
     this.authServ.UserOnline$$.subscribe(online => {
@@ -55,12 +63,44 @@ export class AppComponent implements AfterViewInit {
       'linkedin',
       this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/linkedin.svg')
     );
+
+    this.comServ.ScreenType$$.subscribe(desktop => {
+      this.tooggleMenue(desktop);
+    });
+  }
+
+
+  getToolbarHeader(): string {
+    for (const page of this.MenuPages) {
+      if (page.Active) {
+        return page.Name;
+      }
+    }
+  }
+
+
+  tooggleMenue(desktop: boolean) {
+    this.desktopScreen = desktop;
+
+    this.menuMode = this.desktopScreen ? 'side' : 'over';
+
+    if (!this.drawer) {
+      return;
+    }
+
+    if (this.desktopScreen) {
+      this.drawer.open();
+    } else {
+      this.drawer.close();
+    }
   }
 
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.drawer.open();
+      if (this.desktopScreen) {
+        this.drawer.open();
+      }
     }, 1000);
   }
 
@@ -77,6 +117,7 @@ export class AppComponent implements AfterViewInit {
     });
   }
 
+
   LogOut() {
     this.authServ.logoutUser();
   }
@@ -89,6 +130,14 @@ export class AppComponent implements AfterViewInit {
 
   GoToPage(page: string) {
     this.routServ.GoToPage(page);
+    if (this.drawer && !this.desktopScreen) {
+      this.drawer.close();
+    }
+  }
+
+  /*-------- fonrt call backs ----*/
+  showMenuButton(page: IPageLink): boolean {
+    return (page.Page !== 'admin') || ((page.Page === 'admin') && this.adminOnline);
   }
 
 }
