@@ -1,11 +1,10 @@
-@import '../../../themes/common.scss';
 
 $about-aboutrowmargin:13px;
 $about-whattextmargin:10px;
 $about-fontsize:17px;
 
 $about-whatwidth:90px;
-
+$about-whatfontweight:700;
 
 .about-row {
   display: flex;
@@ -19,7 +18,7 @@ $about-whatwidth:90px;
 
 .about-what {
   width: $about-whatwidth;
-  font-weight: 700;
+  font-weight: $about-whatfontweight;
 }
 
 

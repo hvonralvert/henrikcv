@@ -1,6 +1,3 @@
-@import '../../../themes/common.scss';
-
-
 $contact-iconsize:25px;
 $contact-iconwidth:25px;
 $contact-fontsize:20px;
@@ -22,16 +19,13 @@ $contact-contactrowmargin:20px;
   margin-bottom: $contact-contactrowmargin;
 }
 
-.contact-icon-container{
-    font-size: $contact-iconsize;
-    width: $contact-iconwidth;
-    height: $contact-iconwidth;
+.contact-icon-container {
+  font-size: $contact-iconsize;
+  width: $contact-iconwidth;
+  height: $contact-iconwidth;
 }
 
-.contact-text{
-    font-size: $contact-fontsize;
-    margin-left: $contact-icontextmargin;
+.contact-text {
+  font-size: $contact-fontsize;
+  margin-left: $contact-icontextmargin;
 }
-
-
-

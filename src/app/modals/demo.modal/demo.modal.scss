@@ -1,4 +1,3 @@
-@import '../../../themes/common.scss';
 
 $demo-infottext-fontsize:15px;
 $demo-what-fontsize:15px;
@@ -13,12 +12,14 @@ h1 {
   color: white !important;
 }
 
+
 .demo-content {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding-bottom:$demo-marginbott;
 }
+
 
 .demo-infotext {
   font-size: $demo-infottext-fontsize;
@@ -33,11 +34,13 @@ h1 {
   width: 100%;
 }
 
+
 .demo-what {
   font-size: $demo-what-fontsize;
   color: white;
   width: $demo-what-width;
 }
+
 
 .demo-text {
   font-size: $demo-what-fontsize;

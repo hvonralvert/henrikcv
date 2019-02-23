@@ -4,6 +4,8 @@ $img-margin-left:50px;
 $img-margin:20px;
 $img-width:200px;
 
+$smallscreen-paddingbott:300px;
+
 .me-image {
   width: $img-width;
   height: $img-width;
@@ -15,6 +17,7 @@ $img-width:200px;
   width: 100%;
   display: flex;
   margin-bottom: $img-margin;
+  margin-top: $img-margin;
 
   @include ScreenSize('bigscreen') {
     margin-left: $img-margin-left;
@@ -34,6 +37,6 @@ $img-width:200px;
   }
 
   @include ScreenSize('smallscreen') {
-    padding-bottom: 300px;
+    padding-bottom: $smallscreen-paddingbott;
   }
 }

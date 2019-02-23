@@ -1,20 +1,29 @@
-:root{
-    /*---- menu specifics ----*/
-    --menu-dark:#3a65ff;
-    --menu-light:#5da0ff;
-    --menu-button-active:#7bb3ff;
-    --menu-button-hover:#96c3fd;
+:root {
+  /*---- menu specifics ----*/
+  --menu-dark: #3a65ff;
+  --menu-light: #5da0ff;
+  --menu-button-active: #7bb3ff;
+  --menu-button-hover: #96c3fd;
+  --menu-button-description: #e4e4e4;
 
-    /*---- Page specifics -----*/
-    --page-background:#f1f1f1;
-    --page-headercolor:#575757;
+  /*---- Page specifics -----*/
+  --page-background: #f1f1f1;
+  --page-headercolor: #575757;
 
-    /*------- buttons -------*/
-    --button-save:#32a43c;
-    --button-save-hover:#56b158;
+  /*--- Boxes --- */
+  --box-border: #e4e4e4;
+  --box-background: #ffffff;
 
-    --button-standard:#488aff;
-    --button-standard-hover:#73a6ff;
+  /*-- scrollbar ---*/
+  --scroll-track: #e4e4e4;
+  --scroll-thumb: #7c7c7c;
 
-    --button-phonSidenav:#525252;
+  /*------- buttons -------*/
+  --button-save: #32a43c;
+  --button-save-hover: #56b158;
+
+  --button-standard: #488aff;
+  --button-standard-hover: #73a6ff;
+
+  --button-phonSidenav: #525252;
 }
