@@ -1,0 +1,78 @@
+
+/*--------- modal classer -----*/
+$color-groupcaller-lightgrad: #054b95;
+$color-groupcaller-darkgrad: #032d59;
+
+.groupcallerModal .mat-dialog-container {
+  height: fit-content;
+  background-color: $color-groupcaller-lightgrad;
+  background: -moz-linear-gradient(top, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
+  background: -webkit-linear-gradient(top, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
+  background: linear-gradient(to bottom, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#054b95', endColorstr='#032d59', GradientType=0);
+}
+
+
+.dinmedlemModal .mat-dialog-container {
+  height: fit-content;
+  background: #20932c;
+  background: -moz-linear-gradient(-45deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
+  background: -webkit-linear-gradient(-45deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
+  background: linear-gradient(135deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#20932c', endColorstr='#3b6115', GradientType=1);
+  color: white;
+}
+
+
+@mixin buttonstuff() {
+  border-radius: 7px;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.goupCallerbutton {
+  @include buttonstuff();
+  color: white !important;
+  height: fit-content;
+  background-color: $color-groupcaller-lightgrad;
+  background: -moz-linear-gradient(top, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
+  background: -webkit-linear-gradient(top, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
+  background: linear-gradient(to bottom, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#054b95', endColorstr='#032d59', GradientType=0);
+}
+
+.goupCallerbutton:active {
+  opacity: 0.7;
+}
+
+.dinmedlemButton:active {
+  opacity: 0.7;
+}
+
+.wedding:active {
+  opacity: 0.7;
+}
+
+
+.dinmedlemButton {
+  @include buttonstuff();
+  color: white;
+  height: fit-content;
+  background: #20932c;
+  background: -moz-linear-gradient(-45deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
+  background: -webkit-linear-gradient(-45deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
+  background: linear-gradient(135deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#20932c', endColorstr='#3b6115', GradientType=1);
+}
+
+
+
+.wedding {
+  @include buttonstuff();
+  color: white;
+  height: fit-content;
+  background: #f5b658af;
+  background: -moz-linear-gradient(-45deg, #f5b658af 0%, #b87511af 49%, #f5b658af 100%);
+  background: -webkit-linear-gradient(-45deg, #f5b658af 0%, #b87511af 49%, #f5b658af 100%);
+  background: linear-gradient(135deg, #f5b658af 0%, #b87511af 49%, #f5b658af 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5b658af', endColorstr='#b87511af', GradientType=1);
+}

@@ -22,10 +22,9 @@ export class PortfolioCard implements OnInit, OnDestroy {
 
   ngOnInit() {
   }
-  
+
 
   openModal() {
-
     if (!this.Portfolio.DemoType) {
       return window.open(this.Portfolio.Link);
     }
@@ -35,6 +34,10 @@ export class PortfolioCard implements OnInit, OnDestroy {
       data: this.Portfolio.DemoModalData
     });
 
+  }
+
+  getClass(): string {
+    return this.Portfolio.cssClass;
   }
 
 

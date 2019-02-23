@@ -62,7 +62,9 @@ $cont-textmargbott:16px;
 }
 
 .button-card:hover {
-  background-color: rgb(245, 245, 245);
+  background-color: white;
+  opacity: 0.4;
+  color: black;
 }
 
 .line {
@@ -110,3 +112,6 @@ $cont-textmargbott:16px;
 .content-text {
   margin-bottom: $cont-textmargbott;
 }
+
+
+

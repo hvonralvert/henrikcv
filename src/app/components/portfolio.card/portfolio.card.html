@@ -1,16 +1,16 @@
-<div class="box-container big">
+<div class="box-container big" [ngClass]="getClass()" (click)="openModal()">
 
   <!--header-->
-  <div class="header-row">
+  <div class="header-row" >
     <img class="header-img" [src]="Portfolio.Loggo">
-    <div class="header-text">
+    <div class="header-text" >
       {{Portfolio.Header}}
     </div>
   </div>
 
   <!--the line-->
   <div class="line-row">
-    <div class="line"></div>
+    <div class="line" [style.border-color]="Portfolio.ColorDark"></div>
   </div>
 
   <!--the content-->
@@ -29,14 +29,13 @@
 
   <!--the line-->
   <div class="line-row">
-    <div class="line"></div>
+    <div class="line" [style.border-color]="Portfolio.ColorDark"></div>
   </div>
 
   <div class="line-row button-height">
-
   </div>
 
-  <div class="button-card" (click)="openModal()">
+  <div class="button-card" >
     {{Portfolio.ButtonText}}
   </div>
 </div>
