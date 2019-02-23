@@ -3,7 +3,7 @@ import { ICareer, IParamInfoBox } from '@henrik/interfaces/app.interfaces';
 export const CareerData: ICareer[] = [
     {
         Title: 'Developer / Founder',
-        LoggoURL: './assets/groupcaller.png',
+        LoggoURL: './assets/career/ralva.png',
         CompanyName: 'Ralva Affärsutveckling AB',
         Time: 'Nov 2016 - Nu    2 år 4 mån',
         TextArray: [
@@ -23,7 +23,7 @@ export const CareerData: ICareer[] = [
     },
     {
         Title: 'Teknisk chef',
-        LoggoURL: './assets/groupcaller.png',
+        LoggoURL: './assets/career/almhaga.png',
         CompanyName: 'Almhaga AB',
         Time: 'Apr 2015 - Nov 2016    1 år 8 mån',
         TextArray: [
@@ -45,7 +45,7 @@ export const CareerData: ICareer[] = [
     },
     {
         Title: 'Affärsutvecklare',
-        LoggoURL: './assets/groupcaller.png',
+        LoggoURL: './assets/career/foteviks.png',
         CompanyName: 'Foteviks svenska AB',
         Time: 'Okt 2011 - Nov 2016    5 år 2 mån',
         TextArray: [
@@ -66,7 +66,7 @@ export const CareerData: ICareer[] = [
     },
     {
         Title: 'Magisteruppsats',
-        LoggoURL: './assets/groupcaller.png',
+        LoggoURL: './assets/career/lindab.png',
         CompanyName: 'Magisteruppsats',
         Time: 'Dec 2010 - Aug 2011    9 mån',
         TextArray: [

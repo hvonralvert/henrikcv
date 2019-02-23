@@ -25,7 +25,7 @@ export const PortfolioData: IPortfolio[] = [
                 ]
             }
         ],
-        ProductImage: './assets/GroupCallerScreens.png',
+        ProductImage: './assets/groupcaller2.png',
         ButtonText: 'Ta mig till GroupCaller',
         Link: 'www.ralva.se',
         DemoModalData: {
@@ -40,7 +40,7 @@ export const PortfolioData: IPortfolio[] = [
     },
     {
         Header: 'Din Medlem',
-        Loggo: './assets/groupcaller.png',
+        Loggo: './assets/dinmedlem_loggo.png',
         TextArray: [
             {
                 Header: 'Din Medlem',
@@ -55,7 +55,7 @@ export const PortfolioData: IPortfolio[] = [
                 ]
             }
         ],
-        ProductImage: './assets/GroupCallerScreens.png',
+        ProductImage: './assets/dinmedlem.png',
         ButtonText: 'Ta mig till Din Medlem',
         Link: 'www.dinmedlem.se',
         DemoModalData: {
@@ -70,7 +70,7 @@ export const PortfolioData: IPortfolio[] = [
     },
     {
         Header: 'Mitt eget bröllop',
-        Loggo: './assets/groupcaller.png',
+        Loggo: './assets/rongaralvert_loggo.png',
         TextArray: [
             {
                 Header: 'RongaRalvert.com',
@@ -85,7 +85,7 @@ export const PortfolioData: IPortfolio[] = [
                 ]
             }
         ],
-        ProductImage: './assets/GroupCallerScreens.png',
+        ProductImage: './assets/rongaralvert.png',
         ButtonText: 'Ta mig till rongaralvert.com',
         Link: 'https://rongaralvert.com/'
     }

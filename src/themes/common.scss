@@ -4,6 +4,8 @@
 
 /*---------- page containers -----*/
 $pagecontainer-FullscreenPadding:20px;
+$pagecontainer-smallscreenpadding:2px;
+$pagecontainer-smallscreenToppadding:2px;
 $pageHeader-fontsize:55px;
 $pageHeader-marginleft:25px;
 $pageHeader-underlinewidth:550px;
@@ -29,26 +31,32 @@ $myprojects-topmargins:20px;
 $box-paraggraph-fontsize:18px;
 $box-marginbottom:20px;
 
+/*------- scrollbar sizes --------*/
+$scroll-wdith:10px;
+$scroll-height:10px;
+$scroll-track-marginBottTop:4px;
+$scroll-track-borderradius:7px;
+$scroll-thumb-borderradius:7px;
 
 /*----------------------------------- scrollbar ----------------------------------------*/
 @mixin henrikScrollBar {
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: $scroll-wdith;
+    height: $scroll-height;
     cursor: pointer;
   }
 
   ::-webkit-scrollbar-track {
-    background: gray;
-    border-radius: 7x;
+    background: var(--scroll-track);
+    border-radius: $scroll-track-borderradius;
+    margin-bottom: $scroll-track-marginBottTop;
+    margin-top: $scroll-track-marginBottTop;
     cursor: pointer;
-    margin-bottom: 4px;
-    margin-top: 4px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: black;
-    border-radius: 7px;
+    background: var(--scroll-thumb);
+    border-radius: $scroll-thumb-borderradius;
     cursor: pointer;
   }
 }
@@ -88,9 +96,9 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   }
 
   @include ScreenSize('smallscreen') {
-    padding-left: 2px;
-    padding-right: 2px;
-    padding-top: 5px;
+    padding-left: $pagecontainer-smallscreenpadding;
+    padding-right: $pagecontainer-smallscreenpadding;
+    padding-top: $pagecontainer-smallscreenToppadding;
   }
 }
 
@@ -123,12 +131,13 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 /*------------------------- page content ----------------------*/
 .page-content {
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: fit-content;
   flex: 1;
   overflow-x: hidden;
-  align-items: center;
-  justify-content: center;
+
 }
 
 
@@ -152,10 +161,10 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 .page-box-wrapper {
   /*--only det boxes ---*/
   display: flex;
-  max-width: 100%;
-  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: flex-start;
   margin: 10px;
 }
 
@@ -180,10 +189,10 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 .transp-container {
   display: flex;
   flex-direction: column;
-  max-width: $box-maxwidth;
-  overflow: hidden;
   height: fit-content;
   width: 100%;
+  max-width: $box-maxwidth;
+  overflow: hidden;
 }
 
 .myprojects-margintop {
@@ -192,13 +201,13 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 
 
 .box-container {
-  background-color: white;
-  border: 1px solid rgb(206, 206, 206);
   display: flex;
   flex-direction: column;
+  background-color: var(--box-background);
+  border: 1px solid var(--box-border);
   max-width: $box-maxwidth;
-  overflow: hidden;
   height: fit-content;
+  overflow: hidden;
   position: relative;
 
   &.small {

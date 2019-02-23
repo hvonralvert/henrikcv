@@ -38,11 +38,11 @@ app-me,
 app-career,
 app-contact,
 app-about {
-  height: 100%;
   display: flex;
   flex: 1;
-  max-width: 100%;
+  height: 100%;
   width: 100%;
+  max-width: 100%;
 }
 
 
@@ -51,21 +51,19 @@ app-info-box,
 app-portfolio-box,
 app-portfolio-card,
 app-career-card {
-  max-width: 100%;
   display: flex;
+  max-width: 100%;
 }
 
 app-knowledge-item {
+  display: flex;
   width: 100%;
   max-width: 100%;
-  display: flex;
 }
 
 app-groupcaller-modal {
   position: relative;
 }
-
-
 
 
 
@@ -84,12 +82,11 @@ $color-groupcaller-darkgrad: #032d59;
 
 
 .dinmedlemModal .mat-dialog-container {
-  height:fit-content;
+  height: fit-content;
   background: #20932c;
   background: -moz-linear-gradient(-45deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
   background: -webkit-linear-gradient(-45deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
   background: linear-gradient(135deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20932c', endColorstr='#3b6115', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#20932c', endColorstr='#3b6115', GradientType=1);
   color: white;
 }
-

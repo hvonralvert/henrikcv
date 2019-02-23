@@ -27,15 +27,28 @@ $toolbar-padding:5px;
 $toolbar-header-fontsize:20px;
 $menuButton-size:25px;
 
+/*---- phone menue ---*/
+$phMenu-mycontainer-padding:20px;
+$phMenu-width:70vw;
+$phMenu-imgheight:70px;
+$phMenu-fontsize:17px;
+
+$phonePageButt-height:30px;
+$phonePageButt-padding:10px;
+$phonePageButt-icontext-margin:15px;
+$phonePageButt-namesize:15px;
+$phonePageButt-iconssize:18px;
+
 .app-container {
   width: 100vw;
   height: 100vh;
 }
 
+
 .content {
   display: flex;
-  flex: 1;
   flex-direction: column;
+  flex: 1;
   height: 100%;
   overflow: hidden;
 }
@@ -43,10 +56,10 @@ $menuButton-size:25px;
 
 .router-content {
   display: flex;
-  height: 100%;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-direction: column;
+  height: 100%;
   overflow-y: auto;
 }
 
@@ -59,6 +72,7 @@ $menuButton-size:25px;
   background: linear-gradient(to bottom, var(--menu-light) 0%, var(--menu-light) 52%, var(--menu-dark) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4f74fe', endColorstr='#6fa9fb', GradientType=0);
 }
+
 
 .Menu-inner {
   @include menuGradient();
@@ -88,7 +102,7 @@ $menuButton-size:25px;
 
 
 .mat-drawer-container {
-  background-color: #f1f1f1 !important;
+  background-color: var(--page-background) !important;
 }
 
 
@@ -98,9 +112,10 @@ $menuButton-size:25px;
   align-items: center;
   width: 100%;
   height: $toolbar-height;
-  background-color: var(--menu-light);
   padding: $toolbar-padding;
+  background-color: var(--menu-light);
 }
+
 
 .menubutton-container {
   display: flex;
@@ -108,8 +123,8 @@ $menuButton-size:25px;
   align-items: center;
   height: 100%;
   cursor: pointer;
-
 }
+
 
 .menubutton {
   height: $menuButton-size !important;
@@ -132,12 +147,13 @@ $menuButton-size:25px;
   color: white;
 }
 
+
 /*----------------- buttons small upp -------------*/
 .small-links-container {
-  width: 100%;
-  position: absolute;
   display: flex;
+  position: absolute;
   color: white;
+  width: 100%;
   font-size: $smallLink-fontsize;
 }
 
@@ -170,6 +186,7 @@ $menuButton-size:25px;
   }
 }
 
+
 .smalllink:hover {
   background-color: var(--menu-button-hover);
   border-radius: 50%;
@@ -185,12 +202,12 @@ $menuButton-size:25px;
 
 .deskPageButt-container {
   display: flex;
-  min-width: 100%;
-  width: fit-content;
-  height: $deskPageButt-height;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  min-width: 100%;
+  width: fit-content;
+  height: $deskPageButt-height;
   padding: $deskPageButt-padding;
   cursor: pointer;
 }
@@ -207,13 +224,12 @@ $menuButton-size:25px;
 
 
 .deskPageButt-icon-container {
-  width: $deskPageButt-iconsize-width;
-  height: $deskPageButt-iconsize-height;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: $deskPageButt-iconsize-width;
+  height: $deskPageButt-iconsize-height;
   color: white;
-  font-size: 55px;
 }
 
 
@@ -226,8 +242,8 @@ $menuButton-size:25px;
 .deskPageButt-text-container {
   display: flex;
   flex-direction: column;
-  width: fit-content;
   justify-content: center;
+  width: fit-content;
   margin-left: $deskPageButt-icontext-margin;
 }
 
@@ -239,18 +255,18 @@ $menuButton-size:25px;
 
 
 .deskPageButt-text-description {
-  font-size: $deskPageButt-descsize;
   width: fit-content;
-  color: rgb(245, 245, 245);
+  font-size: $deskPageButt-descsize;
+  color: var(--menu-button-description);
 }
 
 
 /*---------------- arrow button desktop side nav bottom----------------*/
 .ButtonExpand-container {
-  height: $expandbutt-hieght;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  height: $expandbutt-hieght;
   width: 100%;
   cursor: pointer;
 }
@@ -262,10 +278,10 @@ $menuButton-size:25px;
 
 
 .arrow {
+  display: inline-block;
+  padding: 4px;
   border: solid white;
   border-width: 0 3px 3px 0;
-  padding: 4px;
-  display: inline-block;
   transition: all 0.2s ease;
 }
 
@@ -283,10 +299,7 @@ $menuButton-size:25px;
   margin: 15px 10px 15px 10px;
 }
 
-$phMenu-mycontainer-padding:20px;
-$phMenu-width:70vw;
-$phMenu-imgheight:70px;
-$phMenu-fontsize:17px;
+
 
 /*------------ phone side nav-----------------------------------*/
 .phMen-menu-inner {
@@ -294,8 +307,9 @@ $phMenu-fontsize:17px;
   flex-direction: column;
   overflow: hidden;
   width: $phMenu-width;
-  height:100%;
+  height: 100%;
 }
+
 
 .phMenu-my-container {
   @include menuGradient();
@@ -319,19 +333,14 @@ $phMenu-fontsize:17px;
 }
 
 
-.phMenu-buttons-container{
+.phMenu-buttons-container {
   display: flex;
-  width:100%;
-  flex:1;
+  width: 100%;
+  flex: 1;
   flex-direction: column;
 }
 
 
-$phonePageButt-height:30px;
-$phonePageButt-padding:10px;
-$phonePageButt-icontext-margin:15px;
-$phonePageButt-namesize:15px;
-$phonePageButt-iconssize:18px;
 
 /*----------------- phone buttons side nav --------------*/
 .phonePageButt-wrapper {
@@ -339,16 +348,17 @@ $phonePageButt-iconssize:18px;
   width: fit-content;
 }
 
+
 .phonePageButt-container {
   display: flex;
-  min-width: 100%;
-  width: fit-content;
-  height: $phonePageButt-height;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   padding-top: $phonePageButt-padding;
   padding-bottom: $phonePageButt-padding;
+  min-width: 100%;
+  width: fit-content;
+  height: $phonePageButt-height;
   cursor: pointer;
 }
 
@@ -362,27 +372,28 @@ $phonePageButt-iconssize:18px;
   background-color: var(--menu-button-active);
 }
 
-.phonePageButt-actcolor{
+
+.phonePageButt-actcolor {
   color: white !important;
 }
 
 
 .phonePageButt-icon {
-  font-size: $phonePageButt-iconssize;
-  color: var(--button-phonSidenav);
   display: flex;
   align-items: center;
+  font-size: $phonePageButt-iconssize;
+  color: var(--button-phonSidenav);
   margin-left: $phonePageButt-icontext-margin;
-  margin-right:   $phonePageButt-icontext-margin;
+  margin-right: $phonePageButt-icontext-margin;
 }
 
 
 .phonePageButt-text-container {
   display: flex;
   flex-direction: column;
-  width: fit-content;
   justify-content: center;
   align-items: center;
+  width: fit-content;
 }
 
 
@@ -390,5 +401,3 @@ $phonePageButt-iconssize:18px;
   font-size: $phonePageButt-namesize;
   color: var(--button-phonSidenav);
 }
-
-
