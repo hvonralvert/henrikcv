@@ -40,6 +40,9 @@ export interface IPortfolio {
     Link: string;
     DemoModalData?: IDemoModalData;
     DemoType?: IDemoType;
+    ColorLight: string;
+    ColorDark: string;
+    cssClass: string;
 }
 
 

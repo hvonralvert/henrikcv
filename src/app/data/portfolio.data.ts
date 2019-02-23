@@ -36,7 +36,10 @@ export const PortfolioData: IPortfolio[] = [
             PanelClass: 'groupcallerModal',
             url: 'https://groupcaller2.firebaseapp.com/loginpagedesktop'
         },
-        DemoType: 'groupcaller'
+        DemoType: 'groupcaller',
+        ColorDark: '#032d59',
+        ColorLight: '#054b95',
+        cssClass: 'goupCallerbutton'
     },
     {
         Header: 'Din Medlem',
@@ -66,7 +69,10 @@ export const PortfolioData: IPortfolio[] = [
             PanelClass: 'dinmedlemModal',
             url: 'https://makalosa-demo.firebaseapp.com'
         },
-        DemoType: 'dinmedlem'
+        DemoType: 'dinmedlem',
+        ColorDark: '#3b6115',
+        ColorLight: '#20932c',
+        cssClass: 'dinmedlemButton'
     },
     {
         Header: 'Mitt eget bröllop',
@@ -87,7 +93,10 @@ export const PortfolioData: IPortfolio[] = [
         ],
         ProductImage: './assets/rongaralvert.png',
         ButtonText: 'Ta mig till rongaralvert.com',
-        Link: 'https://rongaralvert.com/'
+        Link: 'https://rongaralvert.com/',
+        ColorDark: '#b87511af',
+        ColorLight: '#d49432af',
+        cssClass: 'wedding'
     }
 ];
 
