@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [{
-  path: '',
-  redirectTo: 'frontend',
-  pathMatch: 'full'
-},
+const routes: Routes = [
+//   {
+//   path: '',
+//   redirectTo: 'frontend',
+//   pathMatch: 'full'
+// },
 {
   path: 'about',
   loadChildren: './pages/about.page.module#AboutPageModule',

@@ -62,11 +62,12 @@ export class RouteService {
 
 
   constructor(public router: Router) {
-    this.GoToPage('frontend');
+    // this.GoToPage('frontend');
   }
 
 
   GoToPage(page: string) {
+    console.log(' route.service :: GoToPage :: page => '+page);
     this.MenuPages = this.MenuPages.map(el => {
       el.Active = el.Page === page ? true : false;
       return el;

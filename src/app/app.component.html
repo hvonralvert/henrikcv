@@ -1,4 +1,4 @@
-<mat-sidenav-container class="app-container" autosize>
+<mat-sidenav-container class="app-container" autosize *ngIf="UserEntered">
 
   <!--side menu-->
   <mat-sidenav #drawer [mode]="menuMode">
@@ -109,4 +109,51 @@
     </div>
 
   </div>
+</ng-template>
+
+
+<!------------------splash screen------------------>
+<div *ngIf="desktopScreen" class="splash-container">
+  <ng-content *ngTemplateOutlet="desktopSplash"></ng-content>
+</div>
+
+
+<div *ngIf="!desktopScreen" class="splash-container">
+  <ng-content *ngTemplateOutlet="phoneSplash"></ng-content>
+</div>
+
+
+
+<ng-template #desktopSplash>
+  <!--content-->
+  <div class="splash-content-container">
+
+    <!--text part-->
+    <div class="splash-deskt-textrow">
+      <div class="splash-deskt-header">
+        Henrik Ralvert
+      </div>
+      <div class="splash-deskt-tagline">
+        Front end devloper, cunning smart everything
+      </div>
+    </div>
+
+    <!-- button row-->
+    <div class="splash-deskt-button-row">
+      <div class="splash-flag-dummy"></div>
+      <div class="splash-flag-dummy"></div>
+    </div>
+
+    <img class="splash-deskt-me" src="./assets/mig.jpg">
+
+  </div>
+
+  <!--bottom row-->
+  <div class="bottom-deskt-row">
+  </div>
+</ng-template>
+
+
+<ng-template #phoneSplash>
+  hejsan phone
 </ng-template>

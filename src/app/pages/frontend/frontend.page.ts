@@ -19,7 +19,8 @@ export class FrontEndPage implements OnInit, OnDestroy {
   desktopScreen = true;
   ngUnsubscribe$: Subject<boolean> = new Subject();
 
-  constructor(public comServ: CommonService) {
+  constructor(
+    public comServ: CommonService) {
 
     this.comServ.ScreenType$$.subscribe(desktop => {
       this.desktopScreen = desktop;

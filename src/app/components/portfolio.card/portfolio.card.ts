@@ -4,6 +4,7 @@ import { IPortfolio } from '~/app/interfaces/app.interfaces';
 import { DemoModal } from '@henrik/modals/demo.modal/demo.modal';
 import { MatDialog } from '@angular/material';
 
+import { GoogleAnalyticsService } from '@henrik/services/googleanalytics.service';
 
 @Component({
   selector: 'app-portfolio-card',
@@ -16,7 +17,8 @@ export class PortfolioCard implements OnInit, OnDestroy {
 
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public gaServ: GoogleAnalyticsService
   ) { }
 
 
@@ -26,14 +28,30 @@ export class PortfolioCard implements OnInit, OnDestroy {
 
   openModal() {
     if (!this.Portfolio.DemoType) {
+      this.sendAnalyticsGotTo();
       return window.open(this.Portfolio.Link);
     }
+
+    this.sendAnalyticsOpen();
 
     const logModal = this.dialog.open(DemoModal, {
       width: '310px',
       data: this.Portfolio.DemoModalData
     });
 
+    logModal.afterClosed().subscribe(useGoTo => {
+      if (useGoTo) {
+        this.sendAnalyticsGotTo();
+      }
+    });
+  }
+
+  sendAnalyticsOpen() {
+    this.gaServ.openPortfModal(this.Portfolio.Header);
+  }
+
+  sendAnalyticsGotTo() {
+    this.gaServ.goToUrlPort(this.Portfolio.Header);
   }
 
   getClass(): string {
