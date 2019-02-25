@@ -10,7 +10,7 @@ $pageHeader-fontsize:55px;
 $pageHeader-marginleft:25px;
 $pageHeader-underlinewidth:550px;
 $pageHeader-underlineBottom:10px;
-
+$pageBoxWrapper-margin:10px;
 
 /*---------- boxes --------------*/
 $box-bigwidth:750px;
@@ -162,10 +162,10 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   /*--only det boxes ---*/
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   flex-wrap: wrap;
   max-width: 100%;
-  justify-content: flex-start;
-  margin: 10px;
+  margin: $pageBoxWrapper-margin;
 }
 
 .box-margins {
@@ -192,7 +192,6 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   height: fit-content;
   width: 100%;
   max-width: $box-maxwidth;
-  // overflow: visible;
 }
 
 .myprojects-margintop {
