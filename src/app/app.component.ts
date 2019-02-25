@@ -35,6 +35,8 @@ export class AppComponent implements AfterViewInit {
 
   toolbarHeader = '';
 
+  UserEntered=false;
+
   constructor(
     public routServ: RouteService,
     public dialog: MatDialog,
@@ -97,11 +99,20 @@ export class AppComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      if (this.desktopScreen) {
-        this.drawer.open();
-      }
-    }, 1000);
+    // setTimeout(() => {
+    //   if (this.desktopScreen) {
+    //     this.drawer.open();
+    //   }
+    // }, 1000);
+
+    // setTimeout(() => {
+    //   this.UserEntered = true;
+    //   setTimeout(() => {
+    //     if (this.desktopScreen) {
+    //       this.drawer.open();
+    //     }
+    //   }, 1000);
+    // }, 5000);
   }
 
 

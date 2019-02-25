@@ -1,403 +1,443 @@
-@import '../themes/colors.scss';
-@import '../themes/common.scss';
+@import "../themes/colors.scss";
+@import "../themes/common.scss";
 
-$menu-padding:5px;
-$menu-maxwidth:300px;
+$menu-padding: 5px;
+$menu-maxwidth: 300px;
 
-$deskPageButt-iconsize-width:30px;
-$deskPageButt-iconsize-height:30px;
-$deskPageButt-iconsize:30px;
-$deskPageButt-namesize:22px;
-$deskPageButt-descsize:15px;
-$deskPageButt-padding:20px;
-$deskPageButt-icontext-margin:15px;
-$deskPageButt-height:55px;
+$deskPageButt-iconsize-width: 30px;
+$deskPageButt-iconsize-height: 30px;
+$deskPageButt-iconsize: 30px;
+$deskPageButt-namesize: 22px;
+$deskPageButt-descsize: 15px;
+$deskPageButt-padding: 20px;
+$deskPageButt-icontext-margin: 15px;
+$deskPageButt-height: 55px;
 
-$expandbutt-hieght:40px;
+$expandbutt-hieght: 40px;
 
-$smallLink-margin:5px;
-$smalllink-padding:5px;
-$smallLink-containerpadding:3px;
-$smallLink-fontsize:20px;
-$smallLink-wdith:25px;
+$smallLink-margin: 5px;
+$smalllink-padding: 5px;
+$smallLink-containerpadding: 3px;
+$smallLink-fontsize: 20px;
+$smallLink-wdith: 25px;
 
 /*--- toolbar ---*/
-$toolbar-height:40px;
-$toolbar-padding:5px;
-$toolbar-header-fontsize:20px;
-$menuButton-size:25px;
+$toolbar-height: 40px;
+$toolbar-padding: 5px;
+$toolbar-header-fontsize: 20px;
+$menuButton-size: 25px;
 
 /*---- phone menue ---*/
-$phMenu-mycontainer-padding:20px;
-$phMenu-width:70vw;
-$phMenu-imgheight:70px;
-$phMenu-fontsize:17px;
+$phMenu-mycontainer-padding: 20px;
+$phMenu-width: 70vw;
+$phMenu-imgheight: 70px;
+$phMenu-fontsize: 17px;
 
-$phonePageButt-height:30px;
-$phonePageButt-padding:10px;
-$phonePageButt-icontext-margin:15px;
-$phonePageButt-namesize:15px;
-$phonePageButt-iconssize:18px;
+$phonePageButt-height: 30px;
+$phonePageButt-padding: 10px;
+$phonePageButt-icontext-margin: 15px;
+$phonePageButt-namesize: 15px;
+$phonePageButt-iconssize: 18px;
 
 .app-container {
-  width: 100vw;
-  height: 100vh;
+    width: 100vw;
+    height: 100vh;
 }
-
 
 .content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  height: 100%;
-  overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
 }
-
 
 .router-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  height: 100%;
-  overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    overflow-y: auto;
 }
-
 
 /*--------------------------- side nav ------------------*/
-@mixin menuGradient() {
-  background: var(--menu-dark);
-  background: -moz-linear-gradient(top, var(--menu-light) 0%, var(--menu-light) 52%, var(--menu-dark) 100%);
-  background: -webkit-linear-gradient(top, var(--menu-light) 0%, var(--menu-light) 52%, var(--menu-dark) 100%);
-  background: linear-gradient(to bottom, var(--menu-light) 0%, var(--menu-light) 52%, var(--menu-dark) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4f74fe', endColorstr='#6fa9fb', GradientType=0);
+@mixin menuGradient {
+    background: var(--menu-dark);
+    background: -moz-linear-gradient(top, var(--menu-light) 0%, var(--menu-light) 52%, var(--menu-dark) 100%);
+    background: -webkit-linear-gradient(top, var(--menu-light) 0%, var(--menu-light) 52%, var(--menu-dark) 100%);
+    background: linear-gradient(to bottom, var(--menu-light) 0%, var(--menu-light) 52%, var(--menu-dark) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4f74fe', endColorstr='#6fa9fb', GradientType=0);
 }
-
 
 .Menu-inner {
-  @include menuGradient();
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  min-width: fit-content;
-  max-width: $menu-maxwidth;
-  height: 100%;
-}
+    @include menuGradient;
 
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    min-width: fit-content;
+    max-width: $menu-maxwidth;
+    height: 100%;
+}
 
 .buttons-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  flex: 1;
-  overflow: hidden;
-  width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+    overflow: hidden;
+    width: fit-content;
 }
-
 
 .mat-drawer-inner-container {
-  overflow: hidden !important;
+    overflow: hidden !important;
 }
-
 
 .mat-drawer-container {
-  background-color: var(--page-background) !important;
+    background-color: var(--page-background) !important;
 }
-
 
 .toolbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  height: $toolbar-height;
-  padding: $toolbar-padding;
-  background-color: var(--menu-light);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: $toolbar-height;
+    padding: $toolbar-padding;
+    background-color: var(--menu-light);
 }
-
 
 .menubutton-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
 }
-
 
 .menubutton {
-  height: $menuButton-size !important;
-  width: $menuButton-size !important;
-  font-size: $menuButton-size !important;
-  color: white;
+    height: $menuButton-size !important;
+    width: $menuButton-size !important;
+    font-size: $menuButton-size !important;
+    color: white;
 
-  path {
-    fill: white !important;
-  }
+    path {
+        fill: white !important;
+    }
 }
-
 
 .toolbar-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-  font-size: $toolbar-header-fontsize;
-  color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    font-size: $toolbar-header-fontsize;
+    color: white;
 }
-
 
 /*----------------- buttons small upp -------------*/
 .small-links-container {
-  display: flex;
-  position: absolute;
-  color: white;
-  width: 100%;
-  font-size: $smallLink-fontsize;
+    display: flex;
+    position: absolute;
+    color: white;
+    width: 100%;
+    font-size: $smallLink-fontsize;
 }
-
 
 .small-links-expanded {
-  flex-direction: row;
-  align-items: center;
+    flex-direction: row;
+    align-items: center;
 }
-
 
 .small-links-shrinked {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .smalllink {
-  margin: $smallLink-margin;
-  padding: $smalllink-padding;
-  width: $smallLink-wdith !important;
-  height: $smallLink-wdith !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  cursor: pointer;
+    margin: $smallLink-margin;
+    padding: $smalllink-padding;
+    width: $smallLink-wdith !important;
+    height: $smallLink-wdith !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer;
 
-  path {
-    fill: white !important;
-  }
+    path {
+        fill: white !important;
+    }
 }
-
 
 .smalllink:hover {
-  background-color: var(--menu-button-hover);
-  border-radius: 50%;
+    background-color: var(--menu-button-hover);
+    border-radius: 50%;
 }
-
 
 /*----------------- desktop buttons side nav --------------*/
 .deskPageButt-wrapper {
-  min-width: 100%;
-  width: fit-content;
+    min-width: 100%;
+    width: fit-content;
 }
-
 
 .deskPageButt-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  min-width: 100%;
-  width: fit-content;
-  height: $deskPageButt-height;
-  padding: $deskPageButt-padding;
-  cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 100%;
+    width: fit-content;
+    height: $deskPageButt-height;
+    padding: $deskPageButt-padding;
+    cursor: pointer;
 }
-
 
 .deskPageButt-container:hover {
-  background-color: var(--menu-button-hover);
+    background-color: var(--menu-button-hover);
 }
-
 
 .deskPageButt-active {
-  background-color: var(--menu-button-active);
+    background-color: var(--menu-button-active);
 }
-
 
 .deskPageButt-icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: $deskPageButt-iconsize-width;
-  height: $deskPageButt-iconsize-height;
-  color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $deskPageButt-iconsize-width;
+    height: $deskPageButt-iconsize-height;
+    color: white;
 }
-
 
 .deskPageButt-icon {
-  font-size: $smallLink-fontsize;
-  color: white;
+    font-size: $smallLink-fontsize;
+    color: white;
 }
-
 
 .deskPageButt-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: fit-content;
-  margin-left: $deskPageButt-icontext-margin;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    margin-left: $deskPageButt-icontext-margin;
 }
-
 
 .deskPageButt-text-name {
-  font-size: $deskPageButt-namesize;
-  color: white !important;
+    font-size: $deskPageButt-namesize;
+    color: white !important;
 }
-
 
 .deskPageButt-text-description {
-  width: fit-content;
-  font-size: $deskPageButt-descsize;
-  color: var(--menu-button-description);
+    width: fit-content;
+    font-size: $deskPageButt-descsize;
+    color: var(--menu-button-description);
 }
-
 
 /*---------------- arrow button desktop side nav bottom----------------*/
 .ButtonExpand-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  height: $expandbutt-hieght;
-  width: 100%;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: $expandbutt-hieght;
+    width: 100%;
+    cursor: pointer;
 }
-
 
 .ButtonExpand-container:hover {
-  background-color: var(--menu-button-hover);
+    background-color: var(--menu-button-hover);
 }
-
 
 .arrow {
-  display: inline-block;
-  padding: 4px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transition: all 0.2s ease;
+    display: inline-block;
+    padding: 4px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transition: all 0.2s ease;
 }
-
 
 .arrow-expand {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  margin: 15px 10px 15px 0px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin: 15px 10px 15px 0px;
 }
-
 
 .arrow-shrink {
-  transform: rotate(-225deg);
-  -webkit-transform: rotate(-225deg);
-  margin: 15px 10px 15px 10px;
+    transform: rotate(-225deg);
+    -webkit-transform: rotate(-225deg);
+    margin: 15px 10px 15px 10px;
 }
-
-
 
 /*------------ phone side nav-----------------------------------*/
 .phMen-menu-inner {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  width: $phMenu-width;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: $phMenu-width;
+    height: 100%;
 }
-
 
 .phMenu-my-container {
-  @include menuGradient();
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: fit-content;
-  padding: $phMenu-mycontainer-padding;
+    @include menuGradient;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    padding: $phMenu-mycontainer-padding;
 }
 
-
 .phMenu-img {
-  height: $phMenu-imgheight;
-  width: $phMenu-imgheight;
-  border-radius: 50%;
+    height: $phMenu-imgheight;
+    width: $phMenu-imgheight;
+    border-radius: 50%;
 }
 
 .phMenu-name {
-  font-size: $phMenu-fontsize;
-  color: white;
+    font-size: $phMenu-fontsize;
+    color: white;
 }
-
 
 .phMenu-buttons-container {
-  display: flex;
-  width: 100%;
-  flex: 1;
-  flex-direction: column;
+    display: flex;
+    width: 100%;
+    flex: 1;
+    flex-direction: column;
 }
-
-
 
 /*----------------- phone buttons side nav --------------*/
 .phonePageButt-wrapper {
-  min-width: 100%;
-  width: fit-content;
+    min-width: 100%;
+    width: fit-content;
 }
-
 
 .phonePageButt-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: $phonePageButt-padding;
-  padding-bottom: $phonePageButt-padding;
-  min-width: 100%;
-  width: fit-content;
-  height: $phonePageButt-height;
-  cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: $phonePageButt-padding;
+    padding-bottom: $phonePageButt-padding;
+    min-width: 100%;
+    width: fit-content;
+    height: $phonePageButt-height;
+    cursor: pointer;
 }
-
 
 .phonePageButt-container:hover {
-  background-color: var(--menu-button-hover);
+    background-color: var(--menu-button-hover);
 }
-
 
 .phonePageButt-active {
-  background-color: var(--menu-button-active);
+    background-color: var(--menu-button-active);
 }
-
 
 .phonePageButt-actcolor {
-  color: white !important;
+    color: white !important;
 }
-
 
 .phonePageButt-icon {
-  display: flex;
-  align-items: center;
-  font-size: $phonePageButt-iconssize;
-  color: var(--button-phonSidenav);
-  margin-left: $phonePageButt-icontext-margin;
-  margin-right: $phonePageButt-icontext-margin;
+    display: flex;
+    align-items: center;
+    font-size: $phonePageButt-iconssize;
+    color: var(--button-phonSidenav);
+    margin-left: $phonePageButt-icontext-margin;
+    margin-right: $phonePageButt-icontext-margin;
 }
-
 
 .phonePageButt-text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
 }
 
-
 .phonePageButt-text-name {
-  font-size: $phonePageButt-namesize;
-  color: var(--button-phonSidenav);
+    font-size: $phonePageButt-namesize;
+    color: var(--button-phonSidenav);
+}
+
+/*------------------ splash screen ---------------*/
+$splash-deskt-headerfontsize: 100px;
+$splash-desk-taglinefontsize: 45px;
+$splash-deskt-paddingleftText: 40px;
+
+$splash-bottomrow-height: 250px;
+$splash-me-height: 170px;
+
+$splash-deskt-marginbetweecontents: 100px;
+
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    // overflow: hidden;
+}
+
+.splash-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: calc(100% - #{$splash-bottomrow-height});
+    width: 100%;
+    overflow: visible;
+    background-color: red;
+    position: relative;
+}
+
+.splash-deskt-textrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-start;
+    padding-left: $splash-deskt-paddingleftText;
+}
+
+.splash-deskt-header {
+    font-size: $splash-deskt-headerfontsize;
+    color: white;
+}
+
+.splash-deskt-tagline {
+    font-size: $splash-desk-taglinefontsize;
+    color: rgb(223, 223, 223);
+}
+
+.splash-deskt-button-row {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-top: $splash-deskt-marginbetweecontents;
+    margin-bottom: calc(2 * #{$splash-deskt-marginbetweecontents});
+}
+
+.splash-flag-dummy {
+    height: 80px;
+    width: 130px;
+    background-color: black;
+}
+
+.bottom-deskt-row {
+    width: 100%;
+    height: $splash-bottomrow-height;
+    background-color: yellow;
+}
+
+.splash-deskt-me {
+    position: absolute;
+    height: $splash-me-height;
+    width: auto;
+    border-radius: 50%;
+    bottom: calc( -1 * #{$splash-me-height} / 2);
+    z-index: 500;
 }
