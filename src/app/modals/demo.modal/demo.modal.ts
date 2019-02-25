@@ -28,6 +28,7 @@ export class DemoModal {
 
   GoTo() {
     window.open(this.demoData.url);
+    this.dialogRef.close(true);
   }
 
   CloseModal(): void {

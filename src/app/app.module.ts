@@ -19,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginModalModule } from '@henrik/modals/login.modal.module';
 import { DemoModalModule } from '@henrik/modals/demo.modal.module';
 
+import { GoogleAnalyticsService } from '@henrik/services/googleanalytics.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -38,8 +40,10 @@ import { DemoModalModule } from '@henrik/modals/demo.modal.module';
     HttpClientModule,
     DemoModalModule
   ],
-  providers: [],
+  providers: [GoogleAnalyticsService],
   entryComponents: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(protected gaServ: GoogleAnalyticsService) { }
+}
