@@ -1,0 +1,247 @@
+
+/*------------------ desktop parameters screen ---------------*/
+$deskt-header-fontsize: 100px; // the name fontsize
+$deskt-tagline-fontsize: 45px; // size of the fontsize
+$deskt-textrow-paddingleft: 40px; // the padding from the screen left side
+$deskt-buttons-marginTopBott: 80px; // the margin to the text above and to the profile picture below
+$deskt-bottomrow-height: 210px; // the size of the white banner below
+$deskt-meImg-height: 170px; // profilepicture height
+$deskt-meImg-padding:3px; // padding around the profilepciture
+$deskt-copyright-padding:5px;
+
+/*------------------ phone parameters screen ---------------*/
+$phone-meimg-padding:3px; // the padding around the image
+$phone-meimg-topleft:20px; // the padding from the screen borders
+$phone-meimg-size:100px; //  the size of the meimg
+$phone-header-fontsize:40px; // font size of the header
+$phone-description-fontsize:20px; // description text font size
+$phone-textbox-margintop:55%; // margin from the textbox to the top of the screen
+
+
+/*----------------- flags parameters ------------------------*/
+$flag-height:55px; // flag & buttonhieght
+$flag-width:90px; // flag width
+$flag-container-width:220px; // button width 
+$flag-border-radius:5px; // button radius
+$flag-outline-width:1px; //button outline width
+$flag-margintext:10px; // margin between flag and welcome text
+$flag-fontsize:22px; // welcome text size
+$flag-marginright:50px; // margin between buttons
+
+/*--------------- common -----------------------------------*/
+$backimg-opacity:0.15;
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+.deskt-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: calc(100% - #{$deskt-bottomrow-height});
+  width: 100%;
+  overflow: visible;
+  position: relative;
+  background: var(--menu-light);
+  background: linear-gradient(163deg, var(--menu-light) 0%, var(--menu-dark) 100%);
+}
+
+.deskt-backimg {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 90%;
+  width: auto;
+  opacity: $backimg-opacity;
+}
+
+.deskt-textrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: flex-start;
+  padding-left: $deskt-textrow-paddingleft;
+  z-index: 20;
+}
+
+.deskt-header {
+  font-size: $deskt-header-fontsize;
+  line-height: $deskt-header-fontsize;
+  color: white;
+}
+
+.deskt-description {
+  font-size: $deskt-tagline-fontsize;
+  line-height: $deskt-tagline-fontsize;
+  color: var(--splash-textDescription);
+}
+
+.deskt-button-row {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  margin-top: $deskt-buttons-marginTopBott;
+  margin-bottom: calc(2 * #{$deskt-buttons-marginTopBott});
+  z-index: 20;
+}
+
+
+.deskt-bottom-row {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: $deskt-bottomrow-height;
+  background-color: white;
+}
+
+.copyright {
+  padding: $deskt-copyright-padding;
+}
+
+.deskt-meimg {
+  position: absolute;
+  height: $deskt-meImg-height;
+  width: auto;
+  border-radius: 50%;
+  bottom: calc(-1 * #{$deskt-meImg-height} / 2);
+  z-index: 500;
+  background-color: var(--splash-border-img);
+  padding: $deskt-meImg-padding;
+}
+
+/*------------- falgs ---------*/
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: $flag-container-width;
+  height: $flag-height;
+  border: $flag-outline-width solid white;
+  border-radius: $flag-border-radius;
+
+  &.marginright {
+    margin-right: $flag-marginright;
+  }
+
+  color:white;
+  font-size: $flag-fontsize;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button-container:hover {
+  background-color: white;
+  color: gray;
+}
+
+
+.flag-container {
+  width: $flag-width;
+  height: $flag-height;
+  overflow: hidden;
+  margin-right: $flag-margintext;
+}
+
+.flag {
+  width: $flag-width;
+  height: $flag-height;
+}
+
+
+/*-----------------phone-----------------*/
+.phone-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--menu-light);
+  background: linear-gradient(163deg, var(--menu-light) 0%, var(--menu-dark) 100%);
+}
+
+.phone-backimg {
+  width: auto;
+  height: 50%;
+  opacity: $backimg-opacity;
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
+}
+
+.phone-me-img {
+  position: absolute;
+  left: $phone-meimg-topleft;
+  top: $phone-meimg-topleft;
+  height: $phone-meimg-size;
+  width: $phone-meimg-size;
+  background-color: var(--splash-border-img);
+  padding: $phone-meimg-padding;
+  border-radius: 50%;
+}
+
+.phone-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: $phone-textbox-margintop;
+}
+
+
+.phone-header {
+  font-size: $phone-header-fontsize;
+  line-height: $phone-header-fontsize;
+  color: white;
+  width: fit-content;
+}
+
+
+.phone-description {
+  font-size: $phone-description-fontsize;
+  line-height: $phone-description-fontsize;
+  color: var(--splash-textDescription);
+  width: fit-content;
+}
+
+.phone-flagsrow {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  top: calc(75% - #{$flag-height});
+}
+
+
+.contentRemove{
+  animation: animtop 500ms ease forwards;
+}
+
+.bottomRemove{
+  animation: animbott 500ms ease forwards;
+}
+
+@keyframes animtop{
+  from{}
+  to{
+    opacity: 0;
+    transform: translate(0px, -80vh)
+  }
+}
+
+@keyframes animbott{
+  from{}
+  to{
+    opacity: 0;
+    transform: translate(0px, 30vh)
+  }
+}

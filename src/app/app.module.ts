@@ -16,6 +16,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 
+import { SplashPage } from '@henrik/pages/splash.page/splash.page';
+
 import { LoginModalModule } from '@henrik/modals/login.modal.module';
 import { DemoModalModule } from '@henrik/modals/demo.modal.module';
 
@@ -23,7 +25,8 @@ import { GoogleAnalyticsService } from '@henrik/services/googleanalytics.service
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SplashPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ import { GoogleAnalyticsService } from '@henrik/services/googleanalytics.service
     DemoModalModule
   ],
   providers: [GoogleAnalyticsService],
-  entryComponents: [],
+  entryComponents: [SplashPage],
   bootstrap: [AppComponent]
 })
 export class AppModule {
