@@ -33,7 +33,7 @@ $smallscreen-paddingbott:300px;
 
 .col-center-content {
   @include ScreenSize('bigscreen') {
-    padding-bottom: $pagecontainer-FullscreenPadding;
+    padding-bottom: $pagecontainer-BigScreenPadding;
   }
 
   @include ScreenSize('smallscreen') {

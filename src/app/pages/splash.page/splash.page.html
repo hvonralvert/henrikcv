@@ -1,0 +1,89 @@
+<!------------------splash screen------------------>
+<div *ngIf="desktopScreen" class="splash-container">
+  <ng-content *ngTemplateOutlet="desktopSplash"></ng-content>
+</div>
+
+
+<div *ngIf="!desktopScreen" class="splash-container">
+  <ng-content *ngTemplateOutlet="phoneSplash"></ng-content>
+</div>
+
+
+
+<ng-template #desktopSplash>
+  <!--content-->
+  <div [ngClass]="{'contentRemove' : userClicked}" class="deskt-content-container">
+
+    <img class="deskt-backimg" src="./assets/splash/diptrace.png">
+
+    <!--text part-->
+    <div class="deskt-textrow">
+      <div class="deskt-header">
+        {{splashData.Name}}
+      </div>
+      <div class="deskt-description">
+        {{splashData.Description}}
+      </div>
+    </div>
+
+    <!-- button row-->
+    <div class="deskt-button-row">
+      <!-- <div class="flag-container marginright">
+          <div class="flagimg-container">
+            <img class="flag-img" src="./assets/britain.png">
+          </div>
+          Welcome
+        </div> -->
+
+      <div (click)="userEnter()" class="button-container">
+        <div class="flag-container">
+          <img class="flag" src="./assets/sweden.png">
+        </div>
+        Välkommen
+      </div>
+
+    </div>
+
+    <img class="deskt-meimg" src="./assets/mig.jpg">
+
+  </div>
+
+  <!--bottom row-->
+  <div [ngClass]="{'bottomRemove' : userClicked}" class="deskt-bottom-row">
+    <div class="copyright">
+      Copyright Henrik Ralvert 2019
+    </div>
+  </div>
+</ng-template>
+
+
+<ng-template #phoneSplash>
+  <div class="phone-container">
+    <img class="phone-backimg" src="./assets/splash/diptrace.png">
+
+
+    <img class="phone-me-img" src="./assets/mig.jpg">
+
+    <!--the text part-->
+    <div class="phone-text-container">
+      <div class="phone-header">
+        {{splashData.Name}}
+      </div>
+      <div class="phone-description">
+        {{splashData.Description}}
+      </div>
+    </div>
+
+    <!--other parts-->
+    <div class="phone-flagsrow">
+
+      <div (click)="userEnter()" class="button-container">
+        <div class="flag-container">
+          <img class="flag" src="./assets/sweden.png">
+        </div>
+        Välkommen
+      </div>
+
+    </div>
+  </div>
+</ng-template>

@@ -46,10 +46,9 @@ $description-fontsize:20px;
 .time {
   font-size: $time-fontsize;
   color: gray;
-  margin-bottom:$box-marginbottom;
+  margin-bottom:$box-paragraph-marginNext;
 }
 
 .description {
-  // font-size: $box-paraggraph-fontsize;
-  margin-bottom:$box-marginbottom;
+  margin-bottom:$box-paragraph-marginNext;
 }

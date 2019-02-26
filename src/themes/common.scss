@@ -3,33 +3,30 @@
 
 
 /*---------- page containers -----*/
-$pagecontainer-FullscreenPadding:20px;
-$pagecontainer-smallscreenpadding:2px;
-$pagecontainer-smallscreenToppadding:2px;
-$pageHeader-fontsize:55px;
-$pageHeader-marginleft:25px;
-$pageHeader-underlinewidth:550px;
-$pageHeader-underlineBottom:10px;
+$pagecontainer-BigScreenPadding:20px; // page padding big screen
+$pagecontainer-SmallScreenPadding:2px; // page padding small screen
+$pageHeader-fontsize:55px; // side of the page header
+$pageHeader-marginleft:25px; // margin to the page side
+$pageHeader-underline-width:550px; // length of the underline
+$pageHeader-underline-marginBottom:10px; // distance from the header bottom (abolute position)
 $pageBoxWrapper-margin:10px;
 
 /*---------- boxes --------------*/
-$box-bigwidth:750px;
-$box-smallwidth:300px;
-$box-medwidth:450px;
-$box-maxwidth:100%;
-$box-fullscreen-margins:20px;
-$box-smallscreen-margins:5px;
-$box-fullscreenpadding:15px;
-$box-smallscreenpadding:2px;
-$box-headerfontsize:22px;
-$box-items-leftmargin:20px;
-$box-items-topmargin:10px;
-
-$myprojects-topmargins:20px;
+$box-big-width:750px; // width for big boxes
+$box-med-width:450px; // width for med boxes
+$box-small-wdith:300px; // width for small boxes
+$box-maxwidth:100%; // max width for a box.
+$box-bigScreen-margins:20px; // margins between the boxes big
+$box-smallScreen-margins:5px; // margins between the boxes small
+$box-bigScreen-padding:15px; // box padding for big screen
+$box-smalScreen-padding:2px;// box padding for small screen
+$box-header-fontsize:22px; // fontsize of the box headers
+$box-items-leftmargin:20px; // box items margin left. Like knowdleges and stuff
+$box-items-topmargin:10px; // box items margin top
 
 /*---------boxes text------------*/
-$box-paraggraph-fontsize:18px;
-$box-marginbottom:20px;
+$box-paragraph-fontsize:18px; // the text size inside the boxes
+$box-paragraph-marginNext:20px; // margin to the next text paragraph
 
 /*------- scrollbar sizes --------*/
 $scroll-wdith:10px;
@@ -37,6 +34,9 @@ $scroll-height:10px;
 $scroll-track-marginBottTop:4px;
 $scroll-track-borderradius:7px;
 $scroll-thumb-borderradius:7px;
+
+$myprojects-topmargins:20px;
+
 
 /*----------------------------------- scrollbar ----------------------------------------*/
 @mixin henrikScrollBar {
@@ -90,15 +90,15 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   background-color: var(--page-background);
 
   @include ScreenSize('bigscreen') {
-    padding-left: $pagecontainer-FullscreenPadding;
-    padding-right: $pagecontainer-FullscreenPadding;
-    padding-top: $pagecontainer-FullscreenPadding;
+    padding-left: $pagecontainer-BigScreenPadding;
+    padding-right: $pagecontainer-BigScreenPadding;
+    padding-top: $pagecontainer-BigScreenPadding;
   }
 
   @include ScreenSize('smallscreen') {
-    padding-left: $pagecontainer-smallscreenpadding;
-    padding-right: $pagecontainer-smallscreenpadding;
-    padding-top: $pagecontainer-smallscreenToppadding;
+    padding-left: $pagecontainer-SmallScreenPadding;
+    padding-right: $pagecontainer-SmallScreenPadding;
+    padding-top: $pagecontainer-SmallScreenPadding;
   }
 }
 
@@ -122,9 +122,9 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 .PageHeader-underline {
   border-bottom: 1px solid var(--page-headercolor);
   height: 1px;
-  width: $pageHeader-underlinewidth;
+  width: $pageHeader-underline-width;
   position: absolute;
-  bottom: $pageHeader-underlineBottom;
+  bottom: $pageHeader-underline-marginBottom;
 }
 
 
@@ -170,13 +170,13 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 
 .box-margins {
   @include ScreenSize('bigscreen') {
-    margin-left: $box-fullscreen-margins;
-    margin-right: $box-fullscreen-margins;
-    margin-bottom: $box-fullscreen-margins;
+    margin-left: $box-bigScreen-margins;
+    margin-right: $box-bigScreen-margins;
+    margin-bottom: $box-bigScreen-margins;
   }
 
   @include ScreenSize('smallscreen') {
-    margin-top: $box-smallscreen-margins;
+    margin-top: $box-smallScreen-margins;
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
@@ -210,46 +210,38 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   position: relative;
 
   &.small {
-    width: $box-smallwidth;
+    width: $box-small-wdith;
   }
 
   &.med {
-    width: $box-medwidth;
+    width: $box-med-width;
   }
 
   &.big {
-    width: $box-bigwidth;
+    width: $box-big-width;
   }
 
   @include ScreenSize('bigscreen') {
-    padding: $box-fullscreenpadding;
+    padding: $box-bigScreen-padding;
   }
 
   @include ScreenSize('smallscreen') {
-    padding: $box-smallscreenpadding;
+    padding: $box-smalScreen-padding;
   }
 }
 
 .box-header {
-  font-size: $box-headerfontsize;
+  font-size: $box-header-fontsize;
   width: 100%;
 }
 
-.InfoBox.TextArray {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin-left: $box-items-leftmargin;
-  margin-top: $box-items-topmargin;
-}
-
 .box-paragraph-header {
-  font-size: $box-paraggraph-fontsize;
+  font-size: $box-paragraph-fontsize;
   font-weight: bold;
 }
 
-.box-textparagraph {
-  margin-bottom: $box-marginbottom;
+.box-paragraph {
+  margin-bottom: $box-paragraph-marginNext;
 }
 
 .box-items-container {

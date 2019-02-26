@@ -99,20 +99,9 @@ export class AppComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
-    // setTimeout(() => {
-    //   if (this.desktopScreen) {
-    //     this.drawer.open();
-    //   }
-    // }, 1000);
-
-    // setTimeout(() => {
-    //   this.UserEntered = true;
-    //   setTimeout(() => {
-    //     if (this.desktopScreen) {
-    //       this.drawer.open();
-    //     }
-    //   }, 1000);
-    // }, 5000);
+    setTimeout(() => {
+      this.GoToPage('frontend');
+    }, 500);
   }
 
 
@@ -138,9 +127,11 @@ export class AppComponent implements AfterViewInit {
     this.menuWide = !this.menuWide;
   }
 
+
   enterSwed() {
-    this.UserEntered = true;
-    this.GoToPage('frontend');
+    setTimeout(() => {
+      this.UserEntered = true;
+    }, 600);
 
     setTimeout(() => {
       if (this.desktopScreen) {

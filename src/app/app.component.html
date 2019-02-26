@@ -1,4 +1,4 @@
-<mat-sidenav-container class="app-container" autosize *ngIf="UserEntered">
+<mat-sidenav-container class="app-container" autosize >
 
   <!--side menu-->
   <mat-sidenav #drawer [mode]="menuMode">
@@ -111,66 +111,4 @@
   </div>
 </ng-template>
 
-
-<!------------------splash screen------------------>
-<div *ngIf="desktopScreen && !UserEntered" class="splash-container">
-  <ng-content *ngTemplateOutlet="desktopSplash"></ng-content>
-</div>
-
-
-<div *ngIf="!desktopScreen && !UserEntered" class="splash-container">
-  <ng-content *ngTemplateOutlet="phoneSplash"></ng-content>
-</div>
-
-
-
-<ng-template #desktopSplash>
-  <!--content-->
-  <div class="splash-content-container">
-
-    <img class="splash-deskt-backimg" src="./assets/splash/diptrace.png">
-
-    <!--text part-->
-    <div class="splash-deskt-textrow">
-      <div class="splash-deskt-header">
-        Henrik Ralvert
-      </div>
-      <div class="splash-deskt-tagline">
-        Front end devloper, cunning smart everything
-      </div>
-    </div>
-
-    <!-- button row-->
-    <div class="splash-deskt-button-row">
-      <div class="flag-container marginright">
-        <div class="flagimg-container">
-          <img class="flag-img" src="./assets/britain.png">
-        </div>
-        Welcome
-      </div>
-
-      <div (click)="enterSwed()" class="flag-container">
-        <div class="flagimg-container">
-          <img class="flag-img" src="./assets/sweden.png">
-        </div>
-        Välkommen
-      </div>
-
-    </div>
-
-    <img class="splash-deskt-me" src="./assets/mig.jpg">
-
-  </div>
-
-  <!--bottom row-->
-  <div class="splash-bottom-deskt-row">
-    <div class="copyright">
-        Copyright Henrik Ralvert 2019
-    </div>
-  </div>
-</ng-template>
-
-
-<ng-template #phoneSplash>
-  hejsan phone
-</ng-template>
+<app-splash-page  (userEntered)="enterSwed()" *ngIf="!UserEntered"></app-splash-page>
