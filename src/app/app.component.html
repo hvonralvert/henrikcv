@@ -113,12 +113,12 @@
 
 
 <!------------------splash screen------------------>
-<div *ngIf="desktopScreen" class="splash-container">
+<div *ngIf="desktopScreen && !UserEntered" class="splash-container">
   <ng-content *ngTemplateOutlet="desktopSplash"></ng-content>
 </div>
 
 
-<div *ngIf="!desktopScreen" class="splash-container">
+<div *ngIf="!desktopScreen && !UserEntered" class="splash-container">
   <ng-content *ngTemplateOutlet="phoneSplash"></ng-content>
 </div>
 
@@ -127,6 +127,8 @@
 <ng-template #desktopSplash>
   <!--content-->
   <div class="splash-content-container">
+
+    <img class="splash-deskt-backimg" src="./assets/splash/diptrace.png">
 
     <!--text part-->
     <div class="splash-deskt-textrow">
@@ -140,8 +142,20 @@
 
     <!-- button row-->
     <div class="splash-deskt-button-row">
-      <div class="splash-flag-dummy"></div>
-      <div class="splash-flag-dummy"></div>
+      <div class="flag-container marginright">
+        <div class="flagimg-container">
+          <img class="flag-img" src="./assets/britain.png">
+        </div>
+        Welcome
+      </div>
+
+      <div (click)="enterSwed()" class="flag-container">
+        <div class="flagimg-container">
+          <img class="flag-img" src="./assets/sweden.png">
+        </div>
+        Välkommen
+      </div>
+
     </div>
 
     <img class="splash-deskt-me" src="./assets/mig.jpg">
@@ -149,7 +163,10 @@
   </div>
 
   <!--bottom row-->
-  <div class="bottom-deskt-row">
+  <div class="splash-bottom-deskt-row">
+    <div class="copyright">
+        Copyright Henrik Ralvert 2019
+    </div>
   </div>
 </ng-template>
 
