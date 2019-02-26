@@ -365,10 +365,20 @@ $splash-deskt-headerfontsize: 100px;
 $splash-desk-taglinefontsize: 45px;
 $splash-deskt-paddingleftText: 40px;
 
-$splash-bottomrow-height: 250px;
+$splash-bottomrow-height: 210px;
 $splash-me-height: 170px;
+$splash-me-padding:3px;
 
-$splash-deskt-marginbetweecontents: 100px;
+$splash-flag-height:55px;
+$splash-flag-width:90px;
+$splash-flag-container-width:220px;
+$splash-flag-border-radius:5px;
+$splash-flagoutline-width:1px;
+$splash-flag-marginright:50px;
+$splash-flag-margintext:10px;
+$splash-flag-fontsize:22px;
+
+$splash-deskt-marginbetweecontents: 80px;
 
 .splash-container {
     display: flex;
@@ -391,8 +401,18 @@ $splash-deskt-marginbetweecontents: 100px;
     height: calc(100% - #{$splash-bottomrow-height});
     width: 100%;
     overflow: visible;
-    background-color: red;
     position: relative;
+    background: var(--menu-light);
+    background: linear-gradient(163deg, var(--menu-light) 0%, var(--menu-dark) 100%);
+}
+
+.splash-deskt-backimg{
+    position: absolute;
+    right:0px;
+    bottom:0px;
+    height:90%;
+    width:auto;
+    opacity: 0.15;
 }
 
 .splash-deskt-textrow {
@@ -401,15 +421,18 @@ $splash-deskt-marginbetweecontents: 100px;
     justify-content: flex-start;
     align-self: flex-start;
     padding-left: $splash-deskt-paddingleftText;
+    z-index:20;
 }
 
 .splash-deskt-header {
     font-size: $splash-deskt-headerfontsize;
+    line-height:  $splash-deskt-headerfontsize;
     color: white;
 }
 
 .splash-deskt-tagline {
     font-size: $splash-desk-taglinefontsize;
+    line-height:$splash-desk-taglinefontsize; 
     color: rgb(223, 223, 223);
 }
 
@@ -419,6 +442,7 @@ $splash-deskt-marginbetweecontents: 100px;
     width: fit-content;
     margin-top: $splash-deskt-marginbetweecontents;
     margin-bottom: calc(2 * #{$splash-deskt-marginbetweecontents});
+    z-index:20;
 }
 
 .splash-flag-dummy {
@@ -427,10 +451,16 @@ $splash-deskt-marginbetweecontents: 100px;
     background-color: black;
 }
 
-.bottom-deskt-row {
+.splash-bottom-deskt-row {
+    display: flex;
+    align-items: flex-end;
     width: 100%;
     height: $splash-bottomrow-height;
-    background-color: yellow;
+    background-color: white;
+}
+
+.copyright{
+    padding:5px;
 }
 
 .splash-deskt-me {
@@ -440,4 +470,44 @@ $splash-deskt-marginbetweecontents: 100px;
     border-radius: 50%;
     bottom: calc( -1 * #{$splash-me-height} / 2);
     z-index: 500;
+    background-color: rgb(240, 240, 240);
+    padding:$splash-me-padding;
+}
+
+/*------------- flash ---------*/
+.flag-container{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    width:$splash-flag-container-width;
+    height:$splash-flag-height;
+    // border-width: $splash-flagoutline-width;
+    border:$splash-flagoutline-width solid white;
+    border-radius: $splash-flag-border-radius;
+    &.marginright{
+        margin-right: $splash-flag-marginright;
+    }
+    color:white;
+    font-size: $splash-flag-fontsize;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.flag-container:hover{
+    background-color: white;
+    color:gray;
+}
+
+
+.flagimg-container{
+    width:$splash-flag-width;
+    height:$splash-flag-height;
+    overflow:hidden;
+    background-color:rosybrown;
+    margin-right: $splash-flag-margintext;
+}
+
+.flag-img{
+    width:$splash-flag-width;
+    height:$splash-flag-height;
 }

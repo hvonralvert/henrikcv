@@ -35,7 +35,7 @@ export class AppComponent implements AfterViewInit {
 
   toolbarHeader = '';
 
-  UserEntered=false;
+  UserEntered = false;
 
   constructor(
     public routServ: RouteService,
@@ -138,6 +138,16 @@ export class AppComponent implements AfterViewInit {
     this.menuWide = !this.menuWide;
   }
 
+  enterSwed() {
+    this.UserEntered = true;
+    this.GoToPage('frontend');
+
+    setTimeout(() => {
+      if (this.desktopScreen) {
+        this.drawer.open();
+      }
+    }, 1000);
+  }
 
   GoToPage(page: string) {
     this.routServ.GoToPage(page);
