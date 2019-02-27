@@ -24,15 +24,14 @@ $color-groupcaller-darkgrad: #032d59;
 }
 
 
-@mixin buttonstuff() {
+@mixin Portfolio() {
   border-radius: 7px;
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 .goupCallerbutton {
-  @include buttonstuff();
+  @include Portfolio();
   color: white !important;
-  height: fit-content;
   background-color: $color-groupcaller-lightgrad;
   background: -moz-linear-gradient(top, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
   background: -webkit-linear-gradient(top, $color-groupcaller-lightgrad 0%, $color-groupcaller-lightgrad 52%, $color-groupcaller-darkgrad 100%);
@@ -40,23 +39,10 @@ $color-groupcaller-darkgrad: #032d59;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#054b95', endColorstr='#032d59', GradientType=0);
 }
 
-.goupCallerbutton:active {
-  opacity: 0.7;
-}
-
-.dinmedlemButton:active {
-  opacity: 0.7;
-}
-
-.wedding:active {
-  opacity: 0.7;
-}
-
 
 .dinmedlemButton {
-  @include buttonstuff();
+  @include Portfolio();
   color: white;
-  height: fit-content;
   background: #20932c;
   background: -moz-linear-gradient(-45deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
   background: -webkit-linear-gradient(-45deg, #20932c 0%, #4e8230 49%, #3b6115 100%);
@@ -67,9 +53,8 @@ $color-groupcaller-darkgrad: #032d59;
 
 
 .wedding {
-  @include buttonstuff();
+  @include Portfolio();
   color: white;
-  height: fit-content;
   background: #f5b658af;
   background: -moz-linear-gradient(-45deg, #f5b658af 0%, #b87511af 49%, #f5b658af 100%);
   background: -webkit-linear-gradient(-45deg, #f5b658af 0%, #b87511af 49%, #f5b658af 100%);

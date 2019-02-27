@@ -1,0 +1,29 @@
+<div class="box-container med">
+
+  <div class="box-header">
+    {{BoxData.Header}}
+  </div>
+
+  <!--text array-->
+  <div *ngIf="BoxData.TextArray" class="box-items-container">
+    <div *ngFor="let paragraph of BoxData.TextArray" class="box-paragraph">
+
+      <!--paragraoph text-->
+      <div *ngFor="let text of paragraph.Text">
+        {{text}}
+      </div>
+
+      <!-- whats-->
+      <div *ngFor="let what of BoxData.Whats" class="what-row">
+        <div class="what">
+          {{what.What}}
+        </div>
+        <div class="what-text">
+          {{what.Text}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

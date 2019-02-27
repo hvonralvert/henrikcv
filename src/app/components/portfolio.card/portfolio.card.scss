@@ -1,19 +1,25 @@
 @import '../../../themes/common.scss';
 
+/*---top row specifics ---*/
 $header-fontsize:22px;
-$img-height:40px;
-$margin-right:10px;
+$loggo-height:40px; // height of loggo
+$loggo-marginright:10px; // margin to the header text
 
+
+/*---- card content specifics ---*/
 $prod-img-minwidth:200px;
 $prod-text-minwidth:300px;
 $prod-text-padding:10px;
+$paragraph-margbott:16px; // the margin to next paragraph
 
-$butt-prod-card:4px;
-$butt-fontsize:18px;
-$butt-height:30px;
+/*----button----*/
+$button-padding:7px;
+$button-hieght:30px;
+$button-icon-size:15px;
+$button-icon-margintext:10px;
+$button-borderradius:3px;
 
-$cont-textmargbott:16px;
-
+/*-------top row -----*/
 .header-row {
   display: flex;
   flex-direction: row;
@@ -23,9 +29,9 @@ $cont-textmargbott:16px;
 }
 
 
-.header-img {
-  height: $img-height;
-  margin-right: $margin-right;
+.loggo-img {
+  height: $loggo-height;
+  margin-right: $loggo-marginright;
   width: auto;
 }
 
@@ -43,29 +49,6 @@ $cont-textmargbott:16px;
   position: relative;
 }
 
-.button-height {
-  height: $butt-height;
-}
-
-.button-card {
-  position: absolute;
-  width: 100%;
-  padding: $butt-prod-card;
-  cursor: pointer;
-  font-size: $butt-fontsize;
-  bottom: 0px;
-  left: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: $butt-height+15px;
-}
-
-.button-card:hover {
-  background-color: white;
-  opacity: 0.4;
-  color: black;
-}
 
 .line {
   border-bottom: 1px solid rgb(211, 211, 211);
@@ -73,7 +56,12 @@ $cont-textmargbott:16px;
 }
 
 
-/*---------------content section --------------*/
+.button-row {
+  justify-content: flex-end;
+}
+
+
+/*---------------content --------------*/
 .content-container {
   display: flex;
   width: 100%;
@@ -99,7 +87,7 @@ $cont-textmargbott:16px;
 }
 
 
-.content-text-container {
+.paragraph-container {
   display: flex;
   flex: 1;
   min-width: $prod-text-minwidth;
@@ -109,9 +97,32 @@ $cont-textmargbott:16px;
 }
 
 
-.content-text {
-  margin-bottom: $cont-textmargbott;
+.paragraph {
+  margin-bottom: $paragraph-margbott;
 }
 
 
+/*-------------button ------------------*/
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  padding: $button-padding;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: $button-borderradius;
+}
 
+
+.button-container:hover {
+  background-color: var(--button-background-hover);
+}
+
+
+.button-icon {
+  font-size: $button-icon-size;
+  height: fit-content;
+  margin-left: $button-icon-margintext;
+}

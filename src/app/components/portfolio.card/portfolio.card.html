@@ -1,9 +1,9 @@
-<div class="box-container big" [ngClass]="getClass()" (click)="openModal()">
+<div class="box-container big" [ngClass]="getClass()">
 
   <!--header-->
-  <div class="header-row" >
-    <img class="header-img" [src]="Portfolio.Loggo">
-    <div class="header-text" >
+  <div class="header-row">
+    <img class="loggo-img" [src]="Portfolio.Loggo">
+    <div class="header-text">
       {{Portfolio.Header}}
     </div>
   </div>
@@ -20,22 +20,19 @@
       <img class="product-img" [src]="Portfolio.ProductImage">
     </div>
 
-    <div class="content-text-container">
-      <div [ngClass]="{'content-text' : !last}" *ngFor="let textPar of Portfolio.TextArray; let last = last;">
+    <div class="paragraph-container">
+      <div [ngClass]="{'paragraph' : !last}" *ngFor="let textPar of Portfolio.TextArray; let last = last;">
         {{textPar.Text}}
       </div>
     </div>
   </div>
 
-  <!--the line-->
-  <div class="line-row">
-    <div class="line" [style.border-color]="Portfolio.ColorDark"></div>
+  <!--button-->
+  <div class="line-row button-row ">
+    <div class="button-container" (click)="openModal()">
+      Gå till {{Portfolio.Header}}
+      <mat-icon class="button-icon" [inline]="true">arrow_forward</mat-icon>
+    </div>
   </div>
 
-  <div class="line-row button-height">
-  </div>
-
-  <div class="button-card" >
-    {{Portfolio.ButtonText}}
-  </div>
 </div>

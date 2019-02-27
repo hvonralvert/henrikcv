@@ -42,13 +42,6 @@ export class RouteService {
       Active: false
     },
     {
-      Name: 'Kontakt',
-      Description: 'Karriärshistorik',
-      Icon: 'contact_phone',
-      Page: 'contact',
-      Active: false
-    },
-    {
       Name: 'Admin',
       Description: 'Administrationspanel',
       Icon: 'settings',

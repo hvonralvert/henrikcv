@@ -1,0 +1,30 @@
+@import '../../../themes/common.scss';
+
+
+$what-row-marigntop:13px;
+$what-marginToText:10px;
+$what-text-fontsize:17px;
+
+$what-width:90px;
+$what-fontweight:700;
+
+.what-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: $what-row-marigntop;
+}
+
+
+.what {
+  width: $what-width;
+  font-weight: $what-fontweight;
+}
+
+
+.what-text {
+  font-size: $what-text-fontsize;
+  margin-left: $what-marginToText;
+}

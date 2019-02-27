@@ -20,10 +20,6 @@ const routes: Routes = [
     loadChildren: './pages/me.page.module#MePageModule',
   },
   {
-    path: 'contact',
-    loadChildren: './pages/contact.page.module#ContactPageModule',
-  },
-  {
     path: 'career',
     loadChildren: './pages/career.page.module#CareerPageModule',
   },

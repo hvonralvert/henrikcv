@@ -4,6 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AboutPage } from '@henrik/pages/about/about.page';
 
+import { WhatBoxModule } from '@henrik/components/what.box.module';
+import { RealtimeBoxModule } from '@henrik/components/realtime.box.module';
+
 
 const routes: Routes = [
     {
@@ -16,6 +19,8 @@ const routes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
+        WhatBoxModule,
+        RealtimeBoxModule
     ],
     declarations: [AboutPage],
     exports: [AboutPage]

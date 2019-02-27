@@ -54,3 +54,29 @@ export interface ICareer {
     TextArray: IInfoParam[];
 }
 
+
+/*---------bxoes----------*/
+export interface IWhat {
+    What: string;
+    Text: string;
+}
+
+export interface IWhatBox {
+    Header: string;
+    TextArray?: IInfoParam[];
+    Whats?: IWhat[];
+}
+
+
+export interface IRealtimeBox {
+    Header: string;
+    TextArray?: IInfoParam[];
+}
+
+
+export interface ISlider {
+    Name: string;
+    key: string;
+    Value: number;
+}
+

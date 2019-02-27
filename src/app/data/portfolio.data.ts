@@ -14,8 +14,8 @@ export const PortfolioData: IPortfolio[] = [
             {
                 Header: 'Funktion',
                 Text: [
-                    'Systemet är en hybridlösning med både webb-app och IOS samt Android appar. Grafiskt och prestandan är satt utefter Iphone 5s då den inte är tänkt för modeller äldre (samt svagare) än så. ',
-                    'Det är ett realtidssystem.'
+                    'Systemet är en hybridlösning med både webb-app och IOS samt Android appar. Grafiskt och prestandan är satt utefter Iphone 5s då den inte är tänkt för modeller äldre (samt svagare) än så.',
+                    ' Det är ett realtidssystem.'
                 ]
             },
             {

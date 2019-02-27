@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { CommonService } from '~/app/services/common.service';
+import { IWhatBox, IRealtimeBox } from '~/app/interfaces/app.interfaces';
 
 export interface IAbout {
   What: string;
@@ -14,32 +15,42 @@ export interface IAbout {
 })
 export class AboutPage implements OnInit, OnDestroy {
 
-  Abouts: IAbout[] = [
-    {
-      What: 'Språk',
-      Text: 'Typescript'
-    },
-    {
-      What: 'Ramverk',
-      Text: 'Angular 2+'
-    },
-    {
-      What: 'Grafik',
-      Text: 'SASS'
-    },
-    {
-      What: 'Back End',
-      Text: 'Firebase'
-    },
-    {
-      What: 'Tidsåtgång',
-      Text: '5 dagar'
-    },
-    {
-      What: 'Github',
-      Text: 'https://github.com/hvonralvert/henrikcv'
-    },
-  ];
+
+
+  WhatBoxData: IWhatBox = {
+    Header: 'Om CV:et',
+    TextArray: [
+      {
+        Text: ['CV:et är en WebApp som har ett skalbart upplägg kodmässigt. Det är också realtidssystem och använder sig utav Route-gaurds och Lazy loading. ']
+      }
+    ],
+    Whats: [
+      {
+        What: 'Språk',
+        Text: 'Typescript'
+      },
+      {
+        What: 'Ramverk',
+        Text: 'Angular 2+'
+      },
+      {
+        What: 'Grafik',
+        Text: 'SASS'
+      },
+      {
+        What: 'Back End',
+        Text: 'Firebase'
+      },
+    ]
+  };
+
+
+  RealtimeBoxData: IRealtimeBox = {
+    Header: 'Test realtiden',
+    TextArray: [
+      { Text: ['Här kan du testa realtiden'] }
+    ]
+  };
 
   desktopScreen = true;
   ngUnsubscribe$: Subject<boolean> = new Subject();
