@@ -70,7 +70,7 @@ export class AppComponent implements AfterViewInit {
       this.tooggleMenue(desktop);
     });
 
-    this.enterSwed();
+    // this.enterSwed();
   }
 
 
@@ -102,7 +102,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.GoToPage('about');
+      this.GoToPage('frontend');
     }, 500);
   }
 

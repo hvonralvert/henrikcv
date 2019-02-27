@@ -48,7 +48,7 @@ export class AboutPage implements OnInit, OnDestroy {
   RealtimeBoxData: IRealtimeBox = {
     Header: 'Test realtiden',
     TextArray: [
-      { Text: ['Här kan du testa realtiden'] }
+      { Text: ['Öppna en ny sida av detta CV och dra i slidern nedan. Du kommer se att det ändras i båda skärmarna. Rör den på sig drar någon annan besökare i slidern.'] }
     ]
   };
 

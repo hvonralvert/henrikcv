@@ -19,6 +19,7 @@ export class RealtimeService implements OnDestroy {
 
     constructor(public afs: AngularFirestore) {
         this.Sliders$$ = new BehaviorSubject([]);
+        this.initSliders();
     }
 
 

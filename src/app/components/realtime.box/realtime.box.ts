@@ -17,8 +17,8 @@ export class RealtimeBox implements OnInit, OnDestroy {
   @Input() BoxData: IRealtimeBox;
 
 
-  Slider2Value = 50;
-  Slider1Value = 50;
+  Slider1: ISlider;
+  Slider2: ISlider;
 
   /*---slider data ---*/
   autoTicks = false;
@@ -29,7 +29,6 @@ export class RealtimeBox implements OnInit, OnDestroy {
   showTicks = false;
   step = 1;
   thumbLabel = false;
-  value = 0;
   vertical = false;
 
 
@@ -40,7 +39,7 @@ export class RealtimeBox implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.realServ.Sliders$$.pipe(takeUntil(this.ngUnsubscribe$)).subscribe(sliders => {
-      this.getSliderValues(sliders)
+      this.getSliderValues(sliders);
     });
   }
 
@@ -51,9 +50,15 @@ export class RealtimeBox implements OnInit, OnDestroy {
     }
 
     sliders.map(slider => {
-      this.Slider2Value = slider.key === 'Ffq6B4g9E8PxrgugvNHA' ? slider.Value : this.Slider2Value;
-      this.Slider1Value = slider.key === 'tZf7B7TkEvyQJHl9MTvK' ? slider.Value : this.Slider1Value;
+      if (slider.Number === '1') { this.Slider1 = slider; }
+      if (slider.Number === '2') { this.Slider2 = slider; }
     });
+  }
+
+
+  sliderStopped(event, slider: ISlider) {
+    const newSlider: ISlider = JSON.parse(JSON.stringify(slider));
+    this.realServ.saveNewValue(newSlider);
   }
 
 
