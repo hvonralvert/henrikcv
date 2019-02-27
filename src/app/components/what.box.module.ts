@@ -4,14 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MatIconModule } from '@angular/material/icon';
 
-import { ContactPage } from '@henrik/pages/contact/contact.page';
-import { InfoBoxModule } from '@henrik/components/info.box.module';
-
+import { WhatBox } from '@henrik/components/what.box/what.box';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ContactPage
+    path: 'WhatBox',
+    component: WhatBox
   }
 ];
 
@@ -19,11 +17,14 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    InfoBoxModule,
     MatIconModule
   ],
-  declarations: [ContactPage],
-  exports: [ContactPage]
+  declarations: [
+    WhatBox
+  ],
+  exports: [
+    WhatBox
+  ]
 })
 
-export class ContactPageModule { }
+export class WhatBoxModule { }

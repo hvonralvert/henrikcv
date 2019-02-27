@@ -25,7 +25,7 @@ $box-items-leftmargin:20px; // box items margin left. Like knowdleges and stuff
 $box-items-topmargin:10px; // box items margin top
 
 /*---------boxes text------------*/
-$box-paragraph-fontsize:18px; // the text size inside the boxes
+$box-paragraph-fontsize:15px; // the text size inside the boxes
 $box-paragraph-marginNext:20px; // margin to the next text paragraph
 
 /*------- scrollbar sizes --------*/
@@ -233,6 +233,7 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 .box-header {
   font-size: $box-header-fontsize;
   width: 100%;
+  color:var(--box-headertext);
 }
 
 .box-paragraph-header {
@@ -242,6 +243,8 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 
 .box-paragraph {
   margin-bottom: $box-paragraph-marginNext;
+  color:var(--box-textcolor);
+  font-size: $box-paragraph-fontsize;
 }
 
 .box-items-container {

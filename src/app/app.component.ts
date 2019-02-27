@@ -69,6 +69,8 @@ export class AppComponent implements AfterViewInit {
     this.comServ.ScreenType$$.subscribe(desktop => {
       this.tooggleMenue(desktop);
     });
+
+    this.enterSwed();
   }
 
 
@@ -100,7 +102,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.GoToPage('frontend');
+      this.GoToPage('about');
     }, 500);
   }
 

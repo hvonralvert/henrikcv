@@ -10,33 +10,20 @@
   <!-----------content-------------->
   <div class="page-content">
 
-    <div class="page-boxescol">
+    <div class="page-boxescol ">
+
+      <!--column for test-->
+
+      <!-- <div class="box-col">
+      </div> -->
+
+      <!--column for whats-->
       <div class="box-col col-center-content">
+        <app-what-box [BoxData]="WhatBoxData" class="box-margins"></app-what-box>
 
-        <!--vision and goals-->
-        <div class="box-container">
-
-          <div class="box-header">
-            Om CV:et
-          </div>
-
-          <!--info content-->
-          <div class="box-items-container">
-
-            <div *ngFor="let how of Abouts" class="about-row">
-              <!--phone call-->
-              <div class="about-what">
-                {{how.What}}
-              </div>
-              <div class="about-text">
-                {{how.Text}}
-              </div>              
-            </div>             
-
-          </div>
-        </div>
-
+        <app-realtime-box [BoxData]="RealtimeBoxData"></app-realtime-box>
       </div>
+
     </div>
   </div>
 </div>

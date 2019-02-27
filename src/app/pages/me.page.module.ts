@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
+import { MatIconModule } from '@angular/material/icon';
+
 import { KnowledgeBoxModule } from '@henrik/components/knowledge.box.module';
 import { InfoBoxModule } from '@henrik/components/info.box.module';
 
@@ -20,7 +22,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     KnowledgeBoxModule,
-    InfoBoxModule
+    InfoBoxModule,
+    MatIconModule
   ],
   declarations: [MePage],
   exports: [MePage]

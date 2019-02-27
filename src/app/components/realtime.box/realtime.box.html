@@ -1,0 +1,27 @@
+<div class="box-container big">
+
+  <div class="box-header">
+    {{BoxData.Header}}
+  </div>
+
+  <!--text array-->
+  <div *ngIf="BoxData.TextArray" class="box-items-container">
+    <div *ngFor="let paragraph of BoxData.TextArray" class="box-paragraph">
+      <!-- <div class="box-paragraph-header">
+          {{paragraph.Header}}
+      </div> -->
+      <div *ngFor="let text of paragraph.Text">
+        {{text}}
+      </div>
+
+      <mat-slider [(ngModel)]="Slider1Value" [disabled]="disabled" [invert]="invert" [max]="max" [min]="min" [step]="step" [thumbLabel]="thumbLabel"
+        [tickInterval]="tickInterval"  [vertical]="vertical">
+      </mat-slider>
+
+        <mat-slider [(ngModel)]="Slider2Value" [disabled]="disabled" [invert]="invert" [max]="max" [min]="min" [step]="step" [thumbLabel]="thumbLabel"
+        [tickInterval]="tickInterval"  [vertical]="vertical">
+      </mat-slider>
+    </div>
+  </div>
+
+</div>

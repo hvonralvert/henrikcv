@@ -8,12 +8,11 @@
 
   /*---- Page specifics -----*/
   --page-background: #ffffff;
-  // --page-background: #f1f1f1;
-
   --page-headercolor: #575757;
 
   /*--- Boxes --- */
-  // --box-border: #e4e4e4;
+  --box-headertext: #ff933a;
+  --box-textcolor: #383838;
   --box-border: white;
   --box-background: #ffffff;
 
@@ -24,13 +23,14 @@
   /*------- buttons -------*/
   --button-save: #32a43c;
   --button-save-hover: #56b158;
-
   --button-standard: #488aff;
   --button-standard-hover: #73a6ff;
-
   --button-phonSidenav: #525252;
 
   /*------splash ---*/
   --splash-border-img: #f0f0f0;
   --splash-textDescription: #dfdfdf;
+
+  /*----portfolio----*/
+  --button-background-hover:rgba(255,255,255,0.5);
 }

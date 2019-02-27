@@ -20,6 +20,39 @@
         <!--vision and goals-->
         <app-info-box class="box-margins" *ngFor="let info of MySelf" [InfoBox]="info"></app-info-box>
 
+
+        <!-- contact-->
+        <div class="box-container small box-margins">
+
+          <div class="box-header">
+            Kontakt
+          </div>
+
+          <!--info content-->
+          <div class="box-items-container">
+            <div class="contact-row">
+              <!--phone call-->
+              <mat-icon class="contact-icon" [inline]="true">call</mat-icon>
+              <div class="contact-text">
+                +46(0)7 68 65 77 66
+              </div>
+            </div>
+
+            <!--mail-->
+            <div class="contact-row">
+              <mat-icon class="contact-icon" [inline]="true">mail_outline</mat-icon>
+              <div class="contact-text">
+                henrik@ralva.se
+              </div>
+            </div>
+<!-- 
+            <div class="contact-row">
+              henrikscv.se
+            </div> -->
+
+          </div>
+        </div>
+
       </div>
 
     </div>

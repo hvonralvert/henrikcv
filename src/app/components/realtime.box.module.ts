@@ -2,16 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PortfolioCard } from '@henrik/components/portfolio.card/portfolio.card';
-
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSliderModule } from '@angular/material/slider';
 
+import { RealtimeBox } from '@henrik/components/realtime.box/realtime.box';
 
 const routes: Routes = [
   {
-    path: 'PortfolioCard',
-    component: PortfolioCard
+    path: 'RealtimeBox',
+    component: RealtimeBox
   }
 ];
 
@@ -19,15 +18,15 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    MatSliderModule
   ],
   declarations: [
-    PortfolioCard
+    RealtimeBox
   ],
   exports: [
-    PortfolioCard
+    RealtimeBox
   ]
 })
 
-export class PortfolioCardModule { }
+export class RealtimeBoxModule { }
