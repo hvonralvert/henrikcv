@@ -7,20 +7,15 @@
   <!--text array-->
   <div *ngIf="BoxData.TextArray" class="box-items-container">
     <div *ngFor="let paragraph of BoxData.TextArray" class="box-paragraph">
-      <!-- <div class="box-paragraph-header">
-          {{paragraph.Header}}
-      </div> -->
+
       <div *ngFor="let text of paragraph.Text">
         {{text}}
       </div>
 
-      <mat-slider [(ngModel)]="Slider1Value" [disabled]="disabled" [invert]="invert" [max]="max" [min]="min" [step]="step" [thumbLabel]="thumbLabel"
-        [tickInterval]="tickInterval"  [vertical]="vertical">
+      <mat-slider *ngIf="Slider1" (change)="sliderStopped($event,Slider1)" [(ngModel)]="Slider1.Value" [disabled]="disabled" [invert]="invert" [max]="max" [min]="min"
+        [step]="step" [thumbLabel]="thumbLabel" [tickInterval]="tickInterval" [vertical]="vertical">
       </mat-slider>
 
-        <mat-slider [(ngModel)]="Slider2Value" [disabled]="disabled" [invert]="invert" [max]="max" [min]="min" [step]="step" [thumbLabel]="thumbLabel"
-        [tickInterval]="tickInterval"  [vertical]="vertical">
-      </mat-slider>
     </div>
   </div>
 

@@ -22,7 +22,7 @@ export class RouteService {
     },
     {
       Name: 'Mig',
-      Description: 'Vision, mål och personlighet',
+      Description: 'Vem är jag och kontakt',
       Icon: 'face',
       Page: 'me',
       Active: false,
@@ -36,7 +36,7 @@ export class RouteService {
     },
     {
       Name: 'Om OnlineCV:et',
-      Description: 'Hur online cv:et är gjort och sök.',
+      Description: 'Hur online cv:et är gjort.',
       Icon: 'description',
       Page: 'about',
       Active: false

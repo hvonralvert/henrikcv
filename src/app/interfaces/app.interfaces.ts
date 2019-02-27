@@ -78,5 +78,6 @@ export interface ISlider {
     Name: string;
     key: string;
     Value: number;
+    Number: string;
 }
 
