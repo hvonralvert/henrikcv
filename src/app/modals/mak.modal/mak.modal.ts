@@ -65,7 +65,7 @@ export class MakModal {
         'Olika medlemstyper såsom t.ex. stödmedlemmar.'
       ],
       Order: 0,
-      ImgURL: './assets/groupcaller2.png',
+      ImgURL: './assets/mak.medlemsregister.png',
       Active: false
     },
     {
@@ -77,7 +77,7 @@ export class MakModal {
         'Systemet skickar automatiskt ut nya fakturor när medlemskapen skall förnyas.'
       ],
       Order: 1,
-      ImgURL: './assets/dinmedlem.png',
+      ImgURL: './assets/mak.ekonomi.png',
       Active: false
     },
     {
@@ -88,29 +88,29 @@ export class MakModal {
         'Mailutskicken kommer från eran domän och går att svara på om så önskas.'
       ],
       Order: 2,
-      ImgURL: './assets/GroupCallerScreens.png',
+      ImgURL: './assets/mak.mail.png',
       Active: false
     },
     {
-      Header: 'Flera org.',
+      Header: 'Flera organisationer',
       Paragraphs: [
         'Systemet är byggt för att kunna hantera sub-organisationer.',
         'Suborgansiationerna kan vara helt separata med t.ex egna mailadresser, bankgironummer etc.',
         'Vid borttagning av suborganisationer flyttas enkelt medlemmar och data över till en annan organisation.'
       ],
       Order: 3,
-      ImgURL: './assets/rongaralvert.png',
+      ImgURL: './assets/mak.suborg.png',
       Active: false
     },
     {
-      Header: 'Nya medlemmar.',
+      Header: 'Nya medlemmar',
       Paragraphs: [
         'Snygg registreringssida som nya medlemmar kan registrera sig med. ',
         'Vid ny registrering skickas automatiskt en faktura ut till mailadressen. ',
         'Den suborganisation som medlem registrerar sig hos får också notificationsmail om registreringen.'
       ],
       Order: 4,
-      ImgURL: './assets/rongaralvert.png',
+      ImgURL: './assets/mak.register.png',
       Active: false
     }
   ]
