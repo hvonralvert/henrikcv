@@ -65,7 +65,7 @@ export const PortfolioData: IPortfolio[] = [
             anv: 'demo@dinmedlem.se',
             los: 'demo16',
             Header: 'Din Medlem - Demo',
-            GotToText: 'Gå till Din Medlem',
+            GotToText: 'Mer om Din Medlem',
             PanelClass: 'dinmedlemModal',
             url: 'https://makalosa-demo.firebaseapp.com'
         },

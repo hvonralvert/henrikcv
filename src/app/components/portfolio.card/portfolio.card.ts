@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { IPortfolio } from '~/app/interfaces/app.interfaces';
 
 import { DemoModal } from '@henrik/modals/demo.modal/demo.modal';
@@ -12,7 +12,7 @@ import { GoogleAnalyticsService } from '@henrik/services/googleanalytics.service
   templateUrl: './portfolio.card.html',
   styleUrls: ['./portfolio.card.scss']
 })
-export class PortfolioCard implements OnInit, OnDestroy, AfterViewInit {
+export class PortfolioCard implements OnInit, OnDestroy {
 
   @Input() Portfolio: IPortfolio;
 
@@ -24,13 +24,6 @@ export class PortfolioCard implements OnInit, OnDestroy, AfterViewInit {
 
 
   ngOnInit() {
-  }
-
-
-  ngAfterViewInit() {
-    if (this.Portfolio.DemoType === 'dinmedlem') {
-      this.openMakalosa();
-    }
   }
 
 
@@ -51,7 +44,7 @@ export class PortfolioCard implements OnInit, OnDestroy, AfterViewInit {
 
     const makModal = this.dialog.open(MakModal, {
       width: '700px',
-      maxWidth:'90%',
+      maxWidth: '90%',
     });
   }
 

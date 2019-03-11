@@ -1,9 +1,10 @@
 <div class="box-container small">
 
-  <div class="box-header">
+  <div class="box-header" [ngClass]="{'odd-animate' : Odd, 'even-animate' : !Odd}">
     {{Header}}
   </div>
+
   <div class="box-items-container">
-    <app-knowledge-item  [knowledge]="knowledge" *ngFor="let knowledge of KnowLedges"></app-knowledge-item>
+    <app-knowledge-item [@showstate]="knowledge.state" [knowledge]="knowledge" *ngFor="let knowledge of KnowLedges"></app-knowledge-item>
   </div>
 </div>

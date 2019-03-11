@@ -8,6 +8,7 @@ export interface IKnowledge {
     Order?: number; // order in which they are sorted
     // KnowledgeType: IKnowLedgeType; // several knowledgetypes
     Catogery: IKnowCatType[];
+    state:'show'|'hide';
 }
 
 
