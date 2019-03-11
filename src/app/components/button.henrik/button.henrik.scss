@@ -1,8 +1,9 @@
 @import '../../../themes/common.scss';
 
+$button-borderradius:5px;
 
 @mixin buttonColors($type) {
-  border-radius: 5px;
+  border-radius: $button-borderradius;
   border-width: 0px;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -17,7 +18,6 @@
     }
   }
 
-
   @else if $type=="standard" {
     background-color: var(--button-standard);
     color: white !important;
@@ -30,7 +30,7 @@
 
   @else if $type=="transparent" {
     background-color: none;
-    color: black;
+    color: var(--button-transp-text);
 
     .mat-icon {
       color: var(--ralva-boxoddrow);
@@ -38,10 +38,10 @@
   }
 }
 
+
 @mixin buttonColorsHover($type) {
-  border-radius: 5px !important; // needed for when it is active
-  border-width: 0px;
   cursor: pointer;
+  border-radius: $button-borderradius;
 
   @if $type=="save" {
     background-color: var(--button-save-hover);
@@ -64,14 +64,11 @@
 
 
   @else if $type=="transparent" {
-    background-color: rgb(204, 204, 204);
+    background-color: var(--button-transp-hover);
     color: black;
   }
 
 }
-
-
-
 
 
 .button-container {
@@ -127,15 +124,15 @@
 
 
 .transparent-container-button {
-  color: grey;
+  @include buttonColors('transparent');
 }
 
 .transparent-container-button:hover {
-  color: rgb(190, 190, 190);
+  @include buttonColorsHover('transparent');
 }
 
-.transparent-container-button:active {
-  color: grey;
+.transparent-container-button-active {
+  @include buttonColorsHover('transparent');
 }
 
 

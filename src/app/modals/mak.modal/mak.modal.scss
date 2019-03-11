@@ -1,0 +1,68 @@
+
+@import '../../../themes/common.scss';
+
+$button-rightmargin:15px;
+$img-height:313px;
+$bottom-row-height:250px;
+
+.top-row{
+    display: flex;
+    width:100%;
+    justify-content: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    &>*{
+        margin: 5px;
+    }
+}
+
+.button{
+    margin-right:$button-rightmargin;
+    &:last-child{
+        margin-right:0px;
+    }
+}
+
+
+.img-container{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    box-sizing: border-box;
+    width:100%;
+    height:$img-height;    
+}
+
+.img{
+    width:auto;
+    height:$img-height;
+}
+
+.bottom-row{
+    display: flex;
+    box-sizing:border-box;
+    min-height:$bottom-row-height;
+}
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width:100%;
+    height:$bottom-row-height;
+}
+
+.header{
+    font-size: $box-header-fontsize;
+    color:var(--box-headertext);
+}
+
+.paragraph{
+    font-size:$box-paragraph-fontsize;
+    color:var(--box-textcolor);
+    &:not(last){
+        margin-bottom:$box-paragraph-marginNext;
+    }
+}
+

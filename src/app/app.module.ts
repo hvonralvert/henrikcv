@@ -21,6 +21,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { SplashPage } from '@henrik/pages/splash.page/splash.page';
 
 import { LoginModalModule } from '@henrik/modals/login.modal.module';
+import { MakModalModule } from '@henrik/modals/mak.modal.module';
 import { DemoModalModule } from '@henrik/modals/demo.modal.module';
 
 import { GoogleAnalyticsService } from '@henrik/services/googleanalytics.service';
@@ -46,7 +47,8 @@ import { GoogleAnalyticsService } from '@henrik/services/googleanalytics.service
     LoginModalModule,
     HttpClientModule,
     DemoModalModule,
-    MatSliderModule
+    MatSliderModule,
+    MakModalModule
   ],
   providers: [GoogleAnalyticsService],
   entryComponents: [SplashPage],

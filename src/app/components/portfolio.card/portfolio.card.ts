@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, AfterViewInit } from '@angular/core';
 import { IPortfolio } from '~/app/interfaces/app.interfaces';
 
 import { DemoModal } from '@henrik/modals/demo.modal/demo.modal';
+import { MakModal } from '@henrik/modals/mak.modal/mak.modal';
 import { MatDialog } from '@angular/material';
 
 import { GoogleAnalyticsService } from '@henrik/services/googleanalytics.service';
@@ -11,7 +12,7 @@ import { GoogleAnalyticsService } from '@henrik/services/googleanalytics.service
   templateUrl: './portfolio.card.html',
   styleUrls: ['./portfolio.card.scss']
 })
-export class PortfolioCard implements OnInit, OnDestroy {
+export class PortfolioCard implements OnInit, OnDestroy, AfterViewInit {
 
   @Input() Portfolio: IPortfolio;
 
@@ -26,11 +27,36 @@ export class PortfolioCard implements OnInit, OnDestroy {
   }
 
 
-  openModal() {
+  ngAfterViewInit() {
+    if (this.Portfolio.DemoType === 'dinmedlem') {
+      this.openMakalosa();
+    }
+  }
+
+
+  gotToPort() {
     if (!this.Portfolio.DemoType) {
       this.sendAnalyticsGotTo();
       return window.open(this.Portfolio.Link);
+    } else if (this.Portfolio.DemoType === 'groupcaller') {
+      this.openGroupCaller()
+    } else {
+      this.openMakalosa();
     }
+  }
+
+
+  openMakalosa() {
+    this.sendAnalyticsOpen();
+
+    const makModal = this.dialog.open(MakModal, {
+      width: '700px',
+      maxWidth:'90%',
+    });
+  }
+
+
+  openGroupCaller() {
 
     this.sendAnalyticsOpen();
 
@@ -46,13 +72,16 @@ export class PortfolioCard implements OnInit, OnDestroy {
     });
   }
 
+
   sendAnalyticsOpen() {
     this.gaServ.openPortfModal(this.Portfolio.Header);
   }
 
+
   sendAnalyticsGotTo() {
     this.gaServ.goToUrlPort(this.Portfolio.Header);
   }
+
 
   getClass(): string {
     return this.Portfolio.cssClass;

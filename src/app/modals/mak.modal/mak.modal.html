@@ -1,0 +1,31 @@
+<div mat-dialog-title>
+  <!--top row stuffs-->
+  <div class="top-row">
+    <app-button type="transparent" (click)="buttonClick(button)" [active]="button.Active" class="button" [text]="button.Text"
+      *ngFor="let button of buttons"></app-button>
+  </div>
+</div>
+
+
+<div mat-dialog-content>
+  <!--middle stuffs-->
+  <div class="img-container">
+    <img class="img" [src]="SellPoints_act.ImgURL">
+  </div>
+
+  <!--bottom row-->
+  <div class="bottom-row">
+    <div class="text-container">
+
+      <div class="header">
+        {{SellPoints_act.Header}}
+      </div>
+
+      <div class="paragraph" *ngFor="let paragraph of SellPoints_act.Paragraphs">
+        {{paragraph}}
+      </div>
+
+    </div>
+  </div>
+
+</div>
