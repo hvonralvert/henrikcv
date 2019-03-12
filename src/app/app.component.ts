@@ -135,7 +135,7 @@ export class AppComponent implements AfterViewInit {
 
     setTimeout(()=>{
       this.GoToPage('frontend');
-    },200);
+    },500);
 
     setTimeout(() => {
       this.UserEntered = true;
@@ -145,8 +145,7 @@ export class AppComponent implements AfterViewInit {
       if (this.desktopScreen) {
         this.drawer.open();
       }
-
-    }, 1500);
+    }, 250);
   }
 
   GoToPage(page: string) {

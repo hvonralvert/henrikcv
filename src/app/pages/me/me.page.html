@@ -24,13 +24,13 @@
         <!-- contact-->
         <div class="box-container small box-margins">
 
-          <div class="box-header">
+          <div class="box-header odd-animate" >
             Kontakt
           </div>
 
           <!--info content-->
-          <div class="box-items-container">
-            <div class="contact-row">
+          <div @ContentText class="box-items-container">
+            <div @paragraphs class="contact-row">
               <!--phone call-->
               <mat-icon class="contact-icon" [inline]="true">call</mat-icon>
               <div class="contact-text">
@@ -39,7 +39,7 @@
             </div>
 
             <!--mail-->
-            <div class="contact-row">
+            <div @paragraphs class="contact-row">
               <mat-icon class="contact-icon" [inline]="true">mail_outline</mat-icon>
               <div class="contact-text">
                 henrik@ralva.se

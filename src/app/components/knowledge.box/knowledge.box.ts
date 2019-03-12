@@ -23,7 +23,7 @@ import { IKnowledge } from '~/app/interfaces/document.interfaces';
         opacity: 1
       })),
       transition('hide => show', [
-        animate('0.4s ease')
+        animate('0.5s ease')
       ])
     ])
   ]

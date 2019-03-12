@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { state, trigger, transition, style, animate, animateChild, query as q, stagger } from '@angular/animations';
 
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -10,11 +11,36 @@ import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
 
 import { Subject } from 'rxjs';
 
+const query = (s, a, o = { optional: true }) => q(s, a, o);
 
 @Component({
   selector: 'app-me',
   templateUrl: './me.page.html',
-  styleUrls: ['./me.page.scss']
+  styleUrls: ['./me.page.scss'],
+  animations:[
+    trigger('ContentText',
+    [
+      transition(':enter',[
+        query('@paragraphs',[
+          stagger(300,[animateChild()])
+        ])
+      ])
+    ]),
+    trigger('paragraphs',
+    [
+      transition(':enter',[
+        style({
+          opacity: 0,
+          transform: 'translateY(-100%)'
+        }),
+        animate('0.3s ease',
+          style({
+            opacity: 1,
+            transform: 'translateY(0)'
+          }))
+      ])
+    ]),
+  ]
 })
 export class MePage implements OnInit, OnDestroy {
 

@@ -39,7 +39,8 @@ export const PortfolioData: IPortfolio[] = [
         DemoType: 'groupcaller',
         ColorDark: '#032d59',
         ColorLight: '#054b95',
-        cssClass: 'goupCallerbutton'
+        cssClass: 'goupCallerbutton',
+        Color: 'white'
     },
     {
         Header: 'Din Medlem',
@@ -72,7 +73,8 @@ export const PortfolioData: IPortfolio[] = [
         DemoType: 'dinmedlem',
         ColorDark: '#3b6115',
         ColorLight: '#20932c',
-        cssClass: 'dinmedlemButton'
+        cssClass: 'dinmedlemButton',
+        Color: 'white'
     },
     {
         Header: 'Mitt eget bröllop',
@@ -96,7 +98,8 @@ export const PortfolioData: IPortfolio[] = [
         Link: 'https://rongaralvert.com/',
         ColorDark: '#b87511af',
         ColorLight: '#d49432af',
-        cssClass: 'wedding'
+        cssClass: 'wedding',
+        Color: 'white'
     }
 ];
 

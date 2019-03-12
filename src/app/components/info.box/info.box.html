@@ -1,12 +1,12 @@
 <div class="box-container big">
 
-  <div class="box-header">
+  <div class="box-header" [ngClass]="{'odd-animate' : Odd, 'even-animate' : !Odd}">
     {{InfoBox.Header}}
   </div>
 
   <!--text array-->
-  <div *ngIf="InfoBox.TextArray" class="box-items-container">
-    <div *ngFor="let paragraph of InfoBox.TextArray" class="box-paragraph">
+  <div @ContentText *ngIf="InfoBox.TextArray" class="box-items-container">
+    <div @paragraphs *ngFor="let paragraph of InfoBox.TextArray" class="box-paragraph">
 
       <div *ngFor="let text of paragraph.Text">
         {{text}}
