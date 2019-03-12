@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { state, trigger, transition, style, animate, animateChild, query as q, stagger } from '@angular/animations';
+import { state, trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
 
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -10,8 +10,6 @@ import { CommonService } from '@henrik/services/common.service';
 import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
 
 import { Subject } from 'rxjs';
-
-const query = (s, a, o = { optional: true }) => q(s, a, o);
 
 @Component({
   selector: 'app-me',

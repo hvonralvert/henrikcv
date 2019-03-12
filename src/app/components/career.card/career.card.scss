@@ -21,13 +21,13 @@ $description-fontsize:20px;
 
 .middle-line-container{
   display: flex;
-  // align-items: center;
 }
 
 
 .middle-line{
   width:1px;
   border-right:3px solid var(--menu-button-hover);
+  display: flex;
 }
 
 

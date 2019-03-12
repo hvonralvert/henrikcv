@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input, AfterViewInit } from '@angular/core';
-import { state, trigger, transition, style, animate, animateChild, query as q, stagger } from '@angular/animations';
+import { state, trigger, transition, style, animate, query, animateChild, stagger } from '@angular/animations';
 
 import { IPortfolio } from '~/app/interfaces/app.interfaces';
 
@@ -24,9 +24,6 @@ export interface IAnimations {
   Content: IStateData;
   Button: IStateData;
 }
-
-const query = (s, a, o = { optional: true }) => q(s, a, o);
-
 
 @Component({
   selector: 'app-portfolio-card',

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, Input, AfterViewInit } from '@angular/core';
 import { IParamInfoBox, IPortfolio, ICareer } from '~/app/interfaces/app.interfaces';
-import { state, trigger, transition, style, animate, animateChild, query as q, stagger } from '@angular/animations';
+import { state, trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
 
 export type IState = 'hide' | 'show';
 
@@ -15,7 +15,6 @@ export interface IAnimations {
   Content: IStateData;
 }
 
-const query = (s, a, o = { optional: true }) => q(s, a, o);
 
 @Component({
   selector: 'app-career-card',
@@ -25,19 +24,33 @@ const query = (s, a, o = { optional: true }) => q(s, a, o);
     trigger('MiddleLine', [
       state('hide',
         style({
-          height: '0px'
+          maxHeight: '0px',
         })),
       state('show',
         style({
-          height: '100%',
+          maxHeight: '800px',
         })),
       transition('hide => show', [
         animate('0.4s ease')
       ]),
       transition('show => hide', [
-        animate('0.4s ease-out')
+        animate('0.4s ease')
       ])
     ]),
+    trigger('Loggo', [
+      state('hide',
+        style({
+          opacity:0
+        })),
+      state('show',
+        style({
+          opacity:1
+        })),
+      transition('hide => show', [
+        animate('0.3s ease')
+      ]), 
+    ])
+    ,
     trigger('Content',
       [
         transition('hide => show', [
@@ -70,13 +83,13 @@ export class CareerCard implements OnInit, AfterViewInit, OnDestroy {
 
 
   Animations: IAnimations = {
-    MiddleLine: {
-      State: 'hide',
-      DelayBeforeNext: 40
-    },
     Loggo: {
       State: 'hide',
-      DelayBeforeNext: 2
+      DelayBeforeNext: 50
+    },
+    MiddleLine: {
+      State: 'hide',
+      DelayBeforeNext: 30
     },
     Content: {
       State: 'hide',
@@ -93,11 +106,9 @@ export class CareerCard implements OnInit, AfterViewInit, OnDestroy {
 
 
   ngAfterViewInit() {
-    // setTimeout(() => {
-    //   this.AniRest();
-    // }, 700)
-
-    this.AniRest();
+    setTimeout(() => {
+      this.AniRest();
+    }, 300);
   }
 
 
@@ -114,7 +125,6 @@ export class CareerCard implements OnInit, AfterViewInit, OnDestroy {
 
     this.Animations.MiddleLine.State = 'hide';
   }
-
 
 
   ngOnDestroy() {

@@ -1,9 +1,7 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { state, trigger, transition, style, animate, animateChild, query as q, stagger } from '@angular/animations';
+import { state, trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
 
 import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
-
-const query = (s, a, o = { optional: true }) => q(s, a, o);
 
 @Component({
   selector: 'app-info-box',
