@@ -5,7 +5,7 @@ import { IPortfolio } from '~/app/interfaces/app.interfaces';
 
 import { DemoModal } from '@henrik/modals/demo.modal/demo.modal';
 import { MakModal } from '@henrik/modals/mak.modal/mak.modal';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 import { GoogleAnalyticsService } from '@henrik/services/googleanalytics.service';
 

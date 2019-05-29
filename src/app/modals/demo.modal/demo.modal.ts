@@ -1,10 +1,10 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material/dialog';
 
 import { AuthService } from '@henrik/services/auth.service';
 import { IPageLink, IDemoModalData } from '~/app/interfaces/app.interfaces';
 
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({

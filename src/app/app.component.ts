@@ -1,6 +1,6 @@
 import { Component, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { MatDrawer } from '@angular/material/sidenav';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
