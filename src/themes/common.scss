@@ -5,7 +5,7 @@
 /*---------- page containers -----*/
 $pagecontainer-BigScreenPadding:20px; // page padding big screen
 $pagecontainer-SmallScreenPadding:2px; // page padding small screen
-$pageHeader-fontsize:55px; // side of the page header
+$pageHeader-fontsize:135px; // side of the page header, was 55px
 $pageHeader-marginleft:25px; // margin to the page side
 $pageHeader-underline-width:550px; // length of the underline
 $pageHeader-underline-marginBottom:10px; // distance from the header bottom (abolute position)
@@ -77,6 +77,7 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   }
 }
 
+
 /*------------------------------- page container -------------------------------------*/
 @mixin PageContainer {
   @include henrikScrollBar;
@@ -102,9 +103,11 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   }
 }
 
+
 .PageContainer {
   @include PageContainer;
 }
+
 
 .PageHeader-container {
   display: flex;
@@ -113,18 +116,12 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   position: relative;
 }
 
+
 .PageHeader-Text {
   font-size: $pageHeader-fontsize;
   color: var(--page-headercolor);
   margin-left: $pageHeader-marginleft;
-}
-
-.PageHeader-underline {
-  border-bottom: 1px solid var(--page-headercolor);
-  height: 1px;
-  width: $pageHeader-underline-width;
-  position: absolute;
-  bottom: $pageHeader-underline-marginBottom;
+  opacity: 0.05;
 }
 
 
@@ -185,7 +182,6 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
 
 
 /*------------------------ boxes -----------------------------*/
-
 .transp-container {
   display: flex;
   flex-direction: column;
@@ -193,6 +189,7 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   width: 100%;
   max-width: $box-maxwidth;
 }
+
 
 .myprojects-margintop {
   margin-top: $myprojects-topmargins;
@@ -221,6 +218,14 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
     width: $box-big-width;
   }
 
+  &.center{
+    align-items: center;
+  }
+
+  &>*{
+    z-index: 1;
+  }
+
   @include ScreenSize('bigscreen') {
     padding: $box-bigScreen-padding;
   }
@@ -230,8 +235,10 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
   }
 }
 
+
 .box-header {
   font-size: $box-header-fontsize;
+  box-sizing: border-box;
   width: 100%;
   color:var(--box-headertext);
   &.addpaddings{
@@ -243,18 +250,52 @@ $screenszies: ('smallscreen':650px, "bigscreen": 15000px);
       padding: $box-smalScreen-padding;
     }
   }
+
+  &.odd-animate{
+    animation: animateOdd 0.3s ease;
+  }
+
+  &.even-animate{
+    animation: animateEven 0.3s ease;
+  }
 }
+
+@keyframes animateOdd{
+  from{
+    opacity: 0;
+    transform: translateY(75px)
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px)
+  }
+}
+
+@keyframes animateEven{
+  from{
+    opacity: 0;
+    transform: translateY(75px)
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px)
+  }
+}
+
+
 
 .box-paragraph-header {
   font-size: $box-paragraph-fontsize;
   font-weight: bold;
 }
 
+
 .box-paragraph {
   margin-bottom: $box-paragraph-marginNext;
   color:var(--box-textcolor);
   font-size: $box-paragraph-fontsize;
 }
+
 
 .box-items-container {
   display: flex;

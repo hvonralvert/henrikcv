@@ -28,7 +28,7 @@ export class KnowledgeService {
   }
 
 
-  initFirestore( Catogery: IKnowCatType) {
+  initFirestore(Catogery: IKnowCatType) {
     this.Catogery = Catogery;
 
     this.KnowColl = this.afs.collection('/Knowledges/', ref => {
@@ -41,7 +41,7 @@ export class KnowledgeService {
       map(action => {
         return action.map(a => {
           const data = a.payload.doc.data() as IKnowledge;
-          return { ...data };
+          return { state: 'hide', ...data };
         });
       }),
       takeUntil(this.ngUnsubscribe$),

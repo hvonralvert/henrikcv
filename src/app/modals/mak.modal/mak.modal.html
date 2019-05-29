@@ -1,5 +1,7 @@
 <div mat-dialog-title>
   <!--top row stuffs-->
+  <mat-icon class="closeButton" [inline]="true" (click)="CloseDialog()">close</mat-icon>
+
   <div class="top-row">
     <app-button type="transparent" (click)="buttonClick(button)" [active]="button.Active" class="button" [text]="button.Text"
       *ngFor="let button of buttons"></app-button>

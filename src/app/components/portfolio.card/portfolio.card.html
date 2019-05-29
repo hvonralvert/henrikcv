@@ -1,27 +1,29 @@
-<div class="box-container big" [ngClass]="getClass()">
+<div class="box-container big center" [style.color]="Portfolio.Color">
+
+  <div [@Background]="cardState" class="backgroundcolor" [ngClass]="getBackgroundClass()"></div>
 
   <!--header-->
   <div class="header-row">
-    <img class="loggo-img" [src]="Portfolio.Loggo">
-    <div class="header-text">
+    <img [@HeaderImg]="Animations.HeaderImg.State" class="loggo-img" [src]="Portfolio.Loggo">
+    <div [@HeaderText]="Animations.HeaderText.State" class="header-text">
       {{Portfolio.Header}}
     </div>
   </div>
 
   <!--the line-->
   <div class="line-row">
-    <div class="line" [style.border-color]="Portfolio.ColorDark"></div>
+    <div [@HeaderText]="Animations.HeaderText.State" class="line" [style.border-color]="Portfolio.ColorDark"></div>
   </div>
 
   <!--the content-->
   <div class="content-container">
 
     <div class="product-img-container">
-      <img class="product-img" [src]="Portfolio.ProductImage">
+      <img [@ContentImg]="Animations.Content.State" class="product-img" [src]="Portfolio.ProductImage">
     </div>
 
-    <div class="paragraph-container">
-      <div [ngClass]="{'paragraph' : !last}" *ngFor="let textPar of Portfolio.TextArray; let last = last;">
+    <div [@ContentText]="Animations.Content.State" class="paragraph-container">
+      <div [@paragraphs]="Animations.Content.State" [ngClass]="{'paragraph' : !last}" *ngFor="let textPar of Portfolio.TextArray; let last = last;">
         {{textPar.Text}}
       </div>
     </div>
@@ -29,10 +31,14 @@
 
   <!--button-->
   <div class="line-row button-row ">
-    <div class="button-container" (click)="gotToPort()">
-      Gå till {{Portfolio.Header}}
-      <mat-icon class="button-icon" [inline]="true">arrow_forward</mat-icon>
+    <div class="button-wrapper">
+      <div [@Button]="Animations.Button.State" class="button-container" (click)="gotToPort()">
+        Gå till {{Portfolio.Header}}
+        <mat-icon class="button-icon" [inline]="true">arrow_forward</mat-icon>
+      </div>
     </div>
+
   </div>
+
 
 </div>

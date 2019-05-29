@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { MyFrontEndHistoryData } from '@henrik/data/frontend.page.data';
+import { MyFrontEndHistoryData_Swe } from '@henrik/data/frontend.page.data';
 import { CommonService } from '@henrik/services/common.service';
 
 import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
@@ -14,7 +14,7 @@ import { Subject } from 'rxjs';
 export class FrontEndPage implements OnInit, OnDestroy {
 
 
-  MyHistory: IParamInfoBox = MyFrontEndHistoryData;
+  MyHistory: IParamInfoBox = MyFrontEndHistoryData_Swe;
 
   desktopScreen = true;
   ngUnsubscribe$: Subject<boolean> = new Subject();

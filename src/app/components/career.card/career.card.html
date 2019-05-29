@@ -3,27 +3,31 @@
   <!--the content-->
   <div class="content-container">
 
-    <div style="height:fit-content">
-      <img class="comploggo" [src]="career.LoggoURL">
+    <div style="height:fit-content;">
+      <img [@Loggo]="Animations.Loggo.State" class="comploggo" [src]="career.LoggoURL">
     </div>
 
-    <div class="info-container">
+    <div class="middle-line-container">
+      <div [@MiddleLine]="Animations.MiddleLine.State" class="middle-line"></div>
+    </div>
 
-      <div class="title">
+    <div [@Content]="Animations.Content.State" class="info-container">
+
+      <div [@paragraphs]="Animations.Content.State" class="title">
         {{career.Title}}
       </div>
 
-      <div class="company-name">
+      <div [@paragraphs]="Animations.Content.State" class="company-name">
         {{career.CompanyName}}
       </div>
 
-      <div class="time">
+      <div [@paragraphs]="Animations.Content.State" class="time">
         {{career.Time}}
       </div>
 
-      <div class="description" *ngFor="let textPar of career.TextArray">
+      <div [@paragraphs]="Animations.Content.State" class="description" *ngFor="let textPar of career.TextArray">
         <div *ngFor="let text of textPar.Text">
-            {{text}}
+          {{text}}
         </div>
       </div>
 

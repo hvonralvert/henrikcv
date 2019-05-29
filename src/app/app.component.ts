@@ -32,6 +32,7 @@ export class AppComponent implements AfterViewInit {
   menuMode: MatDrawer['mode'] = 'side';
   adminOnline = false;
   desktopScreen = false;
+  webAppView=true;
 
   toolbarHeader = '';
 
@@ -102,7 +103,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.GoToPage('frontend');
+      // this.GoToPage('frontend');
     }, 500);
   }
 
@@ -131,6 +132,11 @@ export class AppComponent implements AfterViewInit {
 
 
   enterSwed() {
+
+    setTimeout(()=>{
+      this.GoToPage('frontend');
+    },500);
+
     setTimeout(() => {
       this.UserEntered = true;
     }, 600);
@@ -139,7 +145,7 @@ export class AppComponent implements AfterViewInit {
       if (this.desktopScreen) {
         this.drawer.open();
       }
-    }, 1000);
+    }, 250);
   }
 
   GoToPage(page: string) {

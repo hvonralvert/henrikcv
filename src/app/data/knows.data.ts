@@ -105,144 +105,168 @@ export const SoftKnowsData: IKnowledge[] = [
         Text: 'TypeScript',
         Stars: 4,
         Img: './assets/typescript.png',
-        Catogery: ['language', 'softdev']
+        Catogery: ['language', 'softdev'],
+        state: 'hide'
     },
     {
         Text: 'Javascript',
         Stars: 4,
         Img: './assets/javascript.png',
-        Catogery: ['language', 'softdev']
+        Catogery: ['language', 'softdev'],
+        state: 'hide'
     },
     {
         Text: 'SASS (& CSS)',
         Stars: 4,
         Img: './assets/sass.png',
-        Catogery: ['language', 'softdev']
+        Catogery: ['language', 'softdev'],
+        state: 'hide'
     },
     {
         Text: 'HTML5',
         Stars: 4,
         Img: './assets/html.png',
-        Catogery: ['language', 'softdev']
+        Catogery: ['language', 'softdev'],
+        state: 'hide'
     },
     {
         Text: 'C++',
         Stars: 3,
         Img: './assets/cplusplus.png',
-        Catogery: ['language', 'softdev', 'iot']
+        Catogery: ['language', 'softdev', 'iot'],
+        state: 'hide'
     },
     {
         Text: 'VBA 6',
         Stars: 2,
         Img: './assets/vba.png',
-        Catogery: ['language', 'softdev']
+        Catogery: ['language', 'softdev'],
+        state: 'hide'
     },
     {
         Text: 'PHP',
         Stars: 1,
         Img: './assets/php.png',
-        Catogery: ['language', 'softdev', 'iot']
+        Catogery: ['language', 'softdev', 'iot'],
+        state: 'hide'
     },
     {
         Text: 'Photoshop',
         Stars: 4,
         Img: './assets/photoshop.png',
-        Catogery: ['graphtools', 'graphdes']
+        Catogery: ['graphtools', 'graphdes'],
+        state: 'hide'
     },
     {
         Text: 'Illustrator',
         Stars: 4,
         Img: './assets/illustrator.png',
-        Catogery: ['graphtools', 'graphdes']
+        Catogery: ['graphtools', 'graphdes'],
+        state: 'hide'
     },
     {
         Text: 'InDesign',
         Stars: 3,
         Img: './assets/indesign.png',
-        Catogery: ['graphtools', 'graphdes']
+        Catogery: ['graphtools', 'graphdes'],
+        state: 'hide'
     },
     {
         Text: 'DipTrace',
         Stars: 3,
         Img: './assets/diptrace.png',
-        Catogery: ['graphtools', 'iot']
+        Catogery: ['graphtools', 'iot'],
+        state: 'hide'
     },
     {
         Text: 'Inventor (CAD)',
         Stars: 3,
         Img: './assets/inventor.png',
-        Catogery: ['graphtools', 'graphdes', 'iot', 'mechengineer']
+        Catogery: ['graphtools', 'graphdes', 'iot', 'mechengineer'],
+        state: 'hide'
     },
     {
         Text: 'Angular 2+',
         Stars: 4,
         Img: './assets/angular.png',
-        Catogery: ['softtools', 'softdev']
+        Catogery: ['softtools', 'softdev'],
+        state: 'hide'
     },
     {
         Text: 'Firebase (NoSQL)',
         Stars: 4,
         Img: './assets/firebase.png',
-        Catogery: ['softtools', 'softdev']
+        Catogery: ['softtools', 'softdev'],
+        state: 'hide'
     },
     {
         Text: 'Node.js',
         Stars: 3,
         Img: './assets/nodejs.png',
-        Catogery: ['softtools', 'softdev', 'iot']
+        Catogery: ['softtools', 'softdev', 'iot'],
+        state: 'hide'
     },
     {
         Text: 'GIT',
         Stars: 3,
         Img: './assets/git.png',
-        Catogery: ['softtools', 'softdev']
+        Catogery: ['softtools', 'softdev'],
+        state: 'hide'
     },
     {
         Text: 'Vue',
         Stars: 2,
         Img: './assets/vue.png',
-        Catogery: ['softtools', 'softdev']
+        Catogery: ['softtools', 'softdev'],
+        state: 'hide'
     },
     {
         Text: 'MySQL',
         Stars: 1,
         Img: './assets/mysql.png',
-        Catogery: ['softtools', 'softdev', 'iot']
+        Catogery: ['softtools', 'softdev', 'iot'],
+        state: 'hide'
     },
     {
         Text: 'Projektledning',
         Stars: 4,
         Img: './assets/mysql.png',
-        Catogery: ['orgdev']
+        Catogery: ['orgdev'],
+        state: 'hide'
     },
     {
         Text: 'Lean',
         Stars: 4,
         Img: './assets/mysql.png',
-        Catogery: ['orgdev']
+        Catogery: ['orgdev'],
+        state: 'hide'
     },
     {
         Text: 'Affärsutveckling',
         Stars: 4,
         Img: './assets/mysql.png',
-        Catogery: ['orgdev']
+        Catogery: ['orgdev'],
+        state: 'hide'
     },
     {
         Text: 'Logistik',
         Stars: 4,
         Img: './assets/mysql.png',
-        Catogery: ['orgdev']
+        Catogery: ['orgdev'],
+        state: 'hide'
     },
     {
         Text: 'I2C',
         Stars: 3,
         Img: './assets/mysql.png',
-        Catogery: ['iot']
+        Catogery: ['iot'],
+        state: 'hide'
     },
     {
         Text: 'SPI',
         Stars: 3,
         Img: './assets/mysql.png',
-        Catogery: ['iot']
+        Catogery: ['iot'],
+        state: 'hide'
     },
 ];

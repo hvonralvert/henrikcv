@@ -29,6 +29,13 @@ $button-borderradius:3px;
 }
 
 
+.backgroundcolor{
+  position: absolute;
+  height:100%;
+  width:100%;
+  top:0px;
+}
+
 .loggo-img {
   height: $loggo-height;
   margin-right: $loggo-marginright;
@@ -94,6 +101,7 @@ $button-borderradius:3px;
   flex-direction: column;
   justify-content: center;
   padding: $prod-text-padding;
+  font-size: $box-paragraph-fontsize;
 }
 
 
@@ -104,6 +112,8 @@ $button-borderradius:3px;
 
 /*-------------button ------------------*/
 .button-container {
+  position: absolute;
+  right:0px;
   display: flex;
   flex-direction: row;
   width: fit-content;
@@ -112,6 +122,7 @@ $button-borderradius:3px;
   padding: $button-padding;
   border: 2px solid white;
   cursor: pointer;
+  font-size:  $box-paragraph-fontsize;
   border-radius: $button-borderradius;
 }
 
@@ -120,6 +131,12 @@ $button-borderradius:3px;
   background-color: var(--button-background-hover);
 }
 
+.button-wrapper{
+  position: relative;
+  perspective: 300px;
+  width:300px;
+  height:calc( 2 * #{$button-padding} + #{$box-paragraph-fontsize} + 2px);
+}
 
 .button-icon {
   font-size: $button-icon-size;

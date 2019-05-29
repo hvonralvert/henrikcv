@@ -19,6 +19,18 @@ $description-fontsize:20px;
 }
 
 
+.middle-line-container{
+  display: flex;
+}
+
+
+.middle-line{
+  width:1px;
+  border-right:3px solid var(--menu-button-hover);
+  display: flex;
+}
+
+
 .comploggo {
   width: $comploggo-width;
   height: auto;
@@ -32,6 +44,7 @@ $description-fontsize:20px;
   flex: 1;
   min-width: $infocont-minwidth;
   padding-left: $infocont-paddingleft;
+  overflow: hidden;
 }
 
 .title {

@@ -1,7 +1,7 @@
 import { IParamInfoBox } from '@henrik/interfaces/app.interfaces';
 
-export const MyFrontEndHistoryData: IParamInfoBox = {
-    Header: 'Front End',
+export const MyFrontEndHistoryData_Swe: IParamInfoBox = {
+    Header: 'Front End karriär',
     TextArray: [
         {
             Header: 'Hur kom jag hit',
@@ -25,4 +25,5 @@ export const MyFrontEndHistoryData: IParamInfoBox = {
         },
     ]
 };
+
 

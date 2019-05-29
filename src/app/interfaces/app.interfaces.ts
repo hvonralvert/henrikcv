@@ -42,7 +42,8 @@ export interface IPortfolio {
     DemoType?: IDemoType;
     ColorLight: string;
     ColorDark: string;
-    cssClass: string;
+    cssClass: string; // the css class
+    Color: string; // text color
 }
 
 
