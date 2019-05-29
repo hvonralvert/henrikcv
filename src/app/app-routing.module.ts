@@ -9,23 +9,23 @@ const routes: Routes = [
   // },
   {
     path: 'about',
-    loadChildren: './pages/about.page.module#AboutPageModule',
+    loadChildren: () => import('./pages/about.page.module').then(m => m.AboutPageModule),
   },
   {
     path: 'frontend',
-    loadChildren: './pages/frontend.page.module#FrontEndPageModule',
+    loadChildren: () => import('./pages/frontend.page.module').then(m => m.FrontEndPageModule),
   },
   {
     path: 'me',
-    loadChildren: './pages/me.page.module#MePageModule',
+    loadChildren: () => import('./pages/me.page.module').then(m => m.MePageModule),
   },
   {
     path: 'career',
-    loadChildren: './pages/career.page.module#CareerPageModule',
+    loadChildren: () => import('./pages/career.page.module').then(m => m.CareerPageModule),
   },
   {
     path: 'admin',
-    loadChildren: './pages/admin.page.module#AdminPageModule',
+    loadChildren: () => import('./pages/admin.page.module').then(m => m.AdminPageModule),
   }
 ];
 

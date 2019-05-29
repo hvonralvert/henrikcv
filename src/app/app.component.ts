@@ -23,7 +23,7 @@ import { LoginModal } from '@henrik/modals/login.modal/login.modal';
 
 export class AppComponent implements AfterViewInit {
 
-  @ViewChild('drawer') drawer: MatDrawer;
+  @ViewChild('drawer', { static: true }) drawer: MatDrawer;
 
 
   MenuPages: IPageLink[] = [];
