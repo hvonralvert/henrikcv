@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { KnowledgeService } from '@henrik/services/knowledge.service';
-import { IKnowLedgeType, IKnowCatType } from '~/app/interfaces/app.interfaces';
+import { IKnowCatType } from '~/app/interfaces/app.interfaces';
 import { IKnowledge } from '~/app/interfaces/document.interfaces';
 
 @Component({
@@ -38,7 +38,6 @@ export class KnowledgeBox implements OnInit, OnDestroy {
 
   animateNextTime = 150;
 
-
   ngUnsubscribe$: Subject<void> = new Subject();
 
   constructor(public knowServ: KnowledgeService) {
@@ -48,6 +47,14 @@ export class KnowledgeBox implements OnInit, OnDestroy {
     });
   }
 
+  ngOnInit() {
+    this.knowServ.initFirestore(this.Catogery);
+  }
+
+  ngOnDestroy() {
+    this.ngUnsubscribe$.next();
+    this.ngUnsubscribe$.unsubscribe();
+  }
 
   newTImer() {
     setTimeout(() => {
@@ -66,17 +73,6 @@ export class KnowledgeBox implements OnInit, OnDestroy {
       }
 
     }, this.animateNextTime);
-  }
-
-
-  ngOnInit() {
-    this.knowServ.initFirestore(this.Catogery);
-  }
-
-
-  ngOnDestroy() {
-    this.ngUnsubscribe$.next();
-    this.ngUnsubscribe$.unsubscribe();
   }
 
 }

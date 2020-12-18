@@ -55,7 +55,6 @@ export class RouteService {
     // this.GoToPage('frontend');
   }
 
-
   GoToPage(page: string) {
     console.log(' route.service :: GoToPage :: page => '+page);
     this.MenuPages = this.MenuPages.map(el => {

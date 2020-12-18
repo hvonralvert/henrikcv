@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { IParamInfoBox, IRealtimeBox, ISlider } from '~/app/interfaces/app.interfaces';
+import { IRealtimeBox, ISlider } from '~/app/interfaces/app.interfaces';
 
 import { RealtimeService } from '@henrik/services/realtime.service';
 import { Subject } from 'rxjs';
@@ -16,7 +16,6 @@ export class RealtimeBox implements OnInit, OnDestroy {
 
   @Input() BoxData: IRealtimeBox;
 
-
   Slider1: ISlider;
   Slider2: ISlider;
 
@@ -31,11 +30,9 @@ export class RealtimeBox implements OnInit, OnDestroy {
   thumbLabel = false;
   vertical = false;
 
-
   ngUnsubscribe$: Subject<void> = new Subject();
 
   constructor(public realServ: RealtimeService) { }
-
 
   ngOnInit() {
     this.realServ.Sliders$$.pipe(takeUntil(this.ngUnsubscribe$)).subscribe(sliders => {
@@ -43,6 +40,10 @@ export class RealtimeBox implements OnInit, OnDestroy {
     });
   }
 
+  ngOnDestroy() {
+    this.ngUnsubscribe$.next();
+    this.ngUnsubscribe$.unsubscribe();
+  }
 
   getSliderValues(sliders: ISlider[]) {
     if (sliders.length < 1) {
@@ -55,16 +56,9 @@ export class RealtimeBox implements OnInit, OnDestroy {
     });
   }
 
-
   sliderStopped(event, slider: ISlider) {
     const newSlider: ISlider = JSON.parse(JSON.stringify(slider));
     this.realServ.saveNewValue(newSlider);
-  }
-
-
-  ngOnDestroy() {
-    this.ngUnsubscribe$.next();
-    this.ngUnsubscribe$.unsubscribe();
   }
 
 }

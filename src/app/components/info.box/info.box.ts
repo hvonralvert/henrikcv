@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { state, trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
+import { Component, OnInit, Input } from '@angular/core';
+import { trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
 
 import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
 
@@ -32,20 +32,13 @@ import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
     ]),
   ]
 })
-export class InfoBox implements OnInit, OnDestroy {
+export class InfoBox implements OnInit {
 
   @Input() InfoBox: IParamInfoBox;
   @Input() Odd = true;
 
-
   constructor() {  }
 
-
-  ngOnInit() {
-  }
-
-
-  ngOnDestroy() {
-  }
+  ngOnInit() { }
 
 }

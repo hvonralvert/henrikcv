@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, Input, AfterViewInit } from '@angular/core';
-import { IParamInfoBox, IPortfolio, ICareer } from '~/app/interfaces/app.interfaces';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { ICareer } from '~/app/interfaces/app.interfaces';
 import { state, trigger, transition, style, animate, animateChild, query, stagger } from '@angular/animations';
 
 export type IState = 'hide' | 'show';
@@ -14,7 +14,6 @@ export interface IAnimations {
   Loggo: IStateData;
   Content: IStateData;
 }
-
 
 @Component({
   selector: 'app-career-card',
@@ -77,10 +76,9 @@ export interface IAnimations {
     ]),
   ]
 })
-export class CareerCard implements OnInit, AfterViewInit, OnDestroy {
+export class CareerCard implements OnInit, AfterViewInit {
 
   @Input() career: ICareer;
-
 
   Animations: IAnimations = {
     Loggo: {
@@ -97,20 +95,15 @@ export class CareerCard implements OnInit, AfterViewInit, OnDestroy {
     }
   };
 
-
   constructor() { }
 
-
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 
   ngAfterViewInit() {
     setTimeout(() => {
       this.AniRest();
     }, 300);
   }
-
 
   async AniRest() {
     for (const keystate of Object.keys(this.Animations)) {
@@ -124,10 +117,6 @@ export class CareerCard implements OnInit, AfterViewInit, OnDestroy {
     }
 
     this.Animations.MiddleLine.State = 'hide';
-  }
-
-
-  ngOnDestroy() {
   }
 
 }

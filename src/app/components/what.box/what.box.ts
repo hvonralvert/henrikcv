@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-import { IParamInfoBox, IWhatBox } from '~/app/interfaces/app.interfaces';
+import { Component, OnInit, Input } from '@angular/core';
+import { IWhatBox } from '~/app/interfaces/app.interfaces';
 
 
 @Component({
@@ -7,19 +7,12 @@ import { IParamInfoBox, IWhatBox } from '~/app/interfaces/app.interfaces';
   templateUrl: './what.box.html',
   styleUrls: ['./what.box.scss']
 })
-export class WhatBox implements OnInit, OnDestroy {
+export class WhatBox implements OnInit {
 
   @Input() BoxData: IWhatBox;
 
-
   constructor() {  }
 
-
-  ngOnInit() {
-  }
-
-
-  ngOnDestroy() {
-  }
+  ngOnInit() { }
 
 }

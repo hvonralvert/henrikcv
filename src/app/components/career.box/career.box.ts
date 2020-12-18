@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { IPortfolio, ICareer } from '~/app/interfaces/app.interfaces';
+import { Component, OnInit } from '@angular/core';
+import { ICareer } from '~/app/interfaces/app.interfaces';
 
 import { CareerData } from '@henrik/data/career.data';
 
@@ -8,20 +8,12 @@ import { CareerData } from '@henrik/data/career.data';
   templateUrl: './career.box.html',
   styleUrls: ['./career.box.scss']
 })
-export class CareerBox implements OnInit, OnDestroy {
-
+export class CareerBox implements OnInit {
 
   CareerData: ICareer[] = CareerData;
 
-
   constructor() { }
 
-
-  ngOnInit() {
-  }
-
-
-  ngOnDestroy() {
-  }
+  ngOnInit() { }
 
 }

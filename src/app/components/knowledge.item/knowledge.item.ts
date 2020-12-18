@@ -16,7 +16,6 @@ export class KnowledgeItem implements OnInit {
 
   @Input() knowledge: IKnowledge;
 
-
   stars: IStars[] = [];
 
   constructor() { }

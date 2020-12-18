@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { state, trigger, transition, style, animate, query, animateChild, stagger } from '@angular/animations';
 
 import { IPortfolio } from '~/app/interfaces/app.interfaces';
@@ -145,13 +145,11 @@ export interface IAnimations {
       ])
   ]
 })
-export class PortfolioCard implements OnInit, AfterViewInit, OnDestroy {
+export class PortfolioCard implements OnInit, AfterViewInit {
 
   @Input() Portfolio: IPortfolio;
 
-
   cardState: IBackStates = 'start';
-
 
   Animations: IAnimations = {
     HeaderText: {
@@ -172,21 +170,17 @@ export class PortfolioCard implements OnInit, AfterViewInit, OnDestroy {
     }
   };
 
-
   constructor(
     public dialog: MatDialog,
     public gaServ: GoogleAnalyticsService
   ) { }
 
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 
   ngAfterViewInit() {
     this.AniBoxMaxWidth();
   }
-
 
   AniBoxMaxWidth() {
     this.cardState = 'maxwidth';
@@ -195,12 +189,10 @@ export class PortfolioCard implements OnInit, AfterViewInit, OnDestroy {
     }, 500)
   }
 
-
   AniBoxMaxHeight() {
     this.cardState = 'maxheight';
     this.AniRest()
   }
-
 
   async AniRest() {
     for (const keystate of Object.keys(this.Animations)) {
@@ -214,7 +206,6 @@ export class PortfolioCard implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-
   gotToPort() {
     if (!this.Portfolio.DemoType) {
       this.sendAnalyticsGotTo();
@@ -226,7 +217,6 @@ export class PortfolioCard implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-
   openMakalosa() {
     this.sendAnalyticsOpen();
 
@@ -235,7 +225,6 @@ export class PortfolioCard implements OnInit, AfterViewInit, OnDestroy {
       maxWidth: '90%',
     });
   }
-
 
   openGroupCaller() {
 
@@ -253,23 +242,16 @@ export class PortfolioCard implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-
   sendAnalyticsOpen() {
     this.gaServ.openPortfModal(this.Portfolio.Header);
   }
-
 
   sendAnalyticsGotTo() {
     this.gaServ.goToUrlPort(this.Portfolio.Header);
   }
 
-
   getBackgroundClass(): string {
     return this.Portfolio.cssClass;
-  }
-
-
-  ngOnDestroy() {
   }
 
 }

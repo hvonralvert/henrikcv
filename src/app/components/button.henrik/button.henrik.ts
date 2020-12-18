@@ -18,8 +18,7 @@ export class ButtonHenrik implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   getClass(what) {
     let cssClass = ' ';
