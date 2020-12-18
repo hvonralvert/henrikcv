@@ -5,6 +5,7 @@ import { CommonService } from '@henrik/services/common.service';
 
 import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
 import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-frontend',
@@ -12,7 +13,6 @@ import { Subject } from 'rxjs';
   styleUrls: ['./frontend.page.scss']
 })
 export class FrontEndPage implements OnInit, OnDestroy {
-
 
   MyHistory: IParamInfoBox = MyFrontEndHistoryData_Swe;
 
@@ -22,14 +22,12 @@ export class FrontEndPage implements OnInit, OnDestroy {
   constructor(
     public comServ: CommonService) {
 
-    this.comServ.ScreenType$$.subscribe(desktop => {
+    this.comServ.ScreenType$$.pipe(takeUntil(this.ngUnsubscribe$)).subscribe(desktop => {
       this.desktopScreen = desktop;
     });
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 
   ngOnDestroy() {
     this.ngUnsubscribe$.next();

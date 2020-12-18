@@ -11,10 +11,10 @@ import { Subject } from 'rxjs';
 })
 export class SplashPage implements OnInit, OnDestroy {
 
+  @Output() userEntered = new EventEmitter<string>();
+
   desktopScreen = true;
   userClicked = false;
-
-  @Output() userEntered = new EventEmitter<string>();
 
   splashData = {
     Name: 'Henrik Ralvert',
@@ -23,11 +23,9 @@ export class SplashPage implements OnInit, OnDestroy {
 
   ngUnsubscribe$: Subject<boolean> = new Subject();
 
-
   constructor(
     public comServ: CommonService
   ) { }
-
 
   ngOnInit() {
     this.comServ.ScreenType$$.pipe(takeUntil(this.ngUnsubscribe$)).subscribe(desktop => {
@@ -39,7 +37,6 @@ export class SplashPage implements OnInit, OnDestroy {
     this.userClicked = true;
     this.userEntered.emit('sweden');
   }
-
 
   ngOnDestroy() {
     this.ngUnsubscribe$.next();

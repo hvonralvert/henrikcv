@@ -10,6 +10,7 @@ import { CommonService } from '@henrik/services/common.service';
 import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
 
 import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-me',
@@ -52,7 +53,7 @@ export class MePage implements OnInit, OnDestroy {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,) {
 
-    this.comServ.ScreenType$$.subscribe(desktop => {
+    this.comServ.ScreenType$$.pipe(takeUntil(this.ngUnsubscribe$)).subscribe(desktop => {
       this.desktopScreen = desktop;
     });
 
@@ -62,10 +63,7 @@ export class MePage implements OnInit, OnDestroy {
     );
   }
 
-
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 
   ngOnDestroy() {
     this.ngUnsubscribe$.next();

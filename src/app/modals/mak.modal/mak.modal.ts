@@ -115,15 +115,12 @@ export class MakModal {
     }
   ]
 
-
-  SellPoints_act:ISellPoint=this.SellPoints[0];
-
+  SellPoints_act: ISellPoint = this.SellPoints[0];
 
   constructor(
     public dialogRef: MatDialogRef<MakModal>,
     public authServ: AuthService
-  ) {
-  }
+  ) { }
 
 
   buttonClick(button: IButton) {
@@ -131,13 +128,12 @@ export class MakModal {
       butt.Active = butt.Text === button.Text ? true : false;
     }
 
-    for(const sellpoint of this.SellPoints){
-      if(sellpoint.Order===button.Order){
+    for (const sellpoint of this.SellPoints) {
+      if (sellpoint.Order === button.Order) {
         this.SellPoints_act = sellpoint;
       }
     }
   }
-
 
   CloseDialog(): void {
     this.dialogRef.close();

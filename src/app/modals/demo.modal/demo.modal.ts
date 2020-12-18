@@ -5,15 +5,12 @@ import { AuthService } from '@henrik/services/auth.service';
 import { IPageLink, IDemoModalData } from '~/app/interfaces/app.interfaces';
 
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-
-
 @Component({
   selector: 'app-demo-modal',
   templateUrl: './demo.modal.html',
   styleUrls: ['./demo.modal.scss']
 })
 export class DemoModal {
-
 
   adminButton: IPageLink;
 

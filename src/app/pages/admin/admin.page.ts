@@ -13,20 +13,17 @@ import { Subject } from 'rxjs';
 })
 export class AdminPage implements OnInit, OnDestroy {
 
-
   desktopScreen = true;
   ngUnsubscribe$: Subject<boolean> = new Subject();
 
   constructor(public knowServ: AdminKnowledgeService) {
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   addNewKnowledges() {
     this.knowServ.addNewKnows();
   }
-
 
   ngOnDestroy() {
     this.ngUnsubscribe$.next();

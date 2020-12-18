@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { CommonService } from '~/app/services/common.service';
 import { IWhatBox, IRealtimeBox } from '~/app/interfaces/app.interfaces';
+import { takeUntil } from 'rxjs/operators';
 
 export interface IAbout {
   What: string;
@@ -14,8 +15,6 @@ export interface IAbout {
   styleUrls: ['./about.page.scss']
 })
 export class AboutPage implements OnInit, OnDestroy {
-
-
 
   WhatBoxData: IWhatBox = {
     Header: 'Om CV:et',
@@ -44,7 +43,6 @@ export class AboutPage implements OnInit, OnDestroy {
     ]
   };
 
-
   RealtimeBoxData: IRealtimeBox = {
     Header: 'Test realtiden',
     TextArray: [
@@ -56,16 +54,12 @@ export class AboutPage implements OnInit, OnDestroy {
   ngUnsubscribe$: Subject<boolean> = new Subject();
 
   constructor(public comServ: CommonService) {
-
-    this.comServ.ScreenType$$.subscribe(desktop => {
+    this.comServ.ScreenType$$.pipe(takeUntil(this.ngUnsubscribe$)).subscribe(desktop => {
       this.desktopScreen = desktop;
     });
   }
 
-
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 
   ngOnDestroy() {
     this.ngUnsubscribe$.next();

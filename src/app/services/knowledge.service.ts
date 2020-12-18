@@ -32,7 +32,7 @@ export class KnowledgeService {
     this.Catogery = Catogery;
 
     this.KnowColl = this.afs.collection('/Knowledges/', ref => {
-      let query: firebase.firestore.CollectionReference | firebase.firestore.Query = ref;
+      let query: firebase.default.firestore.CollectionReference | firebase.default.firestore.Query = ref;
       query = query.orderBy('Order', 'asc').where('Catogery', 'array-contains', this.Catogery);
       return query;
     });

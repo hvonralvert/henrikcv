@@ -28,7 +28,6 @@ export class LoginModal {
     this.newFormControls();
   }
 
-
   newFormControls() {
     this.loginFormGroup = this.formBuild.group({
       Email: new FormControl('', [
@@ -42,21 +41,18 @@ export class LoginModal {
     });
   }
 
-
   LoginUser() {
     if (this.loginFormGroup.status === 'VALID') {
       this.authServ.loginUser(
         this.loginFormGroup.controls.Email.value,
         this.loginFormGroup.controls.Password.value
-      ).then(authData => {
+      ).then(() => {
         this.dialogRef.close(true);
       }, error => {
-        console.log('error');
-        // this.errorFunc();
+        console.error(error);
       });
     }
   }
-
 
   CloseDialog(): void {
     this.dialogRef.close();

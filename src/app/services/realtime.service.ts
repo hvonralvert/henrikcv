@@ -16,12 +16,10 @@ export class RealtimeService implements OnDestroy {
 
     ngUnsubscribe$: Subject<void> = new Subject();
 
-
     constructor(public afs: AngularFirestore) {
         this.Sliders$$ = new BehaviorSubject([]);
         this.initSliders();
     }
-
 
     initSliders() {
         this.SildersColl = this.afs.collection('Sliders');

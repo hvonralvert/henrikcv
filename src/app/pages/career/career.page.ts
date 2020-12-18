@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { CareerData, MyCareerHistory } from '@henrik/data/career.data';
+import { MyCareerHistory } from '@henrik/data/career.data';
 import { IParamInfoBox } from '~/app/interfaces/app.interfaces';
 import { Subject } from 'rxjs';
 import { CommonService } from '~/app/services/common.service';
@@ -23,9 +23,8 @@ export class CareerPage implements OnInit, OnDestroy {
       this.desktopScreen = desktop;
     });
   }
-  ngOnInit() {
-  }
 
+  ngOnInit() { }
 
   ngOnDestroy() {
     this.ngUnsubscribe$.next();

@@ -11,7 +11,6 @@ import { BehaviorSubject } from 'rxjs';
 
 export class RouteService {
 
-
   MenuPages: IPageLink[] = [
     {
       Name: 'Front End',
@@ -50,9 +49,7 @@ export class RouteService {
     }
   ];
 
-
   MenuPages$$: BehaviorSubject<IPageLink[]> = new BehaviorSubject(this.MenuPages);
-
 
   constructor(public router: Router) {
     // this.GoToPage('frontend');

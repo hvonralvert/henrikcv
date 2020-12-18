@@ -13,8 +13,8 @@ export class AuthService {
   UserOnline$$: BehaviorSubject<boolean>;
   UserOnline = false;
 
-  authState: Observable<firebase.User>;
-  user: firebase.User;
+  authState: Observable<firebase.default.User>;
+  user: firebase.default.User;
 
 
   constructor(public afAuth: AngularFireAuth) {
@@ -43,12 +43,12 @@ export class AuthService {
 
 
   loginUser(email, password): Promise<any> {
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
+    return this.afAuth.signInWithEmailAndPassword(email, password);
   }
 
 
   logoutUser() {
-    return this.afAuth.auth.signOut();
+    return this.afAuth.signOut();
   }
 
 }

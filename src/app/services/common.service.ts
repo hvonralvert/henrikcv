@@ -9,7 +9,6 @@ export interface IScreen {
   Width: number;
   Height: number;
 }
-
 @Injectable({
   providedIn: 'root'
 })
@@ -42,11 +41,9 @@ export class CommonService {
     });
   }
 
-
   newScreenDesktop(newScreen: IScreen) {
     this.ScreenType$$.next(newScreen.Width < this.whenDesktopWidth ? false : true);
   }
-
 
   startScreenDesktop(): boolean {
     const newScreen: IScreen = {
