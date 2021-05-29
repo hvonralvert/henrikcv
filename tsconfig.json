@@ -30,5 +30,8 @@
       "@henrik/common/*":["app/common/*"],
       "@henrik/data/*":["app/data/*"]
     }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
   }
 }

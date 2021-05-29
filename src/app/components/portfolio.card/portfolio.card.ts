@@ -197,10 +197,10 @@ export class PortfolioCard implements OnInit, AfterViewInit {
   async AniRest() {
     for (const keystate of Object.keys(this.Animations)) {
       let state = this.Animations[keystate];
-      await new Promise(resolve => {
+      await new Promise<void>(resolve => {
         state.State = 'show'
         setTimeout(() => {
-          resolve();
+          resolve(undefined);
         }, state.DelayBeforeNext)
       })
     }

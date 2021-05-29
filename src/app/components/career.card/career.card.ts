@@ -76,6 +76,7 @@ export interface IAnimations {
     ]),
   ]
 })
+
 export class CareerCard implements OnInit, AfterViewInit {
 
   @Input() career: ICareer;
@@ -108,7 +109,7 @@ export class CareerCard implements OnInit, AfterViewInit {
   async AniRest() {
     for (const keystate of Object.keys(this.Animations)) {
       let state = this.Animations[keystate];
-      await new Promise(resolve => {
+      await new Promise<void>(resolve => {
         state.State = 'show'
         setTimeout(() => {
           resolve();
